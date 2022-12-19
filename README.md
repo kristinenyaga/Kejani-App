@@ -13,12 +13,7 @@ SQLite, you will need to make the following changes in the project files:
 2. In the `database.yml` file, change the line `adapter: postgresql` to
    `adapter: sqlite3`.
 
-## Requirements
 
-- Ruby 2.7.4
-- NodeJS (v16), and npm
-- Render account
-- Postgresql
 
 See Environment Setup below for instructions on installing these tools if you
 don't already have them.
