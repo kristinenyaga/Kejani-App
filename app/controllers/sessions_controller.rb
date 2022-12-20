@@ -18,8 +18,7 @@ class SessionsController < ApplicationController
             render json: {errors: ["Not authorized"]}, status: :unauthorized
         end
     end
-end
-class SessionsController < ApplicationController
+
   def create
     lister = Lister.find_by(email: params[:email])
     if(lister&.authenticate(params[:password]))
