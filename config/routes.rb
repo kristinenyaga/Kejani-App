@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :reviews
+  resources :units
   resources :users
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
