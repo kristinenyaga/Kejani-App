@@ -9,14 +9,17 @@ function NavBar() {
   
 
   return (
-    < div className='navbar'>
+    <div className='navbar'>
      
-      <Navbar bg="light" className='background' variant="light">
+      <Navbar bg="rgb(27, 98, 110);" className='background' variant="light">
         <Container className='display-flex'>
-          <Navbar.Brand className='kejani'>Kejani</Navbar.Brand>
+          
+          <Navbar.Brand className='kejani'><img src='../src/components/assets/ph_house-fill.jpg'></img>Kejani</Navbar.Brand>
           <Nav className="me-auto rightside" >
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/signup">Signup</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/contact us">Contact Us</Nav.Link>
+
             {/* <button className='logoutBtn'>
           Logout
         </button> */}
