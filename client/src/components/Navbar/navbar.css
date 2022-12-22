@@ -1,0 +1,42 @@
+span.kejani{
+  color: rgb(27, 98, 110);
+  font-family: 'Montserrat', sans-serif;
+  font-size:50px;
+  font-weight: bold;
+
+
+}
+
+.rightside{
+  /*  */
+  font-family: 'Nerko One', cursive;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px;
+  font-size: 24px;
+}
+
+.display-flex{
+  display: flex;
+  flex-direction: row;
+  gap: 30em;
+  
+}
+
+.navbar{
+  position: absolute;
+  top: 20;
+  width: 100%;
+  background-color: #f3f3fb;
+  z-index: 1000;
+}
+
+div.navbar{
+  background-color: #F8F9FA;
+
+}
+
+.nav.background navbar navbar-expand navbar-light bg-light{
+  background-color: #d82e83;
+
+}
