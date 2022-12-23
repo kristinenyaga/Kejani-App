@@ -75,6 +75,43 @@ export default function Homepage(){
       </div>
 
     </section>
+
+    <section>
+      <h1 className="choose">
+        Why Choose Us
+      </h1>
+
+      <div className="container-choose-us">
+
+        <div>
+          <img
+          src="../components/assets/ph_house-fill.jpg">
+          </img>
+          <h3>Affordable</h3>
+
+          <p></p>
+        </div>
+
+        <div>
+          <img>
+          </img>
+          <h3>Fast</h3>
+
+
+          <p></p>
+        </div>
+
+        <div>
+          <img>
+          </img>
+          <h3>Secure</h3>
+
+
+          <p></p>
+        </div>
+
+      </div>
+    </section>
     </>
   )
 }
