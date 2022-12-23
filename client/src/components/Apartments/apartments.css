@@ -1,0 +1,14 @@
+.images{
+    position: relative;
+    top: 3%;
+    left: 1%;
+    right: 1;
+  }
+  
+  .properties{
+    height: 31%;
+    width: 31%;
+    border-radius: 0px 60px;
+    padding: 1%;
+  
+  }
