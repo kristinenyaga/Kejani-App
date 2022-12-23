@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
-function Login({ onLogin }) {
+ export default function Login({ onLogin }) {
     const [errors, setErrors] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -65,10 +65,3 @@ function Login({ onLogin }) {
     )
 };
 
-export default function Login(){
-  return(
-    <>
-    <h1>Login</h1>
-    </>
-  )
-}
