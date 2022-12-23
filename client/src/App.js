@@ -9,7 +9,7 @@ function App() {
   const [user, setUser] = useState(null);
   return (
     <>
-    <Homepage />
+    <Homepage user={user} setUser={setUser}/>
     <Routes>
       <Route exact path="/login" element={<Login />}/>
       <Route exact path="/signup" element={<Signup />}/>
