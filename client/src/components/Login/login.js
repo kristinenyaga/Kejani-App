@@ -56,7 +56,7 @@ import './login.css';
                     </div>
                 }
 
-                <button>Log In</button>
+                <button className='login-button'>Log In</button>
                 <div className="social">
                     <p className='p'>Don't have an account ? <span onClick={handleClick}><a href="/signup">Sign Up</a></span> </p>
                 </div>

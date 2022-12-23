@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './signup.css'
 
 function SignUp() {
     // States for registration
@@ -8,6 +9,7 @@ function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [number, setNumber] = useState('');
+    const [role, setRole] = useState('')
 
     // States for checking the errors
     const [submitted, setSubmitted] = useState(false);
@@ -52,7 +54,30 @@ function SignUp() {
             setSubmitted(true);
             setError(false);
         }
+        
+ 
+
+        fetch('/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                username:name,
+                location:location,
+                email:email,
+                phone_number:number,
+                password:password
+            })
+        })
     };
+
+
+    const handleRole=(e)=>{
+        setRole(e.target.value)
+        setSubmitted(false)
+
+    }
+
+   
 
     // Showing success message
     const successMessage = () => {
@@ -82,7 +107,7 @@ function SignUp() {
 
 
     return (
-        <div className="form">
+        <div className="form" onSubmit={handleSubmit}>
             <form>
                 <h3>Sign Up</h3>
                 <div className="mb-3">
@@ -132,6 +157,8 @@ function SignUp() {
                         placeholder="Enter your location" />
                 </div>
 
+        
+
                 <div className="mb-3">
                     <label>Password</label>
                     <input
@@ -144,8 +171,31 @@ function SignUp() {
                     />
                 </div>
 
+                <div className="mb-3">
+                    <label>Password Confirmation</label>
+                    <input
+                        type="password"
+                        onChange={handlePassword}
+                        value={password}
+                        name={password}
+                        className="form-control"
+                        placeholder="password confirmation"
+                    />
+                </div>
+
+                <div className="mb-3">
+                    {/* <label htmlFor='roles'>Roles</label> */}
+                <div className='custom-select'>
+                <select onChange={handleRole}>
+                    <option value='SE'> Sign Up As User</option>
+                    <option value='Marketers'>Sign Up As Lister</option>
+                </select>
+
+                </div>
+                </div>
+
                 <div className="d-grid">
-                    <button onClick={handleSubmit} type="submit" className="btn btn-primary">
+                    <button  type="submit" className="btn btn-primary signup-button">
                         Sign Up
                     </button>
                 </div>

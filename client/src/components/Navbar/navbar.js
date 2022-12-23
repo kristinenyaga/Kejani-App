@@ -1,13 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import "./navbar.css"
 
-
 function NavBar() {
-  
+  const nav = useNavigate();
+function handleClick(){
+  nav('/signup')
 
+}
   return (
     <div className='navbar'>
      
@@ -17,7 +19,8 @@ function NavBar() {
           <Navbar.Brand className='kejani'><img src='../src/components/assets/ph_house-fill.jpg'></img>Kejani</Navbar.Brand>
           <Nav className="me-auto rightside" >
             <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} className='auth' to="/signup">Signup</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/">Kejani</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/signup" onClick={handleClick}>Signup</Nav.Link>
             <Nav.Link as={Link} className='auth' to="/contact us">Contact Us</Nav.Link>
 
             {/* <button className='logoutBtn'>
