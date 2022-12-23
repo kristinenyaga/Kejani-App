@@ -42,7 +42,3 @@ review1=Review.create(user_id:user1.id,description:"the owner was very cooperati
 review2=Review.create(user_id:user2.id,description:"the owner was very cooperative",unit_id:unit2.id)
 review3=Review.create(user_id:user3.id,description:"the owner was very cooperative",unit_id:unit3.id)
 
-
-
-
-
