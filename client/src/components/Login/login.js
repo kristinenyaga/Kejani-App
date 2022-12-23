@@ -58,7 +58,7 @@ function Login({ onLogin }) {
 
                 <button>Log In</button>
                 <div className="social">
-                    <p className='p'>Don't have an account ? <span onClick={handleClick}>Sign Up</span> </p>
+                    <p className='p'>Don't have an account ? <span onClick={handleClick}><a href="/signup">Sign Up</a></span> </p>
                 </div>
             </form>
         </>
