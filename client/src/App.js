@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 import {useEffect, useState} from 'react'
 import Apartments from './components/Apartments/apartments'
@@ -48,9 +49,20 @@ function App(  ) {
 
       const det = detail.map(inf=>inf.price)
       console.log(det)
+=======
+import React from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import SignUp from './components/SignUp/signup.js'
+import Login from './components/Login/login';
+import Homepage from './components/Homepage/homepage';
+
+>>>>>>> d8a42d6c92b73bd23efcc4e4d895b9ee0da36875
 
   return (
     <>
+<<<<<<< HEAD
     < Apartments images = {images} detail = {detail} det= {det} />
       {/* <ul className ='images'>
       {images.map((imgSrc, index) => (<img className= 'properties' src={imgSrc.image_url} key={index} alt="property" />))}
@@ -62,5 +74,25 @@ function App(  ) {
     </>
   );
 }
+=======
+   
+    <Routes>
+      {/* <div className="App">
+        <div className="auth-wrapper">
+          <div className="auth-inner"> */}
+            {/* <Routes> */}
+              <Route exact path="/signup" element={<SignUp />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/" element={ <Homepage />} />
+>>>>>>> d8a42d6c92b73bd23efcc4e4d895b9ee0da36875
 
-export default App;
+            {/* </Routes> */}
+          {/* </div>
+        </div>
+      </div> */}
+    </Routes>
+    </>
+    
+  )
+}
+export default App
