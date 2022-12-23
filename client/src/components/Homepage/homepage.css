@@ -184,3 +184,19 @@ Carousel.Item{
   margin-left: 10%;
   letter-spacing: 2px;
 }
+
+.container-choose-us{
+  display: flex;
+ 
+}
+
+.choose{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-size: 70px;
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #1A626D;
+}
