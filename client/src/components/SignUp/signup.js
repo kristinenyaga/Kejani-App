@@ -100,7 +100,7 @@ function SignUp() {
                 style={{
                     display: error ? '' : 'none',
                 }}>
-                <h5>All fields are required!</h5>
+                <h5 className='signup-h5'>All fields are required!</h5>
             </div>
         );
     };

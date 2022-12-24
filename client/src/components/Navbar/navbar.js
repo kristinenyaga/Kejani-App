@@ -13,13 +13,13 @@ function handleClick(){
   return (
     <div className='navbar'>
      
-      <Navbar bg="rgb(27, 98, 110);" className='background' variant="light">
+      <Navbar  className='navbar-background' variant="light">
         <Container className='display-flex'>
           
-          <Navbar.Brand className='kejani'><img src='../src/components/assets/ph_house-fill.jpg'></img>Kejani</Navbar.Brand>
+          <Navbar.Brand className='kejani'>Kejani</Navbar.Brand>
           <Nav className="me-auto rightside" >
             <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} className='auth' to="/">Kejani</Nav.Link>
+            {/* <Nav.Link as={Link} className='auth' to="/">Kejani</Nav.Link> */}
             <Nav.Link as={Link} className='auth' to="/signup" onClick={handleClick}>Signup</Nav.Link>
             <Nav.Link as={Link} className='auth' to="/contact us">Contact Us</Nav.Link>
 
