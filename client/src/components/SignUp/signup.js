@@ -2,16 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 
 function SignUp() {
+
     // States for registration
     const [name, setName] = useState('');
-    const [location, setLocation] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [number, setNumber] = useState('');
 
+    // const [error, setError] = useState('');
+
+
     // States for checking the errors
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+
 
     // Handling the name change
     const handleName = (e) => {
@@ -26,8 +30,8 @@ function SignUp() {
     };
 
     // Handling the location change
-    const handleLocation = (e) => {
-        setLocation(e.target.value);
+    const handleUserLocation = (e) => {
+        setUserLocation(e.target.value);
         setSubmitted(false);
     };
 
@@ -46,12 +50,26 @@ function SignUp() {
     // Handling the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (name === '' || number === '' || location === '' || email === '' || password === '') {
+        if (name === '' || number === '' || userLocation === '' || email === '' || password === '') {
             setError(true);
         } else {
             setSubmitted(true);
             setError(false);
         }
+
+        // fetch('/sign-up', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then((r) => {
+        //         if (r.ok) {
+        //             r.json().then((user) => onSignup(user));
+        //             navigate(`/`)
+        //         } else {
+        //             r.json().then((err) => setErrors(err.errors));
+        //         }
+        //     });
     };
 
     // Showing success message
@@ -125,9 +143,9 @@ function SignUp() {
                     <label>Location</label>
                     <input
                         type="text"
-                        onChange={handleLocation}
-                        value={location}
-                        name={location}
+                        onChange={handleUserLocation}
+                        value={userLocation}
+                        name={userLocation}
                         className="form-control"
                         placeholder="Enter your location" />
                 </div>
