@@ -14,7 +14,7 @@ export default function Homepage(){
           </div>
 
           <div className='red'>
-          <img className="header-img"
+          <img className="header-img" alt =''
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
             </img>
            
@@ -85,7 +85,7 @@ export default function Homepage(){
 
         <div>
           <img
-          src="../components/assets/ph_house-fill.jpg">
+          src="../components/assets/ph_house-fill.jpg" alt =''>
           </img>
           <h3>Affordable</h3>
 
@@ -115,3 +115,4 @@ export default function Homepage(){
     </>
   )
 }
+

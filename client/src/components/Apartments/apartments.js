@@ -1,26 +1,37 @@
-import React from 'react'
+import React, { useState} from 'react'
 import './apartments.css'
 
-function Apartments({detail, images}) {
+function Apartments( {propertyDetail} ) {
 
-    console.log(detail)
-    console.log(images)
 
-    const details = detail.map((det)=>(det))
-    console.log(details)
+  function formatAmount(price) {
+    const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+    return amountFormatter.format(price);
+
+}
+
+const [moreDetails, setMoreDetails] = useState()
+
+    console.log(propertyDetail)
+
+    
 
   return (
     <>
-      {/* <div className ='images'>
-      <img className='properties' src= {imgs} alt = 'property picture'/>
-      </div> */}
-     <div className="images">
-     {detail.map((imgSrc, index) => (<img className= 'properties' src={imgSrc.image_url} key={index} alt="property" />))}
+
+      <div className ='images'>
+        <div>
+          <img className= 'properties'src={propertyDetail.image_url} />
+        </div>
+        <div>
+          <h4 className='det'>Property Name: {propertyDetail.property_name}</h4>
+          <h4 className='det'>Location: {propertyDetail.location}</h4>
+          <h4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </h4>
+          <button className='but' type='submit'>More details</button>
+        </div>
+      </div>
      
-     {/* <img className= 'properties' src={details.image_url} alt="property" />
-     <h2>{details.location}</h2> */}
-     <button>More details</button>
-     </div>
+
     </>
   );
 }
