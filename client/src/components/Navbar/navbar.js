@@ -16,7 +16,7 @@ function handleClick(){
       <Navbar  className='navbar-background' variant="light">
         <Container className='display-flex'>
           
-          <Navbar.Brand className='kejani'>Kejani</Navbar.Brand>
+          <Navbar.Brand className='kejani'><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
           <Nav className="me-auto rightside" >
             <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
             {/* <Nav.Link as={Link} className='auth' to="/">Kejani</Nav.Link> */}

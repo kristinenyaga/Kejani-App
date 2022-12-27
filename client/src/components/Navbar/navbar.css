@@ -2,7 +2,7 @@
 span.kejani{
   color: rgb(27, 98, 110);
   font-family: 'Lora', serif;
-  font-size:55px;
+  font-size:50px;
   font-weight: bold;
   letter-spacing: 4px;
  
@@ -14,9 +14,6 @@ span.kejani{
 .rightside{
   /*  */
   font-family: 'Poppins', sans-serif;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  text-decoration-thickness: 2px;
   font-size: 17px;
   font-weight: light;
   color: #fff;
@@ -47,15 +44,16 @@ span.kejani{
 }
 
 a.auth.nav-link{
-  color: #fff;
-  background-color: black;
+  color:#fff;
+  background-color:rgb(27, 98, 110) ;
+  border: none;
 
 } 
 
 .navbar-background{
   align-items: center;
   margin: 0 auto;
-  width: 90%;
+  
   /* padding-left:2% ; */
 
 }

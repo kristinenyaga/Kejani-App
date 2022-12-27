@@ -5,11 +5,10 @@
     margin: 0;
     box-sizing: border-box;
 } 
-body{
-    background-color: #FFFFFF;
-}
+
 .background{
     width: 430px;
+    background-color:#efeded;
     height: 520px;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -26,7 +25,6 @@ body{
 form{
     height: 600px;
     width: 1000px;
-    background-color: #FFFFFF;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
