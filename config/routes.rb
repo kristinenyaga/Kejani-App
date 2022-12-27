@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'listers#create'
   delete "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
+  get "/listerObjects", to: "listers#index"
   resources :listers
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
