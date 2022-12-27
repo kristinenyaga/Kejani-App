@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 2022_12_20_134950) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "listers", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "image_url"
-    t.string "username"
-    t.integer "phone_no"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.string "description"
