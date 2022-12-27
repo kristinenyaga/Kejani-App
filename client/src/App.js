@@ -1,7 +1,6 @@
 import React from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SignUp from './components/SignUp/signup.js'
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -21,7 +20,7 @@ function App() {
             {/* <Routes> */}
               <Route exact path="/signup" element={<SignUp />} />
               <Route exact path="/login" element={<Login />} />
-              <Route exact path="/" element={ <Homepage />} />
+              <Route exact path="/" element={ <Homepage user={user} setUser={setUser}/>} />
 
             {/* </Routes> */}
           {/* </div>

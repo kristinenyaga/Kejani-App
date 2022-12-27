@@ -35,16 +35,16 @@ function Login({ setUser }) {
                 <div className="shape"></div>
                 <div className="shape"></div>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <h3>Login</h3>
 
-                <label htmlFor="username">Email</label>
-                <input type="text" placeholder="Type in your Email" id="username" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <label className="label" htmlFor="username">Email</label>
+                <input className="input" type="text" placeholder="Type in your Email" id="username" value={email} onChange={(e) => setEmail(e.target.value)}/>
 
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="Type in your Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <label className="label" htmlFor="password">Password</label>
+                <input className="input" type="password" placeholder="Type in your Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
-                <button type='submit'>Log In</button>
+                <button className="button" type='submit'>Log In</button>
                 <div className="social">
                     <p>Don't have an account ? <span onClick={handleClick}><a href="/signup">Sign Up</a></span> </p>
                 </div>
