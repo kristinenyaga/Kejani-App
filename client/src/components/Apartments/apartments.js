@@ -1,7 +1,11 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom"
 import './apartments.css'
 
-function Apartments( {propertyDetail} ) {
+
+const Apartments = ( {propertyDetail} ) => {
+
+  const navigate = useNavigate();
 
   console.log(propertyDetail)
 
@@ -22,7 +26,7 @@ function Apartments( {propertyDetail} ) {
           <p4 className='det'>Property Name: {propertyDetail.property_name}</p4>
           <p4 className='det'>Location: {propertyDetail.location}</p4>
           <p4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </p4>
-          <button className='but' type='submit'>More details</button>
+          <button className='but' type='submit' onClick={()=>navigate('/inbox')}>More details</button>
         </div>
       </div>
 
