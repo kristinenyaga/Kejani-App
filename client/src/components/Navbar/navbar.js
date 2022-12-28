@@ -8,20 +8,22 @@ function NavBar() {
   const nav = useNavigate();
 function handleClick(){
   nav('/signup')
-
 }
+
+
   return (
     <div className='navbar'>
      
       <Navbar  className='navbar-background' variant="light">
         <Container className='display-flex'>
           
-          <Navbar.Brand className='kejani'>Kejani</Navbar.Brand>
+          <Navbar.Brand className='kejani'><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
           <Nav className="me-auto rightside" >
             <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
             {/* <Nav.Link as={Link} className='auth' to="/">Kejani</Nav.Link> */}
             <Nav.Link as={Link} className='auth' to="/signup" onClick={handleClick}>Signup</Nav.Link>
             <Nav.Link as={Link} className='auth' to="/contact us">Contact Us</Nav.Link>
+            <Nav.Link as={Link} className='auth' to="/imagecard">Apartments</Nav.Link>
 
             {/* <button className='logoutBtn'>
           Logout

@@ -1,117 +1,254 @@
 import NavBar from "../Navbar/navbar";
 import './homepage.css'
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom';
+
 export default function Homepage(){
+  const navigate = useNavigate()
+  function handleclick(){
+    navigate('/login')
+  }
   return(
     <>
     <NavBar />
-    <section>
-          <div className='black'>
-            <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
-            <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
+    <div className="header">
+     <div className="left">
+        <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
+        <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
+        <button className="header-button">Learn More</button>
+        <div className="header-container">
+          <div className="row1">
+            <p>1500+</p>
+            <span>Ready Properties</span>
 
-            <button className="header-button">Learn More</button>
+          </div>
+          <div className="row2">
+          <p>500+</p>
+          <span>Happy Customers</span>
+
+
           </div>
 
-          <div className='red'>
-          <img className="header-img"
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
-            </img>
-           
-          </div>
-      
-    </section>
+        </div>
+     </div>
 
-    <section className="carrousel">
-      <div className="popular">
-        <h1>Popular Apartments</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+     <div className="right">
+       
+       </div>
+     
+   </div>
+
+   <div className="section2">
+    <h1 className="section2h1">
+      Whether You Are Renting Or Listing A House This Is The Place For You.
+    </h1>
+
+    <div className="section2container">
+      <div className="section2row">
+        
+      <i class="fa-solid fa-house-circle-check"></i>
+      <p className="section2row-ptag">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
+      </p>
+      <button onClick={handleclick}  className="section2btn">List House</button>
       </div>
 
-      <div className="carrousel-div">
-
-      <Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block "
-          src="https://images.unsplash.com/photo-1604014238170-4def1e4e6fcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>Chandaria Flats</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block "
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Kilimani Houses</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block "
-          src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>
-            Luxious Apartments
-          </h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+      <div className="section2row">
+      <i class="fa-sharp fa-solid fa-house"></i>
+      <p className="section2row-ptag">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
+      </p>
+      <button onClick={handleclick} className="section2btn">Rent House</button>
 
       </div>
 
-    </section>
+    </div>
 
-    <section>
+    <div className="section3">
       <h1 className="choose">
-        Why Choose Us
+        Why Choose Kejani
       </h1>
 
-      <div className="container-choose-us">
+      <div className="section3container"> 
 
-        <div>
+      <div className="section3row">
+        <img className="section3-img"
+        src="https://plus.unsplash.com/premium_photo-1661274151793-173c09ced789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGJ1c2luZXNzJTIwZGVhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+        </img>
+       
+      </div>
+      <div className="section3row">
+        <div className="facilities">
+          <div>
+            <h3 className="section3-h3">Transport Services</h3>
+            <p className="section3-ptag">We provide transport when you are ready to move</p>
+          </div>
+          <div>
+            <h3 className="section3-h3">
+              Cleaning Services
+            </h3>
+            <p className="section3-ptag">We link you up with cleaning companies for your new house</p>
+          </div>
+          <div>
+            <h3 className="section3-h3">Affordable</h3>
+            <p className="section3-ptag">We provide houses that are pocket friendly</p>
+          </div>
+
+          <div>
+            <h3 className="section3-h3">Security</h3>
+            <p className="section3-ptag">We offer houses in a secure neighbourhood</p>
+          </div>
+        </div>
+      
+      </div>
+     
+      
+      </div>
+
+    </div>
+
+   </div>
+
+   <div className="section4">
+    <h1 className="section4-h1">Featured Properties</h1>
+      <div className="section4-container">
+        <div className="section4-row">
           <img
-          src="../components/assets/ph_house-fill.jpg">
+          src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
           </img>
-          <h3>Affordable</h3>
+          <h3>Kilimani Hse</h3>
+          <h4><i class="fa-solid fa-location-dot"></i>  Chinua,Ng Road</h4>
+          <h5>100 houses</h5>
+          <div className="container-flex">
+            <p>Residential</p>
+            <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+          </div>
 
-          <p></p>
         </div>
 
-        <div>
-          <img>
-          </img>
-          <h3>Fast</h3>
-
-
-          <p></p>
+        <div className="section4-row">
+        <img
+          src="https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=1600">
+        </img>
+        <h3>Kilimani Hse</h3>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h5>100 houses</h5>
+        <div className="container-flex">
+        <p>Hostel</p>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
-        <div>
-          <img>
-          </img>
-          <h3>Secure</h3>
+        </div>
 
+        <div className="section4-row">
+        <img
+          src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
+        </img>
+        <h3>Kilimani Hse</h3>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h5>100 houses</h5>
+        <div className="container-flex">
+        <p>Residential</p>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        </div>
+        
+        </div>
 
-          <p></p>
+        <div className="section4-row">
+
+        <img
+          src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+        </img>
+        <h3>Kilimani Hse</h3>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h5>100 houses</h5>
+        <div className="container-flex">
+        <p>Hostel</p>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        </div>
+
         </div>
 
       </div>
-    </section>
-    </>
+   </div>
+
+   <div className="section5">
+   <h1>What Customers Are Saying About Kejani</h1>
+   <div className="section-5container">
+    <div className="section5-row">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sodales nibh a suscipit. Aenean luctus, lacus eu pulvinar tempor, lacus orci varius purus, ut iaculis tellus eros ac ex. Pellentesque finibus quis risus a mollis. Morbi eros urna, pellentesque sed pulvinar in, tempus a arcu.</p>
+      <div className="customers">
+      
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+          </img>
+          <h3>Mia Jonnes</h3>
+
+        
+      </div>
+
+    </div>
+
+    <div className="section5-row">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sodales nibh a suscipit. Aenean luctus, lacus eu pulvinar tempor, lacus orci varius purus, ut iaculis tellus eros ac ex. Pellentesque finibus quis risus a mollis. Morbi eros urna, pellentesque sed pulvinar in, tempus a arcu.</p>
+      <div className="customers">
+        
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+      </img>
+        <h3>Mia Jonnes</h3>
+        
+      </div>
+
+    </div>
+
+   </div>
+  
+   </div>
+
+   
+    <div className="section6-container">
+    <div>
+      <h3>Kejani</h3>
+      <p>Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </p>
+
+    </div>
+    
+    <div>
+      <h3>Contact Us</h3>
+      <div className="icon-container">
+        
+        <div>
+        <i class="fa-brands fa-facebook"></i>
+
+        </div>
+        
+        <div>
+        <i class="fa-brands fa-instagram"></i>
+          
+        </div>
+
+        <div>
+        <i class="fa-brands fa-twitter"></i>
+          
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <h3>Office</h3>
+      <p>Damino Street, CBD254,Kenya +254734452134</p>
+
+    </div>
+
+
+    </div>
+    
+    <div className="footer">
+      <h1>Copyright 2022  Kejani | All Rights Reserved </h1>
+    </div>
+ 
+   
+   </>
   )
 }
+

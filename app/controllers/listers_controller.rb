@@ -2,8 +2,10 @@ class ListersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   def index
-    render json: Lister.all
+    listers = Lister.all
+    render json: listers
   end
+  
   def show
     lister = Lister.find_by(id: session[:lister_id])
     if lister

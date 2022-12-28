@@ -19,13 +19,10 @@ function Login({ setUser }) {
         })
         .then((r) => {
             if (r.ok) {
-                r.json().then((user) => {
-                    setUser(user)
-                
-                navigate(`/`)
-            });
-         } else {
-                r.json().then((err) => alert(err.errors));
+                r.json().then((user) => onLogin(user));
+                navigate(`/imagecard`)
+            } else {
+                r.json().then((err) => setErrors(err.errors));
             }
         });
     }
