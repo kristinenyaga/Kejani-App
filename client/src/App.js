@@ -10,6 +10,7 @@ import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
 import ApartmentCard from './components/ApartmentCard/apartmentCard';
 import ImageCard from './components/ImageCard/imageCard';
+import Tenants from './components/Tenants/tenants';
 
 function App() {
   // const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ function App() {
               <Route exact path="/" element={ <Homepage/> }/>
               <Route exact path="/" element={ <Homepage />} />
               <Route exact path="/imagecard" element={ <ImageCard />} />
+              <Route exact path="/tenants" element={ <Tenants />} />
               
           
 
