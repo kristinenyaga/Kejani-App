@@ -1,7 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :location, :email, :password_digest, :phone_number
-  has_many :units
-  has_many :listers, through: :units
+  attributes :id, :username, :location, :email,:phone_number,:role
+
   # has_many :reviews
  
 end

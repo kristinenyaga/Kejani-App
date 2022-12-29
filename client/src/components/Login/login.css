@@ -1,0 +1,96 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+body{
+    background-color: #FFFFFF;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+form{
+    height: 600px;
+    width: 1000px;
+    background-color: #FFFFFF;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    text-decoration: underline;
+    color:#17646C;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #4D4A4A;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #5F5D5D;
+}
+.login-button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #17646C;
+    color: #FFFFFF;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.social p{
+  color: #17646C;
+  display: flex;
+  justify-content:center;
+}
