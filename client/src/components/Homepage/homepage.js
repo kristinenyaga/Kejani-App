@@ -46,7 +46,7 @@ export default function Homepage(){
     <div className="section2container">
       <div className="section2row">
         
-      <i class="fa-solid fa-house-circle-check"></i>
+      <i className="fa-solid fa-house-circle-check"></i>
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
@@ -54,7 +54,7 @@ export default function Homepage(){
       </div>
 
       <div className="section2row">
-      <i class="fa-sharp fa-solid fa-house"></i>
+      <i className="fa-sharp fa-solid fa-house"></i>
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
@@ -117,11 +117,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
           </img>
           <h3>Kilimani Hse</h3>
-          <h4><i class="fa-solid fa-location-dot"></i>  Chinua,Ng Road</h4>
+          <h4><i className="fa-solid fa-location-dot"></i>  Chinua,Ng Road</h4>
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+            <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -131,11 +131,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=1600">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -145,11 +145,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -160,11 +160,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -217,17 +217,17 @@ export default function Homepage(){
       <div className="icon-container">
         
         <div>
-        <i class="fa-brands fa-facebook"></i>
+        <i className="fa-brands fa-facebook"></i>
 
         </div>
         
         <div>
-        <i class="fa-brands fa-instagram"></i>
+        <i className="fa-brands fa-instagram"></i>
           
         </div>
 
         <div>
-        <i class="fa-brands fa-twitter"></i>
+        <i className="fa-brands fa-twitter"></i>
           
         </div>
       </div>
