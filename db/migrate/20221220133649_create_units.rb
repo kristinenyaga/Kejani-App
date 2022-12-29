@@ -6,12 +6,8 @@ class CreateUnits < ActiveRecord::Migration[6.1]
       t.string :image_url
       t.string :category
       t.integer :user_id
-      t.integer :lister_id
-      t.string :property_name
-      t.string :property_type
-      t.string :location
-
-
+      t.string :occuppied,default: "vacant"
+      t.string :apartment_id
       t.timestamps
     end
   end
