@@ -7,6 +7,7 @@ import './login.css';
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
 
+    
     function handleClick() {
         navigate('/signup')
     }

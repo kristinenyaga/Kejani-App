@@ -2,12 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import './signup.css'
 
-function SignUp() {
+function SignUp({setUser}) {
     // States for registration
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [password_confirmation, setPasswordConfirmation] = useState('');
     const [number, setNumber] = useState('');
     const [role, setRole] = useState('')
 
@@ -65,8 +66,13 @@ function SignUp() {
                 location:location,
                 email:email,
                 phone_number:number,
-                password:password
-            })
+                password:password,
+                password_confirmation: password_confirmation,
+            }),
+        }).then((r)=>{
+            if(r.ok){
+                r.json().then((user)=>setUser(user))
+            }
         })
     };
 
@@ -166,6 +172,7 @@ function SignUp() {
                         onChange={handlePassword}
                         value={password}
                         name={password}
+                        autoComplete="current-password"
                         className="form-control"
                         placeholder="Enter your password"
                     />
@@ -175,9 +182,10 @@ function SignUp() {
                     <label>Password Confirmation</label>
                     <input
                         type="password"
-                        onChange={handlePassword}
-                        value={password}
-                        name={password}
+                        value={password_confirmation}
+                        name={password_confirmation}
+                        autoComplete="current-password"
+                        onChange={(e) => setPasswordConfirmation(e.target.value)}
                         className="form-control"
                         placeholder="password confirmation"
                     />

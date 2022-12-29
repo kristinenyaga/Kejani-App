@@ -1,25 +1,25 @@
  .images{
     position: relative;
     top: 3%;
-    left: 1%;
+    left: 10%;
     right: 1;
+    display: inline-block;
     
 }
-  
   .properties{
-    width: 40%;
+    width: 80%;
     border-radius: 60px 60px;
     padding: 1%;
-  
   }
 
   .det{
-    width: 20%;
+    width: 40%;
     font-size: medium;
     display: flex;
     flex-direction: column;
     color: #1A626D;
     font-weight: bold;
+    
   }
 
   .but{
@@ -27,5 +27,8 @@
     border: 1px solid black;
     color: white;
     background-color: #1A626D;
+    position: absolute;
+    left: 60%;
+    top: -13%;
 
   }
