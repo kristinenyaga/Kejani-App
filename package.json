@@ -11,6 +11,7 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
+    "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^6.5.0"
   }
 }

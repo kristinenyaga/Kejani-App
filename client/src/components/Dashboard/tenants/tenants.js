@@ -1,8 +1,11 @@
+import React from 'react';
 
-export default function Tenants(){
-  return(
-    <>
-    <h1>Tenants</h1>
-    </>
+const Tenants = () => {
+  return (
+    <div>
+      <h1>Tenants page</h1>
+    </div>
   );
-}
+};
+
+export default Tenants;
