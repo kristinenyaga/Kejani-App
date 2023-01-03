@@ -11,12 +11,13 @@ import Addapartment from './components/Dashboard/Addapartment/addapartment'
 import Review from './components/Dashboard/Reviews/review'
 import Tenants from './components/Dashboard/tenants/tenants'
 
-// import style from './App.css';
-// import Layout from './components/Dashboard/layout/layout';
+import style from './App.css';
+import Layout from './components/Dashboard/layout/layout';
+import TopSection from './components/Dashboard/topbar/topbar';
 
 export const AppContext = createContext(null);
 
-function App() {
+export default function App() {
   const [user,setUser]=useState("")
   const [role,setRole]=useState("")
   const navigate =useNavigate("")
@@ -32,29 +33,8 @@ function App() {
 
 
 
-
-//     }
-
-
-//   }
-//   return (
-//     <>
-//       {
-//         role === 'user' ?
-//           (<Routes>
-//             <Route exact path="/signup" element={<SignUp />} />
-//             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
-//             <Route exact path="/" element={<Homepage />} />
-//           </Routes>
-//           ) :
-//           (
-//             <Layout />
-//           )
-//       }
-//     </>
-
-
-
+      
+      }
 
 
   }
@@ -67,11 +47,12 @@ function App() {
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
-        <Route exact path="/layout" element={ <Layout/>} />
-        <Route exact path="/defaultinbox" element={ <DefaultInbox />} />
+        <Route exact path="/layout/*" element={ <Layout/>} />
+        <Route exact path="/inbox" element={ <DefaultInbox />} />
         <Route exact path="/reviews" element={ <Review />} />
-        <Route exact path="/apartments" element={ <Addapartment  user={user}  />} />
+        <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} />
         <Route exact path="/tenants" element={ <Tenants />} />
+        <Route path="/topbar" element={<TopSection />} />
 
 
 
@@ -90,4 +71,3 @@ function App() {
     
   )
 }
-export default App
