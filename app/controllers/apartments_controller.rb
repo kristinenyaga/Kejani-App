@@ -17,4 +17,9 @@ class ApartmentsController < ApplicationController
     end
   end
 
+  private 
+  def apartment_params
+    params.permit(:apartment_name,:apartment_type,:location,:user_id,:image_url)
+  end
+
 end
