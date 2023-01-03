@@ -1,21 +1,20 @@
-import React, { useState } from 'react'
+import React, { createContext,useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// import './App.css'
+import './App.css'
+import 'antd/dist/reset.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
 import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
-import Sidebar from './components/Dashboard/sidebar/sidebar'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Addapartment from './components/Dashboard/Addapartment/addapartment'
 import Review from './components/Dashboard/Reviews/review'
 import Tenants from './components/Dashboard/tenants/tenants'
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
+
+export const AppContext = createContext(null);
 
 function App() {
   const [user,setUser]=useState("")
@@ -29,7 +28,7 @@ function App() {
     if(role === 'user') {
       navigate('/')
       }else if (role === 'lister'){
-       navigate('/defaultinbox') 
+       navigate('/layout') 
 
 
 
@@ -38,21 +37,31 @@ function App() {
 
 
   }
+  const [latestPost, setLatestPost] = useState(AppContext)   
+
   return (
-    <>
-    {
-    role === 'user'?
-      (<Routes>
+    <AppContext.Provider value={{ latestPost, setLatestPost }}>
+  
+      <Routes>
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-        <Route exact path="/" element={ <Homepage />} /> 
-        </Routes>
+        <Route exact path="/" element={ <Homepage />} />
+        <Route exact path="/layout" element={ <Layout/>} />
+        <Route exact path="/defaultinbox" element={ <DefaultInbox />} />
+        <Route exact path="/reviews" element={ <Review />} />
+        <Route exact path="/apartments" element={ <Addapartment  user={user}  />} />
+        <Route exact path="/tenants" element={ <Tenants />} />
+
+
+
+
+        
+
+
+      </Routes>
       ):
-      (
-            <Layout />
-      )
-}
-    </>  
+
+    </AppContext.Provider>  
 
 
   

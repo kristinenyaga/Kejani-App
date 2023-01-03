@@ -22,7 +22,6 @@ class UnitsController < ApplicationController
     render json: unit,status: :created
   end
 
-
   def update
     unit=Unit.find_by(id:params[:id])
     unit.update!(unit_params)
@@ -33,6 +32,6 @@ class UnitsController < ApplicationController
 
   def unit_params
 
-    params.permit(:unit_number,:price,:image_url,:category,:property_id,:user_id)
+    params.permit(:unit_number,:image,:user_id,:apartment_id)
   end
 end
