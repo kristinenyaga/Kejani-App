@@ -11,8 +11,8 @@ import Addapartment from './components/Dashboard/Addapartment/addapartment'
 import Review from './components/Dashboard/Reviews/review'
 import Tenants from './components/Dashboard/tenants/tenants'
 
-import style from './App.css';
-import Layout from './components/Dashboard/layout/layout';
+// import style from './App.css';
+// import Layout from './components/Dashboard/layout/layout';
 
 export const AppContext = createContext(null);
 
@@ -32,8 +32,29 @@ function App() {
 
 
 
-      
-      }
+
+//     }
+
+
+//   }
+//   return (
+//     <>
+//       {
+//         role === 'user' ?
+//           (<Routes>
+//             <Route exact path="/signup" element={<SignUp />} />
+//             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
+//             <Route exact path="/" element={<Homepage />} />
+//           </Routes>
+//           ) :
+//           (
+//             <Layout />
+//           )
+//       }
+//     </>
+
+
+
 
 
   }
