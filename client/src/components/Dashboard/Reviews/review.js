@@ -1,11 +1,10 @@
-import React from 'react';
 
-const Reviews = () => {
+import React from 'react'
+
+export default function Review() {
   return (
-    <div>
-      <h1>Reviews page</h1>
-    </div>
+    <>
+      <h1>Reviews</h1>
+    </>
   );
-};
-
-export default Reviews;
+}

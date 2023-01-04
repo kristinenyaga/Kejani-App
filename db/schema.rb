@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_12_28_014050) do
   create_table "units", force: :cascade do |t|
     t.integer "unit_number"
     t.integer "price"
-    t.string "image_url"
     t.string "category"
+    t.string "image_url"
     t.integer "user_id"
     t.integer "lister_id"
     t.string "property_name"
