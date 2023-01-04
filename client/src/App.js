@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// import './App.css'
+import './App.css'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
@@ -15,49 +15,50 @@ import Review from './components/Dashboard/Reviews/review'
 import Tenants from './components/Dashboard/tenants/tenants'
 
 import style from './App.css';
-import Layout from './components/Dashboard/layout/layout';
+//import Layout from './components/layout/layout.js'
 
 function App() {
-  const [user,setUser]=useState("")
-  const [role,setRole]=useState("")
-  const navigate =useNavigate("")
+  const [user, setUser] = useState("")
+  const [role, setRole] = useState("")
+  const navigate = useNavigate("")
 
-  function onLogin(user){
+  function onLogin(user) {
     setUser(user)
     // console.log(user)
     console.log(role)
-    if(role === 'user') {
+    if (role === 'user') {
       navigate('/')
-      }else if (role === 'lister'){
-       navigate('/defaultinbox') 
+    } else if (role === 'lister') {
+      navigate('/defaultinbox')
 
 
 
-      
-      }
+
+    }
 
 
   }
   return (
     <>
-    {
-    role === 'user'?
+
+      role === 'user' ?
+
       (<Routes>
         <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-        <Route exact path="/" element={ <Homepage />} /> 
-        </Routes>
-      ):
-      (
-            <Layout />
-      )
-}
-    </>  
+        <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
+        <Route exact path="/" element={<Homepage />} />
+      </Routes>
+      ) :
 
 
-  
 
-    
+
+    </>
+
+
+
+
+
   )
 }
 export default App

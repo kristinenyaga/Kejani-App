@@ -1,9 +1,11 @@
+import React from 'react';
 
-export default function Addapartment(){
-  return(
-    <>
-    <h1>Add Apartments</h1>
-    </>
-
+const DefaultInbox = () => {
+  return (
+    <div>
+      <h1>DefaultInbox page</h1>
+    </div>
   );
-}
+};
+
+export default DefaultInbox;
