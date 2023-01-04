@@ -1,4 +1,3 @@
-/* .sidebar {
 *{
   margin:0;
   padding:0;
@@ -52,11 +51,6 @@ main{
   background: #b7ffe913;
   color: #fff;
 }
-
-.nav__active {
-  color: white;
-  background: #b7ffe913;
-  padding: 6px;
-  border-radius: 5px;
+.icon, .link_text{
+  font-size: 20px;
 }
-
