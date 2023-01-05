@@ -8,15 +8,7 @@ function ImageCard(){
 
     const navigate = useNavigate();
   
-    // useEffect(()=>{
-  
-    //   fetch("/apartments")
-    //   .then((res)=>res.json())
-    //   .then((image)=>{
-    //     setImages(image)
-    //   })
-    // }, [])
-  
+    
     useEffect(()=>{
   
       fetch("/apartments")
