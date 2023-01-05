@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :apartments
+  resources :transactions
   resources :reviews
   resources :units
   resources :users

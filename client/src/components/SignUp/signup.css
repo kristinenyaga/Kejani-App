@@ -8,7 +8,7 @@
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
 } */
-.form h1,h2,h3,h4,h6,label,span {
+h2,h3,h4,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
   color: #17646C;
@@ -67,4 +67,4 @@
 .signup-button {
   color: #ffffff;
   background-color: #17646C !important;
-}
+} 

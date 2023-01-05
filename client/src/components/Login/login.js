@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
- export default function Login({ onLogin }) {
+ export default function Login({ onLogin,setRole }) {
     const [errors, setErrors] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
 
-    
     function handleClick() {
+
         navigate('/signup')
     }
 
@@ -25,13 +25,17 @@ import './login.css';
         })
         .then((r) => {
             if (r.ok) {
-                r.json().then((user) => onLogin(user));
-                navigate(`/imagecard`)
+              r.json().then((user) =>{
+              onLogin(user)
+              setRole(user.role)
+              }
+              );
             } else {
-                r.json().then((err) => setErrors(err.errors));
+            r.json().then((err) => setErrors(err.errors));
             }
-        });
-    }
+          });
+        }
+    
     return(
         <>
             <div className="background">
@@ -65,4 +69,3 @@ import './login.css';
         </>
     )
 };
-

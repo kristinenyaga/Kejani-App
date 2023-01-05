@@ -25,8 +25,8 @@ const Apartments = ( {propertyDetail} ) => {
         <div>
           <p4 className='det'>Property Name: {propertyDetail.property_name}</p4>
           <p4 className='det'>Location: {propertyDetail.location}</p4>
-          <p4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </p4>
-          <button className='but' type='submit' onClick={()=>navigate('/home')}>More details</button>
+          {/* <p4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </p4> */}
+          <button className='but' type='submit' onClick={()=>navigate('/unitdetails')}>More details</button>
         </div>
       </div>
 

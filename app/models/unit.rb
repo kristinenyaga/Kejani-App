@@ -1,5 +1,5 @@
 class Unit < ApplicationRecord
   belongs_to :user
-  belongs_to :lister
+  belongs_to :apartment
  
 end

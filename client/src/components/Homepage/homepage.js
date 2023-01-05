@@ -1,13 +1,7 @@
 import NavBar from "../Navbar/navbar";
 import './homepage.css'
 import Carousel from 'react-bootstrap/Carousel';
-import { useNavigate } from 'react-router-dom';
-
 export default function Homepage(){
-  const navigate = useNavigate()
-  function handleclick(){
-    navigate('/login')
-  }
   return(
     <>
     <NavBar />
@@ -50,7 +44,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button onClick={handleclick}  className="section2btn">List House</button>
+      <button className="section2btn">List House</button>
       </div>
 
       <div className="section2row">
@@ -58,7 +52,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button onClick={handleclick} className="section2btn">Rent House</button>
+      <button className="section2btn">Rent House</button>
 
       </div>
 
@@ -117,11 +111,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
           </img>
           <h3>Kilimani Hse</h3>
-          <h4><i className="fa-solid fa-location-dot"></i>  Chinua,Ng Road</h4>
+          <h4><i class="fa-solid fa-location-dot"></i>  Chinua,Ng Road</h4>
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
+            <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -131,11 +125,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=1600">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -145,11 +139,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg?auto=compress&cs=tinysrgb&w=1600">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -160,11 +154,11 @@ export default function Homepage(){
           src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
         </img>
         <h3>Kilimani Hse</h3>
-        <h4><i className="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
+        <h4><i class="fa-solid fa-location-dot"></i> Chinua,Ng Road</h4>
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
+        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -217,17 +211,17 @@ export default function Homepage(){
       <div className="icon-container">
         
         <div>
-        <i className="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-facebook"></i>
 
         </div>
         
         <div>
-        <i className="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-instagram"></i>
           
         </div>
 
         <div>
-        <i className="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-twitter"></i>
           
         </div>
       </div>
@@ -252,3 +246,9 @@ export default function Homepage(){
   )
 }
 
+// https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1600
+// https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+// https://images.pexels.com/photos/1824392/pexels-photo-1824392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+// https://img.freepik.com/premium-photo/modern-australian-house-with-garage_224530-490.jpg?w=1380
+// https://img.freepik.com/premium-photo/3d-rendering-modern-house_62754-1884.jpg?w=1380
+// https://img.freepik.com/free-photo/modern-buildings_1127-2851.jpg?w=1380&t=st=1671981095~exp=1671981695~hmac=4e1e635cc6bbcd0ccb1a3085c42f1093cf7ab9ff048ce5dfe40cbaee364b28ad

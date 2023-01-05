@@ -2,52 +2,58 @@ import React from 'react';
 import { useState } from 'react';
 import './signup.css'
 
-function SignUp({setUser}) {
+function SignUp() {
     // States for registration
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [password_confirmation, setPasswordConfirmation] = useState('');
     const [number, setNumber] = useState('');
     const [role, setRole] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-    // States for checking the errors
-    const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState(false);
+    // // States for checking the errors
+     const [submitted, setSubmitted] = useState(false);
+     const [error, setError] = useState(false);
 
-    // Handling the name change
-    const handleName = (e) => {
-        setName(e.target.value);
-        setSubmitted(false);
-    };
+     const handlerole = (event) => {
+        const value = event.target.value;
+        setRole(value);
+      };
 
-    // Handling the number change
-    const handleNumber = (e) => {
-        setNumber(e.target.value);
-        setSubmitted(false);
-    };
+    // // Handling the name change
+    // const handleName = (e) => {
+    //     setName(e.target.value);
+    //     setSubmitted(false);
+    // };
 
-    // Handling the location change
-    const handleLocation = (e) => {
-        setLocation(e.target.value);
-        setSubmitted(false);
-    };
+    // // Handling the number change
+    // const handleNumber = (e) => {
+    //     setNumber(e.target.value);
+    //     setSubmitted(false);
+    // };
 
-    // Handling the email change
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-        setSubmitted(false);
-    };
+    // // Handling the location change
+    // const handleLocation = (e) => {
+    //     setLocation(e.target.value);
+    //     setSubmitted(false);
+    // };
 
-    // Handling the password change
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
-        setSubmitted(false);
-    };
+    // // Handling the email change
+    // const handleEmail = (e) => {
+    //     setEmail(e.target.value);
+    //     setSubmitted(false);
+    // };
+
+    // // Handling the password change
+    // const handlePassword = (e) => {
+    //     setPassword(e.target.value);
+    //     setSubmitted(false);
+    // };
 
     // Handling the form submission
     const handleSubmit = (e) => {
+        console.log(role)
         e.preventDefault();
         if (name === '' || number === '' || location === '' || email === '' || password === '') {
             setError(true);
@@ -67,12 +73,9 @@ function SignUp({setUser}) {
                 email:email,
                 phone_number:number,
                 password:password,
-                password_confirmation: password_confirmation,
-            }),
-        }).then((r)=>{
-            if(r.ok){
-                r.json().then((user)=>setUser(user))
-            }
+                password_confirmation: passwordConfirmation,
+                role:role
+            })
         })
     };
 
@@ -120,7 +123,7 @@ function SignUp({setUser}) {
                     <label>Name</label>
                     <input
                         type="text"
-                        onChange={handleName}
+                        onChange={(e) => setName(e.target.value)}
                         value={name}
                         name={name}
                         className="form-control"
@@ -132,7 +135,7 @@ function SignUp({setUser}) {
                     <label>Email Address</label>
                     <input
                         type="email"
-                        onChange={handleEmail}
+                        onChange={(e) => setEmail(e.target.value)}
                         value={email}
                         name={email}
                         className="form-control"
@@ -144,7 +147,7 @@ function SignUp({setUser}) {
                     <label>Phone Number</label>
                     <input
                         type="integer"
-                        onChange={handleNumber}
+                        onChange={(e) => setNumber(e.target.value)}
                         value={number}
                         name={number}
                         className="form-control"
@@ -156,7 +159,7 @@ function SignUp({setUser}) {
                     <label>Location</label>
                     <input
                         type="text"
-                        onChange={handleLocation}
+                        onChange={(e) => setLocation(e.target.value)}
                         value={location}
                         name={location}
                         className="form-control"
@@ -169,10 +172,9 @@ function SignUp({setUser}) {
                     <label>Password</label>
                     <input
                         type="password"
-                        onChange={handlePassword}
+                        onChange={(e) => setPassword(e.target.value)}
                         value={password}
                         name={password}
-                        autoComplete="current-password"
                         className="form-control"
                         placeholder="Enter your password"
                     />
@@ -182,21 +184,20 @@ function SignUp({setUser}) {
                     <label>Password Confirmation</label>
                     <input
                         type="password"
-                        value={password_confirmation}
-                        name={password_confirmation}
-                        autoComplete="current-password"
                         onChange={(e) => setPasswordConfirmation(e.target.value)}
+                        value={passwordConfirmation}
+                        name={passwordConfirmation}
                         className="form-control"
                         placeholder="password confirmation"
                     />
                 </div>
 
                 <div className="mb-3">
-                    {/* <label htmlFor='roles'>Roles</label> */}
+                    <label htmlFor='roles'>Roles</label>
                 <div className='custom-select'>
-                <select onChange={handleRole}>
-                    <option value='SE'> Sign Up As User</option>
-                    <option value='Marketers'>Sign Up As Lister</option>
+                <select onChange={handlerole} className='form-select'>
+                    <option value='user'>user</option>
+                    <option value='lister'>lister</option>
                 </select>
 
                 </div>
