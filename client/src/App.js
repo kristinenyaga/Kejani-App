@@ -19,21 +19,26 @@ import TopSection from './components/Dashboard/topbar/topbar';
 import ApartmentForm from './components/Dashboard/Addapartment/apartmentform';
 import UnitForm from './components/Dashboard/Addapartment/unitform';
 import Sidebar from './components/Dashboard/sidebar/sidebar';
+import ImageCard from './components/ImageCard/imageCard';
+import UnitDetails from './components/Units/unitDetails';
+import UnitInformation from './components/Units/unitInformation';
+import Unitspecs from './components/Units/unitspecs';
+import Logout from './components/Logout/logout';
 
-export const AppContext = createContext(null);
 
 export default function App() {
   const [user,setUser]=useState("")
   const [role,setRole]=useState("")
   const navigate =useNavigate("")
-  const [lister,setLister]=useState(true)
+  const [lister,setLister]=useState("")
   function onLogin(user){
     setUser(user)
     console.log(user)
     console.log(role)
     if(role === 'user') {
-      // navigate('/')
       setLister(false)
+      navigate('/imagecard')
+
       }else if (role === 'lister'){
       //  navigate('/layout') 
        setLister(true)
@@ -45,7 +50,6 @@ export default function App() {
 
 
   }
-  const [latestPost, setLatestPost] = useState(AppContext)   
   const [apartment,setApartment]=useState("")
   useEffect(()=>{
     // auto-login
@@ -76,22 +80,35 @@ export default function App() {
               {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
               <Route exact path="/tenants" element={ <Tenants />} />
               <Route path="/topbar" element={<TopSection />} />
-      
-      
+    
            </Routes>
         </>
           ):(
+            <>
+            <Routes>
+             <Route exact path="/imagecard" element={ <ImageCard />} />
+             <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
+             <Route exact path="/unitinformation" element={ <UnitInformation />} />
+             <Route exact path="/unitspecs" element={ <Unitspecs/>} />
+             <Route exact path="/logout" element={ <Logout/>} />
+        <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
+
+
+            </Routes>
+            </>
+       
 
           )
         
           
       ):(
         <Routes>
-
+          
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
+
       </Routes>
       )
     }
@@ -101,4 +118,3 @@ export default function App() {
   )
 }
   
-export default App
