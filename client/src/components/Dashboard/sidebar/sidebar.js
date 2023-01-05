@@ -66,7 +66,7 @@ const Sidebar = ({ children }) => {
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
         {
-            path: "/topbar",
+            path: "/topsection",
             name: "Topbar",
             icon: <FaTh />
         },

@@ -1,9 +1,11 @@
 import React, { createContext, useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import '/home/sheikh/Prodev-project/client/src/components/Contact/contact.css'
 //import 'antd/dist/reset.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import SignUp from './components/SignUp/signup.js'
+import ContactForm from './components/Contact/contact'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
 import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
@@ -13,7 +15,7 @@ import Tenants from './components/Dashboard/tenants/tenants'
 
 import './App.css';
 import Layout from './components/Dashboard/layout/layout';
-import TopSection from './components/Dashboard/topbar/topbar';
+import TopSection from './components/Dashboard/topsection/topsection.js';
 
 export const AppContext = createContext(null);
 
@@ -47,23 +49,21 @@ export default function App() {
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
         <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/layout/*" element={<Layout />} />
+        <Route exact path="/layout" element={<Layout />} />
+        <Route exact path="/contact" element={<ContactForm />} />
         <Route exact path="/inbox" element={<DefaultInbox />} />
         <Route exact path="/reviews" element={<Review />} />
         <Route exact path="/addapartment" element={<Addapartment user={user} />} />
         <Route exact path="/tenants" element={<Tenants />} />
-        <Route path="/topbar" element={<TopSection />} />
-
-
-
-
-
-
-
+        <Route exact path="/topsection" element={<TopSection />} />
       </Routes>
 
 
+
+
     </AppContext.Provider>
+
+
 
 
 

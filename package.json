@@ -11,7 +11,11 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "react-hook-form": "^7.41.5",
+    "react-icons": "^4.7.1",
     "react-perfect-scrollbar": "^1.5.8",
-    "react-router-dom": "^6.5.0"
+    "react-router-dom": "^6.5.0",
+    "react-toastify": "^9.1.1"
   }
 }
