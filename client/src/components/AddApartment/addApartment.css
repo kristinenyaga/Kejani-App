@@ -5,11 +5,10 @@
     margin: 0;
     box-sizing: border-box;
 } 
-body{
-    background-color: #FFFFFF;
-}
+
 .background{
     width: 430px;
+    background-color:#efeded;
     height: 520px;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -23,10 +22,9 @@ body{
     border-radius: 50%;
 }
 
-.login-form{
+form{
     height: 600px;
     width: 1000px;
-    /* background-color: #FFFFFF; */
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -49,8 +47,6 @@ form h3{
     text-align: center;
     text-decoration: underline;
     color:#17646C;
-    font-family: 'Montserrat', sans-serif;
-    text-underline-offset: 3px;
 }
 
 label{
@@ -60,7 +56,7 @@ label{
     font-weight: 500;
     color: #4D4A4A;
 }
- .input{
+input{
     display: block;
     height: 50px;
     width: 100%;
@@ -70,9 +66,8 @@ label{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
 }
-.input::placeholder{
+::placeholder{
     color: #5F5D5D;
 }
 .login-button{

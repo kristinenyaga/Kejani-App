@@ -69,4 +69,3 @@ import './login.css';
         </>
     )
 };
-

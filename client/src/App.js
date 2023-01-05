@@ -1,4 +1,6 @@
-import React, { createContext,useState,useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
+import './App.css';
+import Apartments from './components/ApartmentCard/apartmentCard';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import 'antd/dist/reset.css';
@@ -98,37 +100,5 @@ export default function App() {
     </>
   )
 }
-     
-    
-    // { lister? (
-    //  <>
-     
-    //     <Layout />
-    //    <Routes>
-    //       <Route exact path="/inbox" element={ <DefaultInbox />} />
-    //       <Route exact path="/reviews" element={ <Review />} />
-    //       <Route exact path="/addapartment" element={ <Addapartment setApartment={setApartment} user={user}  />} />
-    //       <Route exact path="/tenants" element={ <Tenants />} />
-    //       <Route path="/topbar" element={<TopSection />} />
-    //       <Route exact path='/apartmentform' element={< ApartmentForm user={user}/>} />
-    //       <Route exact path='/unitform' element={< UnitForm user={user}  />} />
   
-  
-    //    </Routes>
-    //    </>
-  
-    //  ):(
-    //   <Routes>
-
-    //   <Route exact path="/signup" element={<SignUp />} />
-    //   <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-    //   <Route exact path="/" element={ <Homepage />} />
-    
-    // </Routes>
-    //  )}
-    
-     
-
-      
-
-
+export default App

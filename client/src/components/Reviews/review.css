@@ -1,0 +1,9 @@
+
+.det{
+    width: 47%;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    color: #1A626D;
+    font-weight: bold;
+}

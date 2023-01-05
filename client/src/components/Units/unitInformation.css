@@ -1,4 +1,4 @@
- .images{
+.images{
     position: relative;
     top: 3%;
     left: 10%;
@@ -13,7 +13,7 @@
   }
 
   .det{
-    width: 40%;
+    width: 47%;
     font-size: medium;
     display: flex;
     flex-direction: column;
