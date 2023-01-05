@@ -23,10 +23,10 @@ body{
     border-radius: 50%;
 }
 
-form{
+.login-form{
     height: 600px;
     width: 1000px;
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -49,6 +49,8 @@ form h3{
     text-align: center;
     text-decoration: underline;
     color:#17646C;
+    font-family: 'Montserrat', sans-serif;
+    text-underline-offset: 3px;
 }
 
 label{
@@ -58,7 +60,7 @@ label{
     font-weight: 500;
     color: #4D4A4A;
 }
-input{
+ .input{
     display: block;
     height: 50px;
     width: 100%;
@@ -68,8 +70,9 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
 }
-::placeholder{
+.input::placeholder{
     color: #5F5D5D;
 }
 .login-button{
