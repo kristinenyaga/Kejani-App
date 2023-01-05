@@ -32,6 +32,6 @@ class UnitsController < ApplicationController
 
   def unit_params
 
-    params.permit(:unit_number,:image,:user_id,:apartment_id)
+    params.permit(:unit_number,:image_url,:user_id,:apartment_id)
   end
 end
