@@ -1,0 +1,82 @@
+.section2h1{
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  font-family: 'Crimson Text', serif;
+  
+  font-size: 50px;
+  color: #1A626D;
+}
+
+.section2container{
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  justify-content: center;
+  /* margin: 0 auto; */
+  align-items: center;
+}
+
+.section2row{
+ 
+  margin-top: 2%;
+  width: 40%;
+  background-color: #efeded;
+  /* padding: 2% 0 2% 0; */
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+}
+
+.section2row i{
+  color: #1A626D;
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  margin-bottom: 1%;
+}
+.section2row-ptag{
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.section2btn{
+  margin: 0 auto;
+  margin-left: 41%;
+  margin-top: 2%;
+  background-color:#1A626D;
+}
+
+.addapartment{
+  display: flex;
+  flex-direction: row;
+  background-color: #1A626D;
+  color: wheat;
+  margin-top: 30px;
+}
+
+.apartment-h3{
+  margin: 0 auto;
+  text-align: center;
+  
+  width: 50%;
+  font-family: 'Crimson Text', serif;
+  font-size: 46px;
+  color:white;
+}
+
+.apartment-add{
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-size: 36px;
+
+ 
+}
