@@ -116,7 +116,7 @@ function SignUp() {
 
 
     return (
-        <div className="form" onSubmit={handleSubmit}>
+        <div className='apartment-form'  onSubmit={handleSubmit}>
             <form>
                 <h3>Sign Up</h3>
                 <div className="mb-3">
