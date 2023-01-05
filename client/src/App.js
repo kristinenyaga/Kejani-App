@@ -1,4 +1,4 @@
-import React, { createContext,useState } from 'react'
+import React, { createContext,useState,useEffect } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import 'antd/dist/reset.css';
@@ -14,6 +14,9 @@ import Tenants from './components/Dashboard/tenants/tenants'
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
 import TopSection from './components/Dashboard/topbar/topbar';
+import ApartmentForm from './components/Dashboard/Addapartment/apartmentform';
+import UnitForm from './components/Dashboard/Addapartment/unitform';
+import Sidebar from './components/Dashboard/sidebar/sidebar';
 
 export const AppContext = createContext(null);
 
@@ -21,15 +24,17 @@ export default function App() {
   const [user,setUser]=useState("")
   const [role,setRole]=useState("")
   const navigate =useNavigate("")
-
+  const [lister,setLister]=useState(true)
   function onLogin(user){
     setUser(user)
-    // console.log(user)
+    console.log(user)
     console.log(role)
     if(role === 'user') {
-      navigate('/')
+      // navigate('/')
+      setLister(false)
       }else if (role === 'lister'){
-       navigate('/layout') 
+      //  navigate('/layout') 
+       setLister(true)
 
 
 
@@ -39,35 +44,91 @@ export default function App() {
 
   }
   const [latestPost, setLatestPost] = useState(AppContext)   
-
-  return (
-    <AppContext.Provider value={{ latestPost, setLatestPost }}>
+  const [apartment,setApartment]=useState("")
+  useEffect(()=>{
+    // auto-login
+    fetch("/me", {
+      method:'GET',
+      headers: {
+        "Access-Control-Allow-Origin":"no-cors",
+        "Content-Type": "application/json"
+      }
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  },[])
   
-      <Routes>
+  return (
+    <>
+    {
+      user?(
+        
+          lister?(
+        <>   
+          <Layout user={user} setApartment={setApartment} apartment={apartment}/>
+           <Routes>
+              <Route exact path="/inbox" element={ <DefaultInbox />} />
+              <Route exact path="/reviews" element={ <Review />} />
+              {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
+              <Route exact path="/tenants" element={ <Tenants />} />
+              <Route path="/topbar" element={<TopSection />} />
+      
+      
+           </Routes>
+        </>
+          ):(
+        <Route exact path="/" element={ <Homepage />} />
+
+          )
+        
+          
+      ):(
+        <Routes>
+
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
-        <Route exact path="/layout/*" element={ <Layout/>} />
-        <Route exact path="/inbox" element={ <DefaultInbox />} />
-        <Route exact path="/reviews" element={ <Review />} />
-        <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} />
-        <Route exact path="/tenants" element={ <Tenants />} />
-        <Route path="/topbar" element={<TopSection />} />
-
-
-
-
-        
-
-
       </Routes>
-      ):
-
-    </AppContext.Provider>  
-
-
-  
-
+      )
+    }
     
+  
+    </>
   )
 }
+     
+    
+    // { lister? (
+    //  <>
+     
+    //     <Layout />
+    //    <Routes>
+    //       <Route exact path="/inbox" element={ <DefaultInbox />} />
+    //       <Route exact path="/reviews" element={ <Review />} />
+    //       <Route exact path="/addapartment" element={ <Addapartment setApartment={setApartment} user={user}  />} />
+    //       <Route exact path="/tenants" element={ <Tenants />} />
+    //       <Route path="/topbar" element={<TopSection />} />
+    //       <Route exact path='/apartmentform' element={< ApartmentForm user={user}/>} />
+    //       <Route exact path='/unitform' element={< UnitForm user={user}  />} />
+  
+  
+    //    </Routes>
+    //    </>
+  
+    //  ):(
+    //   <Routes>
+
+    //   <Route exact path="/signup" element={<SignUp />} />
+    //   <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+    //   <Route exact path="/" element={ <Homepage />} />
+    
+    // </Routes>
+    //  )}
+    
+     
+
+      
+
+
