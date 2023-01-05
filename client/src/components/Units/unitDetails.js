@@ -1,8 +1,17 @@
 import React from 'react';
 import './unitDetails.css'
 import { slide as Menu } from 'react-burger-menu';
+import { useNavigate } from 'react-router-dom';
 
-function UnitDetails() {
+function UnitDetails({setUser}) {
+  const navigate=useNavigate()
+  function handleClick(){
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        navigate('/')
+      }
+    });
+  }
   return (
     <Menu>
         
@@ -18,7 +27,7 @@ function UnitDetails() {
         Back Home
       </a>
 
-      <a className="menu-item" href="/logout">
+      <a className="menu-item"  onClick={handleClick}>
         Logout
       </a>
     </Menu>
