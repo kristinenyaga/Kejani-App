@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import './unitInformation.css'
+import { Button, size } from 'antd';
+import { Link } from 'react-router-dom';
 
 
 const Unitspecs = ( {data} ) => {
-
-  
+  const [reviews, setReview] = useState([])
+  const[id,setID]=useState("")
   const navigate = useNavigate();
 
-  console.log(data)
 
+  function handleReviews(){
+    navigate(`/data/${data.id}`)
+  }
+    
   function formatAmount(price) {
     const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
     return amountFormatter.format(price);
 
 }
-console.log(data)
   return (
     <>
 
@@ -28,7 +32,8 @@ console.log(data)
           <p className='det'>Unit found in {data.apartment_name} Property</p>
           <p className='det'>Located in {data.occupied}</p>
           <p className='det'>Monthly Rent: { formatAmount (data.price/100)} </p>
-          <button className='but' type='submit' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
+          <button className='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
+          <Link to={`/data/${data.id}`}>View</Link>
         </div>
        
       </div>

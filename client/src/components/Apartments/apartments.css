@@ -7,28 +7,30 @@
     
 }
   .properties{
-    width: 80%;
+    width: 70%;
     border-radius: 60px 60px;
     padding: 1%;
   }
 
   .det{
-    width: 40%;
+    /* width: 40%; */
     font-size: medium;
-    display: flex;
-    flex-direction: column;
+
     color: #1A626D;
     font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
     
   }
 
-  .but{
+  button.but{
     border-radius: 7px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     color: white;
     background-color: #1A626D;
     position: absolute;
+    border: none;
     left: 60%;
-    top: -13%;
+    padding: 10px;
+    /* top: -13%; */
 
   }

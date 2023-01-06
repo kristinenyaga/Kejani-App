@@ -17,7 +17,6 @@ const Apartments = ( {propertyDetail} ) => {
 
   return (
     <>
-
       <div className ='images'>
         <div>
           <img className= 'properties'src={propertyDetail.image_url} />

@@ -46,10 +46,10 @@ unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.
 unit5=Unit.create(unit_number:5504,price:30000,image_url:"https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=600",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
 unit6=Unit.create(unit_number:5505,price:25000,image_url:"https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=600",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
 
-unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
-unit2=Unit.create(unit_number:5501,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
-unit3=Unit.create(unit_number:5502,price:15000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"2bedroom",apartment_id:apartment2.id,user_id:user4.id)
-unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
+# unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
+# unit2=Unit.create(unit_number:5501,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
+# unit3=Unit.create(unit_number:5502,price:15000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"2bedroom",apartment_id:apartment2.id,user_id:user4.id)
+# unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
 
 # unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
 # unit2=Unit.create(unit_number:5501,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)

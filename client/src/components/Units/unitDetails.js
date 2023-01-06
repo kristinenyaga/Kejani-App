@@ -27,6 +27,10 @@ function UnitDetails({setUser}) {
         Back Home
       </a>
 
+      <a className="menu-item" href="/review" onClick={handleClick}>
+        Review
+      </a>
+
       <a className="menu-item"  onClick={handleClick}>
         Logout
       </a>

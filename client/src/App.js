@@ -24,6 +24,8 @@ import UnitDetails from './components/Units/unitDetails';
 import UnitInformation from './components/Units/unitInformation';
 import Unitspecs from './components/Units/unitspecs';
 import Logout from './components/Logout/logout';
+import ReviewCard from './components/Reviews/reviewCard';
+import UnitReview from './components/unitreview/unitreview';
 
 
 export default function App() {
@@ -91,8 +93,12 @@ export default function App() {
              <Route exact path="/unitinformation" element={ <UnitInformation />} />
              <Route exact path="/unitspecs" element={ <Unitspecs/>} />
              <Route exact path="/logout" element={ <Logout/>} />
-        <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-        <Route exact path="/" element={ <Homepage />} />
+            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+            <Route exact path="/" element={ <Homepage />} />
+            <Route exact path="/review" element={ <ReviewCard />} />
+            <Route  path='/data/:id' element={<UnitReview/>} />
+            
+
 
 
             </Routes>

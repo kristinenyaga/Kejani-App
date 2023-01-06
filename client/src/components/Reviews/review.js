@@ -13,9 +13,7 @@ function Review({rev}){
     return (
         <>
           <p className="det">Review: {rev.description}</p>
-          <p>Review for Unit ID: {rev.unit_id}</p>
-          <p>Reviewer ID: {rev.user_id}</p>
-         
+          
         </>
     )
 }

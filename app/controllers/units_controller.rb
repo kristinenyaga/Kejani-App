@@ -8,7 +8,8 @@ class UnitsController < ApplicationController
 
   def show
     unit = Unit.find_by(id:params[:id])
-    render json: unit
+    render json: unit,
+    include: ['reviews'], each_serializer: ReviewSerializer
 
   end
 

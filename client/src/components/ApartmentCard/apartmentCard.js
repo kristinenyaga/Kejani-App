@@ -8,6 +8,8 @@ function ApartmentCard({detail}){
     return (
 
         <>
+      <h1 className='section2h1'>Apartments</h1>
+
         {detail.map((propertyDetail) => (
             <Apartments key={propertyDetail.id} propertyDetail={propertyDetail} />
         ))}
