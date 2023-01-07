@@ -12,8 +12,8 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require "sprockets/railtie"
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,6 +24,8 @@ module ReactRailsApiProjectTemplate
     # Adding cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+
+    Bundler.require(:default, :assets, Rails.env)
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     # https://owasp.org/www-community/SameSite
