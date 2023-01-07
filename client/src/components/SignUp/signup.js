@@ -21,35 +21,7 @@ function SignUp() {
         setRole(value);
       };
 
-    // // Handling the name change
-    // const handleName = (e) => {
-    //     setName(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the number change
-    // const handleNumber = (e) => {
-    //     setNumber(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the location change
-    // const handleLocation = (e) => {
-    //     setLocation(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the email change
-    // const handleEmail = (e) => {
-    //     setEmail(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the password change
-    // const handlePassword = (e) => {
-    //     setPassword(e.target.value);
-    //     setSubmitted(false);
-    // };
+   
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -193,9 +165,10 @@ function SignUp() {
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor='roles'>Roles</label>
+                    {/* <label htmlFor='roles'>Roles</label> */}
                 <div className='custom-select'>
                 <select onChange={handlerole} className='form-select'>
+                    <option  defaultValue disabled>Role</option>
                     <option value='user'>user</option>
                     <option value='lister'>lister</option>
                 </select>

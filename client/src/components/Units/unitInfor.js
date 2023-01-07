@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Unitspecs from './unitspecs';
 import './unitinfor.css'
 
-function UnitInfor({detail,selectedCategory}){
+function UnitInfor({detail,search,selectedCategory,setDetails}){
     console.log(detail)
-    const displayedUnits = detail.filter(
-        (unit) => selectedCategory === "All" || unit.category === selectedCategory
-      );
+    
+    const [filterdetails,setFilterDetails]=useState()
+   
+    let displayedUnits=detail
+        if(selectedCategory){
+            displayedUnits = detail.filter(
+                (unit) => selectedCategory === "All" || unit.category === selectedCategory
+              );
+    
+        }
+       else if(search) {
+          displayedUnits =  detail.filter(det=>{
+                if(search ===''){
+                  return true;
+                     }
+                return (det.apartment.apartment_type).includes(search) || (det.apartment.location).includes(search);
+                      
+              })
+    
+        }
+        
+        
+
+
+  
+     
 
     return (
 

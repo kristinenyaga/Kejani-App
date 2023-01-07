@@ -26,6 +26,8 @@ import Unitspecs from './components/Units/unitspecs';
 import Logout from './components/Logout/logout';
 import ReviewCard from './components/Reviews/reviewCard';
 import UnitReview from './components/unitreview/unitreview';
+import UsersPage from './components/userspage/userspage';
+import UserNavbar from './components/userspage/usernavbar';
 
 
 export default function App() {
@@ -87,6 +89,7 @@ export default function App() {
         </>
           ):(
             <>
+            <UserNavbar/>
             <Routes>
              <Route exact path="/imagecard" element={ <ImageCard />} />
              <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
@@ -97,8 +100,7 @@ export default function App() {
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/review" element={ <ReviewCard />} />
             <Route  path='/data/:id' element={<UnitReview/>} />
-            
-
+            <Route  path='/userspage' element={<UsersPage/>} />
 
 
             </Routes>

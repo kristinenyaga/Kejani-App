@@ -16,7 +16,7 @@ const Unitspecs = ( {data} ) => {
   }
     
   function formatAmount(price) {
-    const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+    const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'Ksh'});
     return amountFormatter.format(price);
 
 }
@@ -32,6 +32,8 @@ const Unitspecs = ( {data} ) => {
           <p className='det'>Found in: {data.apartment.apartment_name} Property</p>
           <p className='det'>{data.occuppied}</p>
           <p className='det'>{data.category}</p>
+          <p className='det'>{data.apartment.location}</p>
+          <p className='det'>{data.apartment.apartment_type}</p>
           <p className='det'>Monthly Rent: { formatAmount (data.price)} </p>
           <button className='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
           <Link to={`/data/${data.id}`}>View</Link>
