@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import UnitInfo from './unitInfor'
+import UnitInfor from './unitInfor'
+import UnitSearch from './unitSearch'
+
 
 function UnitInformation(){
 
     const [detail, setDetails] = useState([])
+    const [search, setSearch] = useState([])
   
     useEffect(()=>{
   
@@ -18,7 +21,20 @@ function UnitInformation(){
     return (
 
         <>
-        <UnitInfo detail= {detail} />
+        {/* <UnitInfor detail= {detail} /> */}
+
+        <UnitSearch setSearch = {setSearch}/>
+      
+        <UnitInfor 
+            detail =  {detail.filter(det=>{
+               if(search ===''){
+                 return true;
+                    }
+               return (det.apartment.apartment_type).includes(search) || (det.apartment.location).includes(search);
+              
+      })}
+      />
+        
         </>
     )
     

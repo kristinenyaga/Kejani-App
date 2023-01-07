@@ -98,6 +98,10 @@ export default function App() {
             <Route exact path="/review" element={ <ReviewCard />} />
             <Route  path='/data/:id' element={<UnitReview/>} />
             
+            <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+            <Route exact path="/" element={ <Homepage />} />
+            
 
 
 

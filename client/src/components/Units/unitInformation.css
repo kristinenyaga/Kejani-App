@@ -1,6 +1,6 @@
 .images{
     position: relative;
-    top: 3%;
+    top: 49px;
     left: 10%;
     right: 1;
     display: inline-block;
@@ -22,7 +22,7 @@
     
   }
 
-  .but{
+  /* .but{
     border-radius: 7px;
     border: 1px solid black;
     color: white;
@@ -31,4 +31,38 @@
     left: 60%;
     top: -13%;
 
+  } */
+
+  #but{
+    border-radius: 7px;
+    background-color: #1A626D;
+    position: relative;
+    color: white;
+    border: none;
+    left: 80%;
+    padding: 10px;
+    /* top: -13%; */
+    width: 49%;
   }
+
+  .filtr{
+    position: absolute;
+   left: 10%;
+   top: 2%;
+   width: 24%;
+   border: 0.2px solid #1A626D;
+   
+  }
+
+  .headerj{
+    color: white;
+    background-color: #1A626D;
+    position: absolute;
+    left: 40%;
+    width: 100%;
+  }
+
+.bar{
+  background-color: #1A626D;
+}
+  

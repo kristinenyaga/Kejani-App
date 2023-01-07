@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import './unitInformation.css'
-import { Button, size } from 'antd';
+// import { Button, size } from 'antd';
 import { Link } from 'react-router-dom';
 
 
@@ -27,13 +27,14 @@ const Unitspecs = ( {data} ) => {
         <div>
           <img className= 'properties'src={data.image_url} />
         </div>
-        <div>
-          <p className='det'>Unit Number: {data.unit_number}</p>
-          <p className='det'>Unit found in {data.apartment_name} Property</p>
-          <p className='det'>Located in {data.occupied}</p>
-          <p className='det'>Monthly Rent: { formatAmount (data.price/100)} </p>
-          <button className='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
-          <Link to={`/data/${data.id}`}>View</Link>
+        <div className='det'>
+          <p>Unit Number: {data.unit_number}</p>
+          <p>Type: {data.apartment.apartment_type}</p>
+          <p>Unit found in {data.apartment.apartment_name} Property</p>
+          <p>Located in {data.apartment.location}</p>
+          <p className='disp'>Monthly Rent: { formatAmount (data.price/100)} </p>
+          <p>Review: {data.reviews.description}</p>
+          <button className='disp' id='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
         </div>
        
       </div>
