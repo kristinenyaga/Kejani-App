@@ -1,16 +1,20 @@
 import React from 'react'
 import Unitspecs from './unitspecs';
+import './unitinfor.css'
 
-
-function UnitInfor({detail}){
+function UnitInfor({detail,selectedCategory}){
+    console.log(detail)
+    const displayedUnits = detail.filter(
+        (unit) => selectedCategory === "All" || unit.category === selectedCategory
+      );
 
     return (
 
-        <>
-        {detail.map((data) => (
+        <div className='units'>
+        {displayedUnits.map((data) => (
             <Unitspecs key={data.id} data={data} />
         ))}
-        </>
+        </div>
     )
 }
 

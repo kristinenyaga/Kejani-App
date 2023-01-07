@@ -29,9 +29,10 @@ const Unitspecs = ( {data} ) => {
         </div>
         <div>
           <p className='det'>Unit Number: {data.unit_number}</p>
-          <p className='det'>Unit found in {data.apartment_name} Property</p>
-          <p className='det'>Located in {data.occupied}</p>
-          <p className='det'>Monthly Rent: { formatAmount (data.price/100)} </p>
+          <p className='det'>Found in: {data.apartment.apartment_name} Property</p>
+          <p className='det'>{data.occuppied}</p>
+          <p className='det'>{data.category}</p>
+          <p className='det'>Monthly Rent: { formatAmount (data.price)} </p>
           <button className='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
           <Link to={`/data/${data.id}`}>View</Link>
         </div>
