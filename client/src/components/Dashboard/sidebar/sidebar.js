@@ -1,54 +1,5 @@
-// import React from "react";
-
-// import { NavLink } from "react-router-dom";
-// import navLinks from "../assets/navLinks";
-// import "./sidebar.css";
-
-// const Sidebar = () => {
-//   return (
-//     <div className="sidebar">
-//       <div className="sidebar__top">
-//         <h2>
-//           <span>
-//             <i class="ri-taxi-line"></i>
-//           </span>{" "}
-//           Kejani
-//         </h2>
-//       </div>
-
-//       <div className="sidebar__content">
-//         <div className="menu">
-//           <ul className="nav__list">
-//             {navLinks.map((item, index) => (
-//               <li className="nav__item" key={index}>
-//                 <NavLink
-//                   to={item.path}
-//                   className={(navClass) =>
-//                     navClass.isActive ? "nav__active nav__link" : "nav__link"
-//                   }
-//                 >
-//                   <i className={item.icon}></i>
-
-//                   {item.display}
-//                 </NavLink>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         <div className="sidebar__bottom">
-//           <span>
-//             <i class="ri-logout-circle-r-line"></i> Logout
-//           </span>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { NavLink } from 'react-router-dom';
 import {
     FaTh,
     FaBars,
@@ -56,19 +7,18 @@ import {
     FaCommentAlt,
     FaEnvelopeOpenText,
     FaThList,
-    // FaArrowCircleLeft
+    FaArrowCircleLeft
 } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import "./sidebar.css";
+import { IconContext } from "react-icons";
 
-
-const Sidebar = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
-    const menuItem = [
+function SideBar() {
+    const [isExpanded, setExpendState] = useState(false);
+	const menuItems = [
         {
-            path: "/topbar",
-            name: "Topbar",
-            icon: <FaTh />
+            path: "/inbox",
+            name: "Inbox",
+            icon: <FaEnvelopeOpenText />
         },
         {
             path: "/addapartment",
@@ -80,43 +30,58 @@ const Sidebar = ({ children }) => {
             name: "Reviews",
             icon: <FaCommentAlt />
         },
-        {
-            path: "/inbox",
-            name: "Inbox",
-            icon: <FaEnvelopeOpenText />
-        },
+       
         {
             path: "/tenants",
             name: "Tenants",
             icon: <FaUserAlt />
         },
-        // {
-        //     path: "/homepage",
-        //     name: "Logout",
-        //     icon: <FaArrowCircleLeft />
-        // }
+        {
+            path: "/logout",
+            name: "Logout",
+            icon: <FaArrowCircleLeft />
+        }
     ]
-    return (
-        <div className="container">
-            <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
-                <div className="top_section">
-                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Kejani</h1>
-                    <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-                        <FaBars onClick={toggle} />
-                    </div>
-                </div>
-                {
-                    menuItem.map((item, index) => (
-                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                            <div className="icon">{item.icon}</div>
-                            <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
-                        </NavLink>
-                    ))
-                }
-            </div>
-            <main>{children}</main>
-        </div>
-    );
+	return (
+		<div
+			className={
+				isExpanded
+					? "side-nav-container"
+					: "side-nav-container side-nav-container-NX"
+			}
+		>
+			<div className="nav-upper">
+				<div className="nav-heading">
+					{isExpanded && (
+						<div className="nav-brand">
+							
+							<h2 className="sidebar_h2"><i class="fa-solid fa-house-circle-check"></i>Kejani</h2>
+						</div>
+					)}
+					<button
+						className={
+							isExpanded ? "hamburger hamburger-in" : "hamburger hamburger-out"
+						}
+						onClick={() => setExpendState(!isExpanded)}
+					>
+					
+					</button>
+				</div>
+				<div className="nav-menu">
+					{menuItems.map(({ item, index }) => (
+						<NavLink to={item.path} key={index}
+							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
+							
+						>
+							
+							{isExpanded?<><p className="picon">{item.icon}</p><p className="pname">{item.name}</p></>:<p>{item.icon}</p>}
+							</NavLink>
+					))}
+				</div>
+			</div>
+			
+		</div>
+	);
 };
 
-export default Sidebar;
+export default SideBar;

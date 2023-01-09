@@ -11,7 +11,7 @@ const Inbox = () => {
             </div>
             <div className="mr-5">26 New Messages!</div>
           </div>
-          <a className="card-footer text-white clearfix small z-1" href="#">
+          <a className="card-footer text-white clearfix small z-1">
             <span className="float-left">View Details</span>
             <span className="float-right">
               <i className="fa fa-angle-right"></i>

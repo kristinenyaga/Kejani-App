@@ -16,9 +16,7 @@ export default function AddApartment({user,setApartment,apartment,handleApartmen
   }
   return (
     <div className="section2">
-    <h1 className="section2h1">
-    <i class="fa-solid fa-house-circle-check"></i>Kejani App
-    </h1>
+    
 
     <div className='addapartment'>
       <h3 className='apartment-h3'>Your Apartments</h3>

@@ -13,7 +13,7 @@ function SideBarPages({user,setApartment,apartment,handleApartment}) {
       <Routes>
       <Route path="/inbox" element={<Inbox />} />
       <Route path="/tenants" element={<Tenants />} />
-      <Route path="/reviews" element={<Review />} />
+      <Route path="/reviews" element={<Review/>} />
       <Route path="/addapartment" element={<AddApartment handleApartment={handleApartment} user={user} setApartment={setApartment} apartment={apartment}/>} />
       <Route path='/apartmentform' element={< ApartmentForm  user={user} />} />
       <Route path='/unitform' element={<UnitForm user={user} apartment={apartment} />} />
