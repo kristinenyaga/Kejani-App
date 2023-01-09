@@ -28,6 +28,7 @@ import ReviewCard from './components/Reviews/reviewCard';
 import UnitReview from './components/unitreview/unitreview';
 import UsersPage from './components/userspage/userspage';
 import UserNavbar from './components/userspage/usernavbar';
+import ContactForm from './components/contact/contact';
 
 
 export default function App() {
@@ -81,9 +82,9 @@ export default function App() {
            <Routes>
               <Route exact path="/inbox" element={ <DefaultInbox />} />
               <Route exact path="/reviews" element={ <Review />} />
-              {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
+              <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} />
               <Route exact path="/tenants" element={ <Tenants />} />
-              <Route path="/topbar" element={<TopSection />} />
+              
     
            </Routes>
         </>
@@ -96,8 +97,6 @@ export default function App() {
              <Route exact path="/unitinformation" element={ <UnitInformation />} />
              <Route exact path="/unitspecs" element={ <Unitspecs/>} />
              <Route exact path="/logout" element={ <Logout/>} />
-            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-            <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/review" element={ <ReviewCard />} />
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage/>} />
@@ -116,6 +115,7 @@ export default function App() {
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
+        <Route exact path="/contact" element={<ContactForm />} />
 
       </Routes>
       )

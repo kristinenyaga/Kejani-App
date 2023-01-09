@@ -6,21 +6,14 @@ span.kejani{
   font-weight: bold;
   letter-spacing: 4px;
  
-
-
 }
 
-
 .rightside{
-  /*  */
+ 
   font-family: 'Poppins', sans-serif;
   font-size: 17px;
   font-weight: light;
   color: #fff;
- 
-
-
-
 }
 
 .display-flex{
@@ -28,10 +21,7 @@ span.kejani{
   flex-direction: row;
   gap: 30em;
  
-  
 }
-
-
 
 .auth{
   border: 1px solid black;
@@ -54,6 +44,5 @@ a.auth.nav-link{
   align-items: center;
   margin: 0 auto;
   
-  /* padding-left:2% ; */
 
 }

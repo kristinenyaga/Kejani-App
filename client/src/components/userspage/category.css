@@ -2,12 +2,15 @@
 .category{
   flex: 3;
   padding-bottom: 30px;
-  margin: 20px;
+  margin: 20px 0 0 0;
   background-color: #fdfbfb;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   display: flex;
+  max-height: 40vh;
   align-items: center;
   flex-direction: column;
+  position:sticky;
+  top: 10px;
 }
 
 
@@ -25,7 +28,9 @@
   color: #222;
   line-height: 20px;
   text-align: center;
-  font-weight: 600;
+  font-weight:400;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .categoryItem > img{
@@ -46,8 +51,9 @@
   display: inline-block;
   width:50%;
   margin-top: 15px;
-  font-family: 'Nerko One', cursive;
-  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+
+  font-size:22px;
   cursor: pointer;
 }
 
