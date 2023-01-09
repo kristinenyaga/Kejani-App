@@ -5,25 +5,17 @@ span.kejani{
   font-size:50px;
   font-weight: bold;
   letter-spacing: 4px;
- 
-
-
 }
-
-
-
 .display-flex{
   display: flex;
   flex-direction: row;
   gap: 46em;
-  
 }
-
 .logoutBtn{
   width: 130px;
   height: 40px;
   margin-top: 2px;
-  margin-left: 10px;
+  margin-left: 10px;font-family: 'Montserrat', sans-serif;
   padding: -10%;
   color: #fff;
   background-color: #17646C;

@@ -16,7 +16,7 @@ export default function Homepage(){
      <div className="left">
         <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
         <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
-        <button className="header-button">Learn More</button>
+        <button className="header-button" onClick={handleClick}>Learn More</button>
         <div className="header-container">
           <div className="row1">
             <p>1500+</p>

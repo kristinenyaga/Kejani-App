@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import './unitInformation.css'
-import { Button, size } from 'antd';
-import { Link } from 'react-router-dom';
+
 
 
 const Unitspecs = ( {data} ) => {
@@ -22,23 +21,23 @@ const Unitspecs = ( {data} ) => {
 }
   return (
     <>
-    <div className="post">
-      <img className="postImg"
+    <div className="unit">
+      <img className="unitImg"
       src={data.image_url} alt="">
       </img>
-      <div className="postInfo">
-      <span  className="postTitle">
+      <div className="unitInfo">
+      <span  className="unitTitle">
       {data.apartment.apartment_name} Property
         </span>
-        <div className="postcat">
+        <div className="unitcat">
         {data.apartment.apartment_type}
         </div>
         
         <hr/>
-        <span className="postDate">{data.category}</span>
+        <span className="unitDate">{data.category}</span>
          
       </div>
-      <p className="postDesc">
+      <p className="unitDesc">
       {data.occuppied}
       </p>
 

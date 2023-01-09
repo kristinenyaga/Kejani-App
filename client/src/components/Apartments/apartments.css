@@ -6,33 +6,16 @@
     display: inline-block;
     
 }
-  .properties{
-    width: 70%;
-    border-radius: 60px 60px;
-    padding: 1%;
-  }
 
-  .det{
-    /* width: 40%; */
-    font-size: medium;
-
-    color: #1A626D;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    
-  }
-
-  button.but{
-    border-radius: 7px;
-    /* border: 1px solid black; */
-    color: white;
-    background-color: #1A626D;
-    position: absolute;
-    border: none;
-    left: 60%;
-    padding: 10px;
-    /* top: -13%; */
-
+.mybtn{
+  width: 130px;
+  height: 40px;
+  margin-top: 2px;
+  margin-left: 10px;font-family: 'Montserrat', sans-serif;
+  padding: -10%;
+  color: #fff;
+  background-color: #17646C;
+  border-radius: 5px;
   }
 
 
@@ -83,11 +66,15 @@ img.apartmentImg{
   margin-top:6px ;
 }
 
-.apartmenttitle{
-  font-family: 'Sanchez', serif;
-  font-size: 19px;
-  color: #17646C;
+  button.but{
+    border-radius: 7px;
+    /* border: 1px solid black; */
+    color: white;
+    background-color: #1A626D;
+    position: absolute;
+    border: none;
+    left: 60%;
+    padding: 10px;
+    /* top: -13%; */
 
-  
-}
-
+  }

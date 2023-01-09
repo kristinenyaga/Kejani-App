@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./topbar.css";
 
-const TopSection = ({user}) => {
+const TopSection = ( {user} ) => {
     return (
         <div className="top_nav">
             <div className="topnav-flex">

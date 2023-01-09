@@ -25,4 +25,3 @@ function UnitInformation(){
 }
 
 export default UnitInformation;
-

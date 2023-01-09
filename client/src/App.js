@@ -90,7 +90,7 @@ export default function App() {
         </>
           ):(
             <>
-            <UserNavbar/>
+            <UserNavbar />
             <Routes>
              <Route exact path="/imagecard" element={ <ImageCard />} />
              <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
@@ -101,6 +101,10 @@ export default function App() {
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage/>} />
 
+            <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+            <Route exact path="/" element={ <Homepage />} />
+            
 
             </Routes>
             </>

@@ -165,12 +165,11 @@ function SignUp() {
                 </div>
 
                 <div className="mb-3">
-                    {/* <label htmlFor='roles'>Roles</label> */}
+                    <label htmlFor='roles' >Sign up as</label>
                 <div className='custom-select'>
-                <select onChange={handlerole} className='form-select'>
-                    <option  defaultValue disabled>Role</option>
-                    <option value='user'>user</option>
-                    <option value='lister'>lister</option>
+                <select onChange={handlerole} className='form-select' size='2' required>
+                    <option className='opt' value='user'>user</option>
+                    <option className='opt' value='lister'>lister</option>
                 </select>
 
                 </div>

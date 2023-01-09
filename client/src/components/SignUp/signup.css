@@ -68,3 +68,6 @@ h2,h3,h4,h6,label,span {
   color: #ffffff;
   background-color: #17646C !important;
 } 
+.opt{
+  font-size: smaller;
+}

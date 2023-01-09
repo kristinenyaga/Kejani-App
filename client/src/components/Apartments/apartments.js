@@ -30,13 +30,11 @@ const Apartments = ( {propertyDetail} ) => {
         </div>
          
       </div>
-     
       <h4 className="apartmenttitle"><i class="fa-solid fa-location-dot"></i>{propertyDetail.location}</h4>
-
       <button className='mybtn' onClick={()=>navigate('/userspage')}>More Details...</button>
-
    </div>
-      
+     
+
     </>
   );
 }
