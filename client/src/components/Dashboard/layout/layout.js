@@ -20,7 +20,7 @@ const Layout = ({user,setApartment, apartment}) => {
     <section>
       <div>
         <div>
-          <TopSection />
+          <TopSection user={user}/>
         </div>
 
         <div className="w-full h-screen flex ">

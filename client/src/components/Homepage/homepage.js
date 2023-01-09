@@ -1,7 +1,14 @@
 import NavBar from "../Navbar/navbar";
 import './homepage.css'
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from "react-router-dom";
+
 export default function Homepage(){
+  const navigate = useNavigate()
+  function handleClick(){
+    navigate('/login')
+  }
+
   return(
     <>
     <NavBar />
@@ -9,7 +16,7 @@ export default function Homepage(){
      <div className="left">
         <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
         <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
-        <button className="header-button">Learn More</button>
+        <button className="header-button" onClick={handleClick}>Learn More</button>
         <div className="header-container">
           <div className="row1">
             <p>1500+</p>
@@ -44,7 +51,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button className="section2btn">List House</button>
+      <button className="section2btn" onClick={handleClick}>List House</button>
       </div>
 
       <div className="section2row">
@@ -52,7 +59,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button className="section2btn">Rent House</button>
+      <button className="section2btn" onClick={handleClick}>Rent House</button>
 
       </div>
 
@@ -115,7 +122,7 @@ export default function Homepage(){
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+            <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -129,7 +136,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -143,7 +150,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -158,7 +165,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
