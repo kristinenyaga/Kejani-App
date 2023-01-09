@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react'
 import Unitspecs from './unitspecs';
 import './unitinfor.css'
 
-function UnitInfor({detail,search,selectedCategory,setDetails}){
+function UnitInfor({detail,search,selectedCategory,setDetails,selectedPrice}){
     console.log(detail)
     
     const [filterdetails,setFilterDetails]=useState()
    
-    let displayedUnits=detail
-        if(selectedCategory){
-            displayedUnits = detail.filter(
+    
+    function applyFilters(){
+        let displayedUnits=detail
+       
+            displayedUnits = displayedUnits.filter(
                 (unit) => selectedCategory === "All" || unit.category === selectedCategory
               );
     
-        }
-       else if(search) {
-          displayedUnits =  detail.filter(det=>{
+        
+       
+          displayedUnits =  displayedUnits.filter(det=>{
                 if(search ===''){
                   return true;
                      }
@@ -23,7 +25,20 @@ function UnitInfor({detail,search,selectedCategory,setDetails}){
                       
               })
     
-        }
+        
+        const minPrice = selectedPrice[0];
+        const maxPrice = selectedPrice[1];
+
+        displayedUnits = displayedUnits.filter(
+        (item) => item.price >= minPrice && item.price <= maxPrice
+        );
+        setDetails(displayedUnits)
+
+    }
+        useEffect(() => {
+            applyFilters();
+          }, [selectedCategory,search,selectedPrice]);
+        
         
         
 
@@ -34,7 +49,7 @@ function UnitInfor({detail,search,selectedCategory,setDetails}){
     return (
 
         <div className='units'>
-        {displayedUnits.map((data) => (
+        {detail.map((data) => (
             <Unitspecs key={data.id} data={data} />
         ))}
         </div>
