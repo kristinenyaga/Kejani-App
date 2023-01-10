@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
+import CustomizedDialogs from '../review/dialog';
 import './unitInformation.css'
 
 
 
-const Unitspecs = ( {data} ) => {
+const Unitspecs = ( {data,user} ) => {
+  console.log(user)
   const [reviews, setReview] = useState([])
   const[id,setID]=useState("")
   const navigate = useNavigate();
@@ -42,13 +44,15 @@ const Unitspecs = ( {data} ) => {
       </p>
 
 
-      <h4 className="posttitle"><i class="fa-solid fa-location-dot"></i>{data.apartment.location}</h4>
+      <h4 className="unittitle"><i class="fa-solid fa-location-dot"></i>{data.apartment.location}</h4>
       <div className="displayflex">
        
       </div>
-      <p className="description">Rent: { formatAmount (data.price)}</p>
-      <button className='mybtn' onClick={()=>navigate('/bookunit')}>request this Unit</button>
+      <h4 className="description">Rent: { formatAmount (data.price)}</h4>
+      <CustomizedDialogs title="Reviews"unit={data} user={user}/>
 
+      <button className='mybtnn' onClick={()=>navigate('/bookunit')}>request this Unit</button>
+      
    </div>
 
       {/* <div className ='images'>
