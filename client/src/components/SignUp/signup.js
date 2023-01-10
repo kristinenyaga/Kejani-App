@@ -100,6 +100,7 @@ function SignUp() {
                         name={name}
                         className="form-control"
                         placeholder="Enter your name"
+                        required
                     />
                 </div>
 
@@ -112,6 +113,7 @@ function SignUp() {
                         name={email}
                         className="form-control"
                         placeholder="Enter your email"
+                        required
                     />
                 </div>
 
@@ -124,6 +126,7 @@ function SignUp() {
                         name={number}
                         className="form-control"
                         placeholder="Enter your phone number"
+                        required
                     />
                 </div>
 
@@ -135,6 +138,7 @@ function SignUp() {
                         value={location}
                         name={location}
                         className="form-control"
+                        required
                         placeholder="Enter your location" />
                 </div>
 
@@ -149,6 +153,7 @@ function SignUp() {
                         name={password}
                         className="form-control"
                         placeholder="Enter your password"
+                        required
                     />
                 </div>
 
@@ -161,6 +166,7 @@ function SignUp() {
                         name={passwordConfirmation}
                         className="form-control"
                         placeholder="password confirmation"
+                        required
                     />
                 </div>
 
