@@ -89,7 +89,7 @@ export default function App() {
         </>
           ):(
             <>
-            <UserNavbar />
+            {/* <UserNavbar /> */}
             <Routes>
              <Route exact path="/imagecard" element={ <ImageCard />} />
              <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
