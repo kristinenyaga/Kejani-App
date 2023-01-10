@@ -7,7 +7,7 @@ import Inbox from "../defaultinbox/defaultinbox";
 import Tenants from "../tenants/tenants";
 import AddApartment from "../Addapartment/addapartment";
 import SideBarPages from "../Routes/sideBarPages";
-import Sidebar from "../sidebar/sidebar";
+import SideBar from "../sidebar/sidebar";
 
 const Layout = ({ user, setApartment, apartment }) => {
   function handleApartment(apartment) {
