@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import Apartments from './components/ApartmentCard/apartmentCard';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -29,36 +29,36 @@ import UnitReview from './components/unitreview/unitreview';
 
 
 export default function App() {
-  const [user,setUser]=useState("")
-  const [role,setRole]=useState("")
-  const navigate =useNavigate("")
-  const [lister,setLister]=useState("")
-  function onLogin(user){
+  const [user, setUser] = useState("")
+  const [role, setRole] = useState("")
+  const navigate = useNavigate("")
+  const [lister, setLister] = useState("")
+  function onLogin(user) {
     setUser(user)
     console.log(user)
     console.log(role)
-    if(role === 'user') {
+    if (role === 'user') {
       setLister(false)
       navigate('/imagecard')
 
-      }else if (role === 'lister'){
+    } else if (role === 'lister') {
       //  navigate('/layout') 
-       setLister(true)
+      setLister(true)
 
 
 
-      
-      }
+
+    }
 
 
   }
-  const [apartment,setApartment]=useState("")
-  useEffect(()=>{
+  const [apartment, setApartment] = useState("")
+  useEffect(() => {
     // auto-login
     fetch("/me", {
-      method:'GET',
+      method: 'GET',
       headers: {
-        "Access-Control-Allow-Origin":"no-cors",
+        "Access-Control-Allow-Origin": "no-cors",
         "Content-Type": "application/json"
       }
     }).then((r) => {
@@ -66,61 +66,61 @@ export default function App() {
         r.json().then((user) => setUser(user));
       }
     });
-  },[])
-  
+  }, [])
+
   return (
     <>
-    {
-      user?(
-        
-          lister?(
-        <>   
-          <Layout user={user} setApartment={setApartment} apartment={apartment}/>
-           <Routes>
-              <Route exact path="/inbox" element={ <DefaultInbox />} />
-              <Route exact path="/reviews" element={ <Review />} />
-              {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
-              <Route exact path="/tenants" element={ <Tenants />} />
-              <Route path="/topbar" element={<TopSection />} />
-    
-           </Routes>
-        </>
-          ):(
+      {
+        user ? (
+
+          lister ? (
             <>
-            <Routes>
-             <Route exact path="/imagecard" element={ <ImageCard />} />
-             <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
-             <Route exact path="/unitinformation" element={ <UnitInformation />} />
-             <Route exact path="/unitspecs" element={ <Unitspecs/>} />
-             <Route exact path="/logout" element={ <Logout/>} />
-            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-            <Route exact path="/" element={ <Homepage />} />
-            <Route exact path="/review" element={ <ReviewCard />} />
-            <Route  path='/data/:id' element={<UnitReview/>} />
-            
+              <Layout user={user} setApartment={setApartment} apartment={apartment} />
+              <Routes>
+                <Route exact path="/inbox" element={<DefaultInbox />} />
+                <Route exact path="/reviews" element={<Review />} />
+                {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
+                <Route exact path="/tenants" element={<Tenants />} />
+                <Route path="/topbar" element={<TopSection />} />
 
-
-
-            </Routes>
+              </Routes>
             </>
-       
+          ) : (
+            <>
+              <Routes>
+                <Route exact path="/imagecard" element={<ImageCard />} />
+                <Route exact path="/unitdetails" element={<UnitDetails user={user} />} />
+                <Route exact path="/unitinformation" element={<UnitInformation />} />
+                <Route exact path="/unitspecs" element={<Unitspecs />} />
+                <Route exact path="/logout" element={<Logout />} />
+                <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
+                <Route exact path="/" element={<Homepage />} />
+                <Route exact path="/review" element={<ReviewCard />} />
+                <Route path='/data/:id' element={<UnitReview />} />
+
+
+
+
+              </Routes>
+            </>
+
 
           )
-        
-          
-      ):(
-        <Routes>
-          
-        <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
-        <Route exact path="/" element={ <Homepage />} />
 
-      </Routes>
-      )
-    }
-    
-  
+
+        ) : (
+          <Routes>
+
+            <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
+            <Route exact path="/" element={<Homepage />} />
+
+          </Routes>
+        )
+      }
+
+
     </>
   )
 }
-  
+
