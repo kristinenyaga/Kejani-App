@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :apartments
     has_many :units
     has_many :reviews
+    has_many :requestunits
     
    
 end
