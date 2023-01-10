@@ -7,7 +7,7 @@ import Inbox from "../defaultinbox/defaultinbox";
 import Tenants from "../tenants/tenants";
 import AddApartment from "../Addapartment/addapartment";
 import SideBarPages from "../Routes/sideBarPages";
-import SideBar from "../sidebar/sidebar";
+import Sidebar from "../sidebar/sidebar";
 
 const Layout = ({user,setApartment, apartment}) => {
   function handleApartment(apartment){
@@ -23,7 +23,7 @@ const Layout = ({user,setApartment, apartment}) => {
 
         <div className="w-full h-screen flex ">
           <div>
-            <SideBar />
+            <Sidebar />
           </div>
           <div className="w-full h-screen">
             <SideBarPages user={user} setApartment={setApartment} handleApartment={handleApartment} apartment={apartment}/>
