@@ -32,14 +32,14 @@ user4=User.create(username: "kunte", location: "Msambweni", email: "kunte@kante"
 # unit3=Unit.create(unit_number:5502,property_name:"Elgon",property_type:"Residential",price:15000,location:"Nakuru",image_url:"https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600",unit_url:"https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=600",category:"2bedroom",user_id:user3.id,lister_id:lister3.id)
 
 
-apartment1=Apartment.create(apartment_name:"Chandaria",apartment_type:"Hostel",location:"Embakasi",image_url:"https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user3.id)
-apartment2=Apartment.create(apartment_name:"Flaqo",apartment_type:"Hostel",location:"Kasarani",image_url:"https://media.istockphoto.com/id/153534693/photo/the-cozy-living-room.jpg?s=612x612&w=0&k=20&c=kBPeXOPM2qiQEbhfbC5M5JJCmD7IZxznssPaLhNomuo=",user_id:user4.id)
+apartment1=Apartment.create(apartment_name:"Chandaria",apartment_type:"Hostel",location:"Embakasi",image_url:"https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user3.id)
+apartment2=Apartment.create(apartment_name:"Siandate",apartment_type:"Hostel",location:"Ngong",image_url:"https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user4.id)
 apartment3=Apartment.create(apartment_name:"Elgon",apartment_type:"Residential",location:"Ruaka",image_url:"https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user3.id)
 apartment4=Apartment.create(apartment_name:"Elmoro",apartment_type:"Residenatial",location:"South B",image_url:"https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user3.id)
 apartment5=Apartment.create(apartment_name:"Siandate",apartment_type:"Hostel",location:"Ngong",image_url:"https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user4.id)
 apartment6=Apartment.create(apartment_name:"Eljuok",apartment_type:"Residential",location:"Ruaka",image_url:"https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user4.id)
 
-unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/3288102/pexels-photo-3288102.png?auto=compress&cs=tinysrgb&w=600",category:"bedsitter",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
+unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/3288102/pexels-photo-3288102.png?auto=compress&cs=tinysrgb&w=600",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
 unit2=Unit.create(unit_number:5501,price:10000,image_url:"https://images.pexels.com/photos/3288102/pexels-photo-3288102.png?auto=compress&cs=tinysrgb&w=600",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
 unit3=Unit.create(unit_number:5502,price:15000,image_url:"https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=600",category:"2bedroom",apartment_id:apartment2.id,user_id:user4.id)
 unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/6523302/pexels-photo-6523302.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)

@@ -1,7 +1,7 @@
 .units{
-  flex: 9;
-  display: flex;
-  flex-wrap: wrap;
-  margin:20px;
-  background-color: rgba(255, 255, 255, 0.837);
-}
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin:20px;
+    background-color: rgba(255, 255, 255, 0.837);
+  }

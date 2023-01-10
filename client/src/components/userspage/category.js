@@ -1,13 +1,11 @@
 import React from 'react'
 import './category.css'
-function Category({categories,setSelectedCategory,selectedCategory}) {
+import PriceFilter from './pricefilter'
+function Category({categories,setSelectedCategory,selectedCategory,value, changePrice}) {
   return (
     <div className="category">
       <div className="categoryItem">
-       
-      </div>
-      <div className="categoryItem">
-        <span className="categoryTitle font-beutify">CHOOSE CATEGORY</span>
+        <span className="categoryTitle font-beutify">Category</span>
         <ul className="categoryList">
           {categories.map((category)=>(
             <li className='categoryListItem'key={category}
@@ -15,13 +13,10 @@ function Category({categories,setSelectedCategory,selectedCategory}) {
           ))}
       </ul>
       </div>
-
-    
-        
+      <span className="categoryTitle font-beutify">Price Range</span>
+      <PriceFilter value={value} changePrice={changePrice} />
       {/* </div> */}
-
     </div>
   )
 }
-
 export default Category

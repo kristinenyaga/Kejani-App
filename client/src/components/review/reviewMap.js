@@ -1,13 +1,13 @@
 import React from "react";
 import Review from "./review";
 
-function ReviewMap({review}){
+function ReviewMap({unit}){
 
     
 
     return(
         <>
-       {review.map((rev) => (
+       {unit.reviews?.map((rev) => (
             <Review key={rev.id} rev={rev} />
         ))}
         </>

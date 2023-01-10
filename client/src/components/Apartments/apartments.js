@@ -17,19 +17,22 @@ const Apartments = ( {propertyDetail} ) => {
 
   return (
     <>
-      <div className ='images'>
-        <div>
-          <img className= 'properties'src={propertyDetail.image_url} />
+     <div className="apartment">
+      <img className="apartmentImg"
+      src={propertyDetail.image_url}alt="">
+      </img>
+      <div className="apartmentInfo">
+      <span  className="apartmentTitle">
+      {propertyDetail.apartment_name}
+        </span>
+        <div className="postcat">
+        {propertyDetail.apartment_type}
         </div>
-        <div>
-          <p4 className='det'>Property Name: {propertyDetail.property_name}</p4>
-          <p4 className='det'>Location: {propertyDetail.location}</p4>
-          {/* <p4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </p4> */}
-          <button className='but' type='submit' onClick={()=>navigate('/userspage')}>More details</button>
-        </div>
+         
       </div>
-
-      
+      <h4 className="apartmenttitle"><i class="fa-solid fa-location-dot"></i>{propertyDetail.location}</h4>
+      <button className='mybtn' onClick={()=>navigate('/userspage')}>More Details...</button>
+   </div>
      
 
     </>

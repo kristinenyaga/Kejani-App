@@ -1,4 +1,6 @@
 import React from 'react'
+import SearchIcon from '@material-ui/icons/Search';
+import './unitsearch.css'
 
 function UnitSearch( {setSearch} ){
 
@@ -10,8 +12,10 @@ function UnitSearch( {setSearch} ){
     return (
         <>
 
-<div className='bar'>
+   <div className='searchBar-wrap'>
       {/* <label>Filter</label>  */}
+
+      <SearchIcon className='searchBar-icon' />
       <input
       className='filtr'
         type="text"
@@ -19,6 +23,7 @@ function UnitSearch( {setSearch} ){
         onChange={(handleChange) }
       />
     </div>
+
 
         </>
     )
