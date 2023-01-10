@@ -18,11 +18,10 @@ function UnitInformation(){
     return (
 
         <>
-        <UnitInfo detail= {detail} />
+        {/* <UnitInfo detail= {detail} /> */}
         </>
     )
     
 }
 
 export default UnitInformation;
-

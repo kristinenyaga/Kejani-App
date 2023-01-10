@@ -21,35 +21,7 @@ function SignUp() {
         setRole(value);
       };
 
-    // // Handling the name change
-    // const handleName = (e) => {
-    //     setName(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the number change
-    // const handleNumber = (e) => {
-    //     setNumber(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the location change
-    // const handleLocation = (e) => {
-    //     setLocation(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the email change
-    // const handleEmail = (e) => {
-    //     setEmail(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the password change
-    // const handlePassword = (e) => {
-    //     setPassword(e.target.value);
-    //     setSubmitted(false);
-    // };
+   
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -128,6 +100,7 @@ function SignUp() {
                         name={name}
                         className="form-control"
                         placeholder="Enter your name"
+                        required
                     />
                 </div>
 
@@ -140,6 +113,7 @@ function SignUp() {
                         name={email}
                         className="form-control"
                         placeholder="Enter your email"
+                        required
                     />
                 </div>
 
@@ -152,6 +126,7 @@ function SignUp() {
                         name={number}
                         className="form-control"
                         placeholder="Enter your phone number"
+                        required
                     />
                 </div>
 
@@ -163,6 +138,7 @@ function SignUp() {
                         value={location}
                         name={location}
                         className="form-control"
+                        required
                         placeholder="Enter your location" />
                 </div>
 
@@ -177,6 +153,7 @@ function SignUp() {
                         name={password}
                         className="form-control"
                         placeholder="Enter your password"
+                        required
                     />
                 </div>
 
@@ -189,15 +166,16 @@ function SignUp() {
                         name={passwordConfirmation}
                         className="form-control"
                         placeholder="password confirmation"
+                        required
                     />
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor='roles'>Roles</label>
+                    <label htmlFor='roles' >Sign up as</label>
                 <div className='custom-select'>
-                <select onChange={handlerole} className='form-select'>
-                    <option value='user'>user</option>
-                    <option value='lister'>lister</option>
+                <select onChange={handlerole} className='form-select' size='2' required>
+                    <option className='opt' value='user'>user</option>
+                    <option className='opt' value='lister'>lister</option>
                 </select>
 
                 </div>

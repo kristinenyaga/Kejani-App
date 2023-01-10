@@ -1,0 +1,26 @@
+
+.det{
+    width: 100%;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    color: #1A626D;
+    font-weight: bold;
+}
+
+
+.unitreviews{
+    font-family: 'Sanchez', serif;
+    font-size: 19px;
+    color: #17646C;
+    margin-top: 10px;
+    
+}
+
+button.reviews-button{
+    color: #17646C;
+    /* border-bottom: 2px solid #1A626D; */
+    margin-bottom: 10px;
+    font-weight: 800;
+   
+}

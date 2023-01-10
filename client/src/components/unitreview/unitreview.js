@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import  { useEffect, useState } from 'react'
-import Review from '../Reviews/review';
+import Review from '../review/review';
 
 
 function UnitReview() {

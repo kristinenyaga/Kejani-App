@@ -18,20 +18,20 @@ const Apartments = ({ propertyDetail }) => {
   return (
     <>
       <div className='images'>
-        {/* added ? just before Detail, edit out when neccessary */}
         <div>
-          <img className='properties' src={propertyDetail?.image_url} />
+          <img className='properties' src={propertyDetail.image_url} />
         </div>
         <div>
-          <p4 className='det'>Property Name: {propertyDetail?.property_name}</p4>
-          <p4 className='det'>Location: {propertyDetail?.location}</p4>
+          <p4 className='det'>Property Name: {propertyDetail.property_name}</p4>
+          <p4 className='det'>Location: {propertyDetail.location}</p4>
           {/* <p4 className='det'>Rent: { formatAmount (propertyDetail.price/100)} </p4> */}
           <button className='but' type='submit' onClick={() => navigate('/unitinformation')}>More details</button>
         </div>
       </div>
-
-
-
+      <h4 className="apartmenttitle"><i class="fa-solid fa-location-dot"></i>{propertyDetail.location}</h4>
+      <button className='mybtn' onClick={() => navigate('/userspage')}>More Details...</button>
+    </div>
+     
 
     </>
   );

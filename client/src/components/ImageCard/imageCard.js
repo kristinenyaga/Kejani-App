@@ -26,7 +26,6 @@ function ImageCard(){
   
   <ApartmentCard detail= {detail} />
 
-  <div><button onClick={()=>navigate('/sidebar')}>Back</button></div>
   </>
   )
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :requestunits
   resources :images
   resources :apartments
   resources :reviews
