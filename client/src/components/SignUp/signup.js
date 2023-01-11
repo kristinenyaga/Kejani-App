@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import {Navigate, useNavigate} from 'react-router-dom'
 import './signup.css'
 
-function SignUp() {
+function SignUp( {onSignup} ) {
     // States for registration
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
@@ -11,6 +12,8 @@ function SignUp() {
     const [number, setNumber] = useState('');
     const [role, setRole] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+    
 
     // // States for checking the errors
      const [submitted, setSubmitted] = useState(false);
@@ -21,35 +24,6 @@ function SignUp() {
         setRole(value);
       };
 
-    // // Handling the name change
-    // const handleName = (e) => {
-    //     setName(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the number change
-    // const handleNumber = (e) => {
-    //     setNumber(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the location change
-    // const handleLocation = (e) => {
-    //     setLocation(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the email change
-    // const handleEmail = (e) => {
-    //     setEmail(e.target.value);
-    //     setSubmitted(false);
-    // };
-
-    // // Handling the password change
-    // const handlePassword = (e) => {
-    //     setPassword(e.target.value);
-    //     setSubmitted(false);
-    // };
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -64,6 +38,20 @@ function SignUp() {
         
  
 
+        // fetch('/signup', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json'},
+        //     body: JSON.stringify({
+        //         username:name,
+        //         location:location,
+        //         email:email,
+        //         phone_number:number,
+        //         password:password,
+        //         password_confirmation: passwordConfirmation,
+        //         role:role
+        //     })
+        // })
+
         fetch('/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -77,7 +65,19 @@ function SignUp() {
                 role:role
             })
         })
+        .then((r) => {
+            if (r.ok) {
+              r.json().then(() =>{
+              onSignup()
+              }
+              );
+            } 
+            
+          });
+        
     };
+
+    
 
 
     const handleRole=(e)=>{
@@ -85,9 +85,6 @@ function SignUp() {
         setSubmitted(false)
 
     }
-
-   
-
     // Showing success message
     const successMessage = () => {
         return (
@@ -114,10 +111,11 @@ function SignUp() {
         );
     };
 
+     
 
     return (
-        <div className='apartment-form'  onSubmit={handleSubmit}>
-            <form>
+        <div className='apartment-form'  >
+            <form onSubmit={handleSubmit}>
                 <h3>Sign Up</h3>
                 <div className="mb-3">
                     <label>Name</label>
@@ -134,6 +132,7 @@ function SignUp() {
                 <div className="mb-3">
                     <label>Email Address</label>
                     <input
+                    
                         type="email"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
@@ -158,6 +157,7 @@ function SignUp() {
                 <div className="mb-3">
                     <label>Location</label>
                     <input
+                        
                         type="text"
                         onChange={(e) => setLocation(e.target.value)}
                         value={location}
@@ -171,6 +171,7 @@ function SignUp() {
                 <div className="mb-3">
                     <label>Password</label>
                     <input
+                        
                         type="password"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}

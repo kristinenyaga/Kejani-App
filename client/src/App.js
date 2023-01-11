@@ -46,14 +46,23 @@ export default function App() {
       }else if (role === 'lister'){
       //  navigate('/layout') 
        setLister(true)
-
-
-
-      
       }
-
-
   }
+
+
+  function onSignup(){
+    navigate('/login')
+
+    // if(role === 'user' || role === 'lister') {
+    //   navigate('/login')
+
+    //   }
+      // else if (role === 'lister'){
+      // //  navigate('/layout') 
+      //  setLister(true)
+      // }
+  }
+
   const [apartment,setApartment]=useState("")
   useEffect(()=>{
     // auto-login
@@ -102,8 +111,8 @@ export default function App() {
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage/>} />
 
-            <Route exact path="/signup" element={<SignUp />} />
-            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+            <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
+            <Route exact path="/login" element={<Login onSignup={onSignup} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />
             
 
@@ -119,7 +128,7 @@ export default function App() {
       ):(
         <Routes>
           
-        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
 
