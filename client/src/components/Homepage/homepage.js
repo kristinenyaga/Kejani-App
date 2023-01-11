@@ -12,6 +12,9 @@ export default function Homepage(){
   return(
     <>
     <NavBar />
+    {/* <div className=''>
+      <Header/>
+    </div> */}
     <div className="header">
      <div className="left">
         <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
@@ -122,7 +125,7 @@ export default function Homepage(){
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
+            <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -136,7 +139,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -150,7 +153,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 className='more'onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -165,7 +168,7 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4 onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
+        <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -174,7 +177,7 @@ export default function Homepage(){
    </div>
 
    <div className="section5">
-   <h1>What Customers Are Saying About Kejani</h1>
+   <h1 className="choose">What Customers Are Saying About Kejani</h1>
    <div className="section-5container">
     <div className="section5-row">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sodales nibh a suscipit. Aenean luctus, lacus eu pulvinar tempor, lacus orci varius purus, ut iaculis tellus eros ac ex. Pellentesque finibus quis risus a mollis. Morbi eros urna, pellentesque sed pulvinar in, tempus a arcu.</p>
@@ -207,13 +210,13 @@ export default function Homepage(){
 
    
     <div className="section6-container">
-    <div>
+    <div className="section6-container-row">
       <h3>Kejani</h3>
       <p>Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </p>
 
     </div>
     
-    <div>
+    <div className="section6-container-row">
       <h3>Contact Us</h3>
       <div className="icon-container">
         
@@ -235,7 +238,7 @@ export default function Homepage(){
 
     </div>
 
-    <div>
+    <div className="section6-container-row">
       <h3>Office</h3>
       <p>Damino Street, CBD254,Kenya +254734452134</p>
 

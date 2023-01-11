@@ -1,4 +1,4 @@
-.section2h1{
+/* .section2h1{
   margin: 0 auto;
   text-align: center;
   width: 50%;
@@ -6,27 +6,25 @@
   
   font-size: 50px;
   color: #1A626D;
-}
-
+} */
+/* 
 .section2container{
   display: flex;
   flex-direction: row;
   gap: 3em;
   justify-content: center;
-  /* margin: 0 auto; */
   align-items: center;
-}
-
+} */
+/* 
 .section2row{
  
   margin-top: 2%;
   width: 40%;
   background-color: #efeded;
-  /* padding: 2% 0 2% 0; */
   padding-top: 3%;
   padding-bottom: 3%;
 
-}
+} */
 
 .section2row i{
   color: #1A626D;
