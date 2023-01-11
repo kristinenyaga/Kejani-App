@@ -30,6 +30,7 @@ import UsersPage from './components/userspage/userpage';
 import UserNavbar from './components/userspage/usernavbar';
 
 
+
 export default function App() {
   const [user,setUser]=useState("")
   const [role,setRole]=useState("")
@@ -51,16 +52,7 @@ export default function App() {
 
 
   function onSignup(){
-    navigate('/login')
-
-    // if(role === 'user' || role === 'lister') {
-    //   navigate('/login')
-
-    //   }
-      // else if (role === 'lister'){
-      // //  navigate('/layout') 
-      //  setLister(true)
-      // }
+       navigate('/login')
   }
 
   const [apartment,setApartment]=useState("")
@@ -93,6 +85,7 @@ export default function App() {
               {/* <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} /> */}
               <Route exact path="/tenants" element={ <Tenants />} />
               <Route path="/topbar" element={<TopSection />} />
+              
     
            </Routes>
         </>

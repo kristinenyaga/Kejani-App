@@ -51,40 +51,42 @@ function SignUp( {onSignup} ) {
         //         role:role
         //     })
         // })
-
-        fetch('/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                username:name,
-                location:location,
-                email:email,
-                phone_number:number,
-                password:password,
-                password_confirmation: passwordConfirmation,
-                role:role
-            })
-        })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then(() =>{
-              onSignup()
-              }
-              );
-            } 
-            
-          });
-        
     };
 
+
+
+    fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username:name,
+            location:location,
+            email:email,
+            phone_number:number,
+            password:password,
+            password_confirmation: passwordConfirmation,
+            role:role
+        })
+    })
+    .then((r) => {
+        if (r.ok) {
+          r.json().then((user) =>{
+          onSignup(user)
+          setRole(user.role)
+          }
+          );
+        } 
+        
+      });
     
-
-
     const handleRole=(e)=>{
         setRole(e.target.value)
         setSubmitted(false)
 
     }
+
+   
+
     // Showing success message
     const successMessage = () => {
         return (
@@ -111,11 +113,10 @@ function SignUp( {onSignup} ) {
         );
     };
 
-     
 
     return (
-        <div className='apartment-form'  >
-            <form onSubmit={handleSubmit}>
+        <div className='apartment-form'  onSubmit={handleSubmit}>
+            <form>
                 <h3>Sign Up</h3>
                 <div className="mb-3">
                     <label>Name</label>
@@ -132,7 +133,6 @@ function SignUp( {onSignup} ) {
                 <div className="mb-3">
                     <label>Email Address</label>
                     <input
-                    
                         type="email"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
@@ -157,7 +157,6 @@ function SignUp( {onSignup} ) {
                 <div className="mb-3">
                     <label>Location</label>
                     <input
-                        
                         type="text"
                         onChange={(e) => setLocation(e.target.value)}
                         value={location}
@@ -171,7 +170,6 @@ function SignUp( {onSignup} ) {
                 <div className="mb-3">
                     <label>Password</label>
                     <input
-                        
                         type="password"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}

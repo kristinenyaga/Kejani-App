@@ -72,23 +72,22 @@
 } }
 
 
-@media screen and (max-width: 400x) { .categoryList{
-  list-style: none;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 1065px) { .categoryList{
+  flex-wrap: wrap;
   
 }}
 
 
-@media (max-width: 400px) {.categoryListItem{
+@media (max-width: 1065px) {.categoryListItem{
   display: flex;
   flex-direction: column;
 } }
 
 
-@media screen and (max-width: 1199.98px) { }
-
+@media screen and (max-width: 1199.98px) { .categoryLis{
+  flex-wrap: wrap;
+} }
+     
 
 @media screen and (max-width: 1399.98px) { }
 
