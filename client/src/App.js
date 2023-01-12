@@ -8,12 +8,11 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
-import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox';
-import Addapartment from './components/Dashboard/Addapartment/addapartment';
-import Review from './components/Dashboard/Reviews/review';
-import Tenants from './components/Dashboard/tenants/tenants';
-import CleanersPage from './components/CleanersPage/cleaners';
-
+import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
+import Addapartment from './components/Dashboard/Addapartment/addapartment'
+import Review from './components/Dashboard/Reviews/review'
+import Tenants from './components/Dashboard/tenants/tenants'
+import RequestUnit from './components/RequestUnit/RequestUnit';
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
@@ -31,6 +30,8 @@ import UnitReview from './components/unitreview/unitreview';
 import UserNavbar from './components/userspage/usernavbar';
 import ContactForm from './components/contact/contact';
 import UsersPage from './components/userspage/userpage';
+import Movers from './components/movers/movers';
+import Cleaners from './components/CleanersPage/cleaners.js'
 
 
 export default function App() {
@@ -49,14 +50,14 @@ export default function App() {
     } else if (role === 'lister') {
       //  navigate('/layout') 
       setLister(true)
-
-
-
-
     }
-
-
   }
+
+
+  function onSignup() {
+    navigate('/login')
+  }
+
   const [apartment, setApartment] = useState("")
   useEffect(() => {
     // auto-login
@@ -100,13 +101,16 @@ export default function App() {
                 <Route exact path="/unitspecs" element={<Unitspecs user={user} />} />
                 <Route exact path="/logout" element={<Logout />} />
                 <Route exact path="/review" element={<ReviewCard />} />
+                <Route exact path="/requestunit" element={<RequestUnit />} />
+
                 <Route path='/data/:id' element={<UnitReview />} />
                 <Route path='/userspage' element={<UsersPage />} />
 
-                <Route exact path="/signup" element={<SignUp />} />
+                <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
                 <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
                 <Route exact path="/" element={<Homepage />} />
                 <Route exact path="/contact" element={<ContactForm />} />
+                <Route exact path="/movers" element={<Movers setUser={setUser} />} />
 
 
 
@@ -120,11 +124,12 @@ export default function App() {
         ) : (
           <Routes>
 
-            <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
             <Route exact path="/" element={<Homepage />} />
-            <Route exact path="/cleaners" element={<CleanersPage />} />
-
+            <Route exact path="/contact" element={<ContactForm />} />
+            <Route exact path="/movers" element={<Movers />} />
+            <Route exact path="/cleaners" element={<Cleaners />} />
 
           </Routes>
         )

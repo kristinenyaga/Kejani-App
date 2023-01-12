@@ -64,5 +64,34 @@
   width: 80px;
 }
 
+@media screen and (max-width: 470px) { .categoryItem{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+} }
+
+
+@media screen and (max-width: 1065px) { .categoryList{
+  flex-wrap: wrap;
+  
+}}
+
+
+@media (max-width: 1065px) {.categoryListItem{
+  display: flex;
+  flex-direction: column;
+} }
+
+
+@media screen and (max-width: 1199.98px) { .categoryLis{
+  flex-wrap: wrap;
+} }
+     
+
+@media screen and (max-width: 1399.98px) { }
+
+
+
 
 

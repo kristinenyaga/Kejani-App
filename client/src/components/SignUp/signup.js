@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import {Navigate, useNavigate} from 'react-router-dom'
 import './signup.css'
 
-function SignUp() {
-    // States for registration
+function SignUp( {onSignup} ) {
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [email, setEmail] = useState('');
@@ -11,6 +11,8 @@ function SignUp() {
     const [number, setNumber] = useState('');
     const [role, setRole] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+    
 
     // // States for checking the errors
      const [submitted, setSubmitted] = useState(false);
@@ -21,7 +23,6 @@ function SignUp() {
         setRole(value);
       };
 
-   
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -30,28 +31,52 @@ function SignUp() {
         if (name === '' || number === '' || location === '' || email === '' || password === '') {
             setError(true);
         } else {
-            setSubmitted(true);
             setError(false);
         }
         
  
 
-        fetch('/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                username:name,
-                location:location,
-                email:email,
-                phone_number:number,
-                password:password,
-                password_confirmation: passwordConfirmation,
-                role:role
-            })
+        // fetch('/signup', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json'},
+        //     body: JSON.stringify({
+        //         username:name,
+        //         location:location,
+        //         email:email,
+        //         phone_number:number,
+        //         password:password,
+        //         password_confirmation: passwordConfirmation,
+        //         role:role
+        //     })
+        // })
+    
+
+
+
+    fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username:name,
+            location:location,
+            email:email,
+            phone_number:number,
+            password:password,
+            password_confirmation: passwordConfirmation,
+            role:role
         })
-    };
-
-
+    })
+    .then((r) => {
+        if (r.ok) {
+          r.json().then((user) =>{
+          onSignup(user)
+          setRole(user.role)
+          }
+          );
+        } 
+        
+      });
+    }
     const handleRole=(e)=>{
         setRole(e.target.value)
         setSubmitted(false)
@@ -85,119 +110,111 @@ function SignUp() {
             </div>
         );
     };
-
-
     return (
         <div className='apartment-form'  onSubmit={handleSubmit}>
-            <form>
-                <h3>Sign Up</h3>
-                <div className="mb-3">
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                        name={name}
-                        className="form-control"
-                        placeholder="Enter your name"
-                        required
-                    />
-                </div>
-
-                <div className="mb-3">
-                    <label>Email Address</label>
-                    <input
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        name={email}
-                        className="form-control"
-                        placeholder="Enter your email"
-                        required
-                    />
-                </div>
-
-                <div className="mb-3">
-                    <label>Phone Number</label>
-                    <input
-                        type="integer"
-                        onChange={(e) => setNumber(e.target.value)}
-                        value={number}
-                        name={number}
-                        className="form-control"
-                        placeholder="Enter your phone number"
-                        required
-                    />
-                </div>
-
-                <div className="mb-3">
-                    <label>Location</label>
-                    <input
-                        type="text"
-                        onChange={(e) => setLocation(e.target.value)}
-                        value={location}
-                        name={location}
-                        className="form-control"
-                        required
-                        placeholder="Enter your location" />
-                </div>
-
-        
-
-                <div className="mb-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                        name={password}
-                        className="form-control"
-                        placeholder="Enter your password"
-                        required
-                    />
-                </div>
-
-                <div className="mb-3">
-                    <label>Password Confirmation</label>
-                    <input
-                        type="password"
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        value={passwordConfirmation}
-                        name={passwordConfirmation}
-                        className="form-control"
-                        placeholder="password confirmation"
-                        required
-                    />
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor='roles' >Sign up as</label>
-                <div className='custom-select'>
-                <select onChange={handlerole} className='form-select' size='2' required>
-                    <option className='opt' value='user'>user</option>
-                    <option className='opt' value='lister'>lister</option>
-                </select>
-
-                </div>
-                </div>
-
-                <div className="d-grid">
-                    <button  type="submit" className="btn btn-primary signup-button">
-                        Sign Up
-                    </button>
-                </div>
-                <p className="forgot-password text-right">
-                    Already registered <a href="/login">login?</a>
-                </p>
-            </form>
-
-            {/* Calling to the methods */}
-            <div className="messages">
-                {errorMessage()}
-                {successMessage()}
+        <form>
+            <h3>Sign Up</h3>
+            <div className="mb-3">
+                <label>Name</label>
+                <input
+                    type="text"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    name={name}
+                    className="form-control"
+                    placeholder="Enter your name"
+                />
             </div>
+
+            <div className="mb-3">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    name={email}
+                    className="form-control"
+                    placeholder="Enter your email"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label>Phone Number</label>
+                <input
+                    type="integer"
+                    onChange={(e) => setNumber(e.target.value)}
+                    value={number}
+                    name={number}
+                    className="form-control"
+                    placeholder="Enter your phone number"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label>Location</label>
+                <input
+                    type="text"
+                    onChange={(e) => setLocation(e.target.value)}
+                    value={location}
+                    name={location}
+                    className="form-control"
+                    placeholder="Enter your location" />
+            </div>
+
+    
+
+            <div className="mb-3">
+                <label>Password</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    name={password}
+                    className="form-control"
+                    placeholder="Enter your password"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label>Password Confirmation</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    value={passwordConfirmation}
+                    name={passwordConfirmation}
+                    className="form-control"
+                    placeholder="password confirmation"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label htmlFor='roles' >Sign up as</label>
+            <div className='custom-select'>
+            <select onChange={handlerole} className='form-select' size='2' required>
+                <option className='opt' value='user'>user</option>
+                <option className='opt' value='lister'>lister</option>
+            </select>
+
+            </div>
+            </div>
+
+            <div className="d-grid">
+                <button  type="submit" className="btn btn-primary signup-button">
+                    Sign Up
+                </button>
+            </div>
+            <p className="forgot-password text-right">
+                Already registered <a href="/login">login?</a>
+            </p>
+        </form>
+
+        {/* Calling to the methods */}
+        <div className="messages">
+            {errorMessage()}
+            {successMessage()}
         </div>
-    )
+    </div>
+)
 }
 
 export default SignUp
