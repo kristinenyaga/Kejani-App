@@ -52,7 +52,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({unit,title,user}) {
+export default function CustomizedDialogs({ unit, title, user }) {
   console.log(user)
   const [open, setOpen] = React.useState(false);
 
@@ -65,7 +65,7 @@ export default function CustomizedDialogs({unit,title,user}) {
 
   return (
     <div>
-    
+
       <button className='reviews-button' onClick={handleClickOpen}>Reviews...</button>
       <BootstrapDialog
         onClose={handleClose}
@@ -73,13 +73,13 @@ export default function CustomizedDialogs({unit,title,user}) {
         open={open}
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-         {title}
+          {title}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <ReviewForm user={user}/>
-         <ReviewMap unit={unit}  />
+          <ReviewForm user={user} />
+          <ReviewMap unit={unit} />
         </DialogContent>
-       
+
       </BootstrapDialog>
     </div>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    FaTh,
     FaBars,
     FaUserAlt,
     FaCommentAlt,
@@ -15,28 +14,28 @@ const Sidebar = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
-			{
-				path: "/inbox",
-				name: "Inbox",
-				icon: <FaEnvelopeOpenText />
-		  },
+        {
+            path: "/inbox",
+            name: "Inbox",
+            icon: <FaEnvelopeOpenText />
+        },
         {
             path: "/addapartment",
             name: "Add Apartment",
             icon: <FaThList />
         },
-				{
-					path: "/tenants",
-					name: "Tenants",
-					icon: <FaUserAlt />
-			 },
+        {
+            path: "/tenants",
+            name: "Tenants",
+            icon: <FaUserAlt />
+        },
         {
             path: "/reviews",
             name: "Reviews",
             icon: <FaCommentAlt />
         }
-       
-        
+
+
         // {
         //     path: "/homepage",
         //     name: "Logout",
