@@ -12,8 +12,6 @@ import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox';
 import Addapartment from './components/Dashboard/Addapartment/addapartment';
 import Review from './components/Dashboard/Reviews/review';
 import Tenants from './components/Dashboard/tenants/tenants';
-import Cleaners from './components/CleanersPage/cleaners';
-
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
@@ -32,7 +30,7 @@ import UserNavbar from './components/userspage/usernavbar';
 import ContactForm from './components/contact/contact';
 import UsersPage from './components/userspage/userpage';
 import Movers from './components/movers/movers';
-
+import Cleaners from './components/CleanersPage/cleaners.js'
 
 
 export default function App() {
@@ -106,7 +104,7 @@ export default function App() {
                 <Route path='/userspage' element={<UsersPage />} />
 
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
-            <Route exact path="/login" element={<Login onSignup={onSignup} setRole={setRole}/>} />
+            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/contact" element={<ContactForm />} />
         <Route exact path="/movers" element={<Movers setUser={setUser} />} />
@@ -128,7 +126,7 @@ export default function App() {
         <Route exact path="/" element={ <Homepage />} />
         <Route exact path="/contact" element={<ContactForm />} />
         <Route exact path="/movers" element={<Movers />} />
-
+        <Route exact path="/cleaners" element={<Cleaners/>} />
 
       </Routes>
       )
