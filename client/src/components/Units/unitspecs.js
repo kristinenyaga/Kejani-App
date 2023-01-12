@@ -51,7 +51,7 @@ const Unitspecs = ( {data,user} ) => {
       <h4 className="description">Rent: { formatAmount (data.price)}</h4>
       <CustomizedDialogs title="Reviews"unit={data} user={user}/>
 
-      <button className='mybtnn' onClick={()=>navigate('/bookunit')}>request this Unit</button>
+      <button className='mybtnn' onClick={()=>navigate('/requestunit')}>request this Unit</button>
       
    </div>
 

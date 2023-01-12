@@ -8,10 +8,11 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
-import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox';
-import Addapartment from './components/Dashboard/Addapartment/addapartment';
-import Review from './components/Dashboard/Reviews/review';
-import Tenants from './components/Dashboard/tenants/tenants';
+import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
+import Addapartment from './components/Dashboard/Addapartment/addapartment'
+import Review from './components/Dashboard/Reviews/review'
+import Tenants from './components/Dashboard/tenants/tenants'
+import RequestUnit from './components/RequestUnit/RequestUnit';
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
@@ -92,16 +93,18 @@ export default function App() {
             </>
           ) : (
             <>
-              {/* <UserNavbar /> */}
-              <Routes>
-                <Route exact path="/imagecard" element={<ImageCard />} />
-                <Route exact path="/unitdetails" element={<UnitDetails user={user} />} />
-                <Route exact path="/unitinformation" element={<UnitInformation />} />
-                <Route exact path="/unitspecs" element={<Unitspecs user={user} />} />
-                <Route exact path="/logout" element={<Logout />} />
-                <Route exact path="/review" element={<ReviewCard />} />
-                <Route path='/data/:id' element={<UnitReview />} />
-                <Route path='/userspage' element={<UsersPage />} />
+            {/* <UserNavbar /> */}
+            <Routes>
+             <Route exact path="/imagecard" element={ <ImageCard />} />
+             <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
+             <Route exact path="/unitinformation" element={ <UnitInformation />} />
+             <Route exact path="/unitspecs" element={ <Unitspecs user={user}/>} />
+             <Route exact path="/logout" element={ <Logout/>} />
+            <Route exact path="/review" element={ <ReviewCard />} />
+            <Route exact path="/requestunit" element={ <RequestUnit />} />
+        
+            <Route  path='/data/:id' element={<UnitReview/>} />
+            <Route  path='/userspage' element={<UsersPage/>} />
 
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
