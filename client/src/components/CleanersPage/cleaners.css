@@ -1,4 +1,4 @@
-img {
+/* img {
     height: 150px;
     width: 100%;
 }
@@ -8,7 +8,9 @@ div [class^="col-"] {
     padding-right: 5px;
 }
 
-
+.clean-head {
+    text-decoration: darkred;
+}
 
 .card {
     transition: 0.5s;
@@ -63,4 +65,14 @@ div [class^="col-"] {
 .card:focus::before,
 .card:focus::after {
     transform: scale3d(1, 1, 1);
+} */
+
+
+
+*,
+*:before,
+*:after {
+    padding: 0px 5px;
+    margin: 9px;
+    box-sizing: border-box;
 }
