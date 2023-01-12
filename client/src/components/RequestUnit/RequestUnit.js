@@ -9,7 +9,7 @@ function RequestUnit() {
     <div  style={{justifyContent:"space-around", fontWeight:"bolder", fontSize:"larger"}}>
       <div style={{color:"#1A626D"}}> 
     <Form>
-      <h1 style={{textAlign:"center"}}>Listers information</h1>
+      <h1 style={{textAlign:"center"}}>Lister information</h1>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control type="name" placeholder="Name" />
