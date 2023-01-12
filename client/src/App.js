@@ -8,10 +8,12 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
-import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
-import Addapartment from './components/Dashboard/Addapartment/addapartment'
-import Review from './components/Dashboard/Reviews/review'
-import Tenants from './components/Dashboard/tenants/tenants'
+import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox';
+import Addapartment from './components/Dashboard/Addapartment/addapartment';
+import Review from './components/Dashboard/Reviews/review';
+import Tenants from './components/Dashboard/tenants/tenants';
+import Cleaners from './components/CleanersPage/cleaners';
+
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
@@ -121,6 +123,8 @@ export default function App() {
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole} />} />
             <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/cleaners" element={<Cleaners />} />
+
 
           </Routes>
         )
