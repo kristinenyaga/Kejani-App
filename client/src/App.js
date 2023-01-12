@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import Apartments from './components/ApartmentCard/apartmentCard';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -8,10 +8,12 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import SignUp from './components/SignUp/signup.js'
 import Login from './components/Login/login';
 import Homepage from './components/Homepage/homepage';
-import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox'
-import Addapartment from './components/Dashboard/Addapartment/addapartment'
-import Review from './components/Dashboard/Reviews/review'
-import Tenants from './components/Dashboard/tenants/tenants'
+import DefaultInbox from './components/Dashboard/defaultinbox/defaultinbox';
+import Addapartment from './components/Dashboard/Addapartment/addapartment';
+import Review from './components/Dashboard/Reviews/review';
+import Tenants from './components/Dashboard/tenants/tenants';
+import Cleaners from './components/CleanersPage/cleaners';
+
 
 import style from './App.css';
 import Layout from './components/Dashboard/layout/layout';
@@ -34,19 +36,19 @@ import Movers from './components/movers/movers';
 
 
 export default function App() {
-  const [user,setUser]=useState("")
-  const [role,setRole]=useState("")
-  const navigate =useNavigate("")
-  const [lister,setLister]=useState("")
-  function onLogin(user){
+  const [user, setUser] = useState("")
+  const [role, setRole] = useState("")
+  const navigate = useNavigate("")
+  const [lister, setLister] = useState("")
+  function onLogin(user) {
     setUser(user)
     console.log(user)
     console.log(role)
-    if(role === 'user') {
+    if (role === 'user') {
       setLister(false)
       navigate('/imagecard')
 
-      }else if (role === 'lister'){
+    } else if (role === 'lister') {
       //  navigate('/layout') 
        setLister(true)
       }
@@ -61,9 +63,9 @@ export default function App() {
   useEffect(()=>{
     // auto-login
     fetch("/me", {
-      method:'GET',
+      method: 'GET',
       headers: {
-        "Access-Control-Allow-Origin":"no-cors",
+        "Access-Control-Allow-Origin": "no-cors",
         "Content-Type": "application/json"
       }
     }).then((r) => {
@@ -71,37 +73,37 @@ export default function App() {
         r.json().then((user) => setUser(user));
       }
     });
-  },[])
-  
+  }, [])
+
   return (
     <>
-    {
-      user?(
-        
-          lister?(
-        <>   
-          <Layout user={user} setApartment={setApartment} apartment={apartment}/>
-           <Routes>
-              {/* <Route exact path="/inbox" element={ <DefaultInbox />} />
+      {
+        user ? (
+
+          lister ? (
+            <>
+              <Layout user={user} setApartment={setApartment} apartment={apartment} />
+              <Routes>
+                {/* <Route exact path="/inbox" element={ <DefaultInbox />} />
               <Route exact path="/reviews" element={ <Review />} />
               <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} />
               <Route exact path="/tenants" element={ <Tenants />} />
                */}
-    
-           </Routes>
-        </>
-          ):(
+
+              </Routes>
+            </>
+          ) : (
             <>
-            {/* <UserNavbar /> */}
-            <Routes>
-             <Route exact path="/imagecard" element={ <ImageCard />} />
-             <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
-             <Route exact path="/unitinformation" element={ <UnitInformation />} />
-             <Route exact path="/unitspecs" element={ <Unitspecs user={user}/>} />
-             <Route exact path="/logout" element={ <Logout/>} />
-            <Route exact path="/review" element={ <ReviewCard />} />
-            <Route  path='/data/:id' element={<UnitReview/>} />
-            <Route  path='/userspage' element={<UsersPage/>} />
+              {/* <UserNavbar /> */}
+              <Routes>
+                <Route exact path="/imagecard" element={<ImageCard />} />
+                <Route exact path="/unitdetails" element={<UnitDetails user={user} />} />
+                <Route exact path="/unitinformation" element={<UnitInformation />} />
+                <Route exact path="/unitspecs" element={<Unitspecs user={user} />} />
+                <Route exact path="/logout" element={<Logout />} />
+                <Route exact path="/review" element={<ReviewCard />} />
+                <Route path='/data/:id' element={<UnitReview />} />
+                <Route path='/userspage' element={<UsersPage />} />
 
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
             <Route exact path="/login" element={<Login onSignup={onSignup} setRole={setRole}/>} />
@@ -111,9 +113,9 @@ export default function App() {
             
             
 
-            </Routes>
+              </Routes>
             </>
-       
+
 
           )
         
@@ -136,4 +138,4 @@ export default function App() {
     </>
   )
 }
-  
+

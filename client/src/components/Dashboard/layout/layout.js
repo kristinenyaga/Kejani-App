@@ -7,31 +7,29 @@ import Inbox from "../defaultinbox/defaultinbox";
 import Tenants from "../tenants/tenants";
 import AddApartment from "../Addapartment/addapartment";
 import SideBarPages from "../Routes/sideBarPages";
-import Sidebar from "../sidebar/sidebar";
+import SideBar from "../sidebar/sidebar";
 
-const Layout = ({user,setApartment, apartment}) => {
-  function handleApartment(apartment){
+const Layout = ({ user, setApartment, apartment }) => {
+  function handleApartment(apartment) {
     setApartment(apartment)
   }
   return (
     <React.Fragment>
-    <section>
-      <div>
+      <section>
         <div>
-          <TopSection user={user}/>
+          <TopSection user={user} />
         </div>
 
         <div className="w-full h-screen flex ">
           <div>
-            <Sidebar />
+            <SideBar />
           </div>
           <div className="w-full h-screen">
-            <SideBarPages user={user} setApartment={setApartment} handleApartment={handleApartment} apartment={apartment}/>
+            <SideBarPages user={user} setApartment={setApartment} handleApartment={handleApartment} apartment={apartment} />
           </div>
         </div>
-      </div>
-    </section>
-  </React.Fragment>
+      </section>
+    </React.Fragment>
   )
 };
 
