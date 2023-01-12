@@ -32,6 +32,7 @@ import UsersPage from './components/userspage/userpage';
 import Movers from './components/movers/movers';
 
 
+
 export default function App() {
   const [user,setUser]=useState("")
   const [role,setRole]=useState("")
@@ -48,14 +49,14 @@ export default function App() {
       }else if (role === 'lister'){
       //  navigate('/layout') 
        setLister(true)
-
-
-
-      
       }
-
-
   }
+
+
+  function onSignup(){
+       navigate('/login')
+  }
+
   const [apartment,setApartment]=useState("")
   useEffect(()=>{
     // auto-login
@@ -102,8 +103,8 @@ export default function App() {
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage/>} />
 
-            <Route exact path="/signup" element={<SignUp />} />
-            <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
+            <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
+            <Route exact path="/login" element={<Login onSignup={onSignup} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/contact" element={<ContactForm />} />
         <Route exact path="/movers" element={<Movers setUser={setUser} />} />
@@ -120,7 +121,7 @@ export default function App() {
       ):(
         <Routes>
           
-        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
         <Route exact path="/contact" element={<ContactForm />} />

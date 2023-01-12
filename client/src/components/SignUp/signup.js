@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import {Navigate, useNavigate} from 'react-router-dom'
 import './signup.css'
 
-function SignUp() {
+function SignUp( {onSignup} ) {
     // States for registration
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
@@ -11,6 +12,8 @@ function SignUp() {
     const [number, setNumber] = useState('');
     const [role, setRole] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+    
 
     // // States for checking the errors
      const [submitted, setSubmitted] = useState(false);
@@ -21,7 +24,6 @@ function SignUp() {
         setRole(value);
       };
 
-   
 
     // Handling the form submission
     const handleSubmit = (e) => {
@@ -36,22 +38,47 @@ function SignUp() {
         
  
 
-        fetch('/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                username:name,
-                location:location,
-                email:email,
-                phone_number:number,
-                password:password,
-                password_confirmation: passwordConfirmation,
-                role:role
-            })
-        })
+        // fetch('/signup', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json'},
+        //     body: JSON.stringify({
+        //         username:name,
+        //         location:location,
+        //         email:email,
+        //         phone_number:number,
+        //         password:password,
+        //         password_confirmation: passwordConfirmation,
+        //         role:role
+        //     })
+        // })
     };
 
 
+
+    fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username:name,
+            location:location,
+            email:email,
+            phone_number:number,
+            password:password,
+            password_confirmation: passwordConfirmation,
+            role:role
+        })
+    })
+    .then((r) => {
+        if (r.ok) {
+          r.json().then((user) =>{
+          onSignup(user)
+          setRole(user.role)
+          }
+          );
+        } 
+        
+      });
+    
     const handleRole=(e)=>{
         setRole(e.target.value)
         setSubmitted(false)
