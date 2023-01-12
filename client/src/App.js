@@ -29,6 +29,7 @@ import UnitReview from './components/unitreview/unitreview';
 import UserNavbar from './components/userspage/usernavbar';
 import ContactForm from './components/contact/contact';
 import UsersPage from './components/userspage/userpage';
+import Movers from './components/movers/movers';
 
 
 export default function App() {
@@ -105,7 +106,8 @@ export default function App() {
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/contact" element={<ContactForm />} />
-
+        <Route exact path="/movers" element={<Movers setUser={setUser} />} />
+            
             
 
             </Routes>
@@ -122,6 +124,8 @@ export default function App() {
         <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
         <Route exact path="/" element={ <Homepage />} />
         <Route exact path="/contact" element={<ContactForm />} />
+        <Route exact path="/movers" element={<Movers />} />
+
 
       </Routes>
       )
