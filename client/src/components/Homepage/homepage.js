@@ -125,7 +125,6 @@ export default function Homepage(){
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -139,7 +138,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -153,7 +151,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4 className='more'onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -168,7 +165,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4 className='more' onClick={handleClick}>More <i class="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>

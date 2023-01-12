@@ -23,7 +23,7 @@ const nav = useNavigate();
   return (
     <>
     <Navbar variant="light">
-      <Container className='display-flex'>
+      <Container className='display-ffflex'>
       <Navbar.Brand className='kejani'><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
         <Nav className="me-auto rightside" >
           <Nav.Link as={Link} to="/contact">contact us</Nav.Link>

@@ -21,13 +21,13 @@ body{
 .right{
   background:  url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhvdXNlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60") center/cover no-repeat;
   object-fit:contain;
-  width: 100vh;
-  height: 60vh;
+  width: 80vh;
+  height: 50vh;
   /* margin-top: 40px; */
 }
 .left-ptag{
   width: 80%;
-  font-size: 55px;
+  font-size: 50px;
   text-align: center;
   margin-top: 50px;
   font-family: 'Fira Sans', sans-serif;
@@ -43,7 +43,7 @@ body{
   margin-top: 10%;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 80px;
+  font-size: 55px;
 }
 
 .header-p{
@@ -54,10 +54,10 @@ body{
   margin: 0 auto;
   margin-top: 3%;
   margin-bottom: 3%;
-  font-weight: 28px;
+  font-weight: 500;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .header-title span{
@@ -70,14 +70,14 @@ body{
   background-color: rgb(27, 98, 110) ;
   border: none;
   color: white;
-  padding: 2% 5%;
+  padding: 1% 5%;
   font-size: 18px;
   font-family: 'Crimson Text', serif;
 }
 .header-container{
   display: flex;
   flex-direction: row;
-  gap: 8em;
+  gap: 5em;
   margin-left: 20px;
   margin-top: 20px;
  
@@ -131,7 +131,7 @@ body{
   width: 50%;
   font-family: 'Crimson Text', serif;
   margin-top: 30px;
-  font-size: 50px;
+  font-size: 40px;
   color: #1A626D;
 }
 
@@ -147,7 +147,7 @@ body{
 .section2row{
  
   margin-top: 2%;
-  width: 40%;
+  width: 35%;
   background-color: #efeded;
   /* padding: 2% 0 2% 0; */
   padding-top: 3%;
@@ -159,7 +159,7 @@ body{
   color: #1A626D;
   display: flex;
   justify-content: center;
-  font-size: 100px;
+  font-size: 80px;
   margin-bottom: 1%;
 }
 .section2row-ptag{
@@ -167,13 +167,13 @@ body{
   text-align: center;
   margin: 0 auto;
   font-family: 'Crimson Text', serif;
-  font-size: 18px;
+  /* font-size: 14px; */
   font-weight: 400;
 }
 
 .section2btn{
   margin: 0 auto;
-  margin-left: 41%;
+  margin-left: -28%;
   margin-top: 2%;
   background-color:#1A626D;
 }
@@ -182,7 +182,7 @@ body{
   text-align: center;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 50px;
+  font-size: 40px;
   color: #1A626D;
   margin-top: 6%;
 }
@@ -199,7 +199,7 @@ body{
 .section3row{
  
   margin-top: 2%;
-  width: 40%;
+  width: 35%;
   background-color: rgb(239, 237, 237);
 
 
@@ -207,14 +207,15 @@ body{
 
 .section3-h3{
   font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
 }
 
 .section3-img{
-  width: 100%;
+  width: 85%;
 }
 
 .facilities{
-  padding: 5%;
+  padding: 4% 4% 0 ;
 }
 
 .section3-ptag{
@@ -228,7 +229,7 @@ body{
   width: 60%;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 50px;
+  font-size: 40px;
   color: #1A626D;
   margin-top: 3%;
 }
@@ -236,18 +237,18 @@ body{
 .section4-container{
   display: flex;
   flex-direction: row;
-  gap: 2.5em;
+  gap: 2em;
   justify-content: center;
   margin: 0 auto;
   align-items: center;
   align-content: center;
-  width: 70%;
+  width: 60%;
 }
 
 .section4-row{
  
   margin-top: 2%;
-  width: 40%;
+  width: 30%;
   background-color: #efeded;
   /* padding: 2% 0 2% 0; */
   
@@ -317,7 +318,7 @@ body{
   width: 40%;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 45px;
+  font-size: 40px;
   color: #1A626D;
   margin-top: 4%;
 
@@ -390,7 +391,7 @@ body{
   background-color: #1A626D;
   width: 70%;
   margin: 0 auto;
-  height: 100px;
+  height: 60px;
   margin-top: 5%;
   margin-bottom: 5%;
 
@@ -401,6 +402,10 @@ body{
   padding-top: 2.5%;
   color: #efeded;
   font-size: 20px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+
+
 }
 
 
@@ -429,6 +434,7 @@ body{
     padding-left: 10px;
    font-size: 5px !important;
    width: 40% !important;
+   display: none;
   }
   .row1 p{
     font-size: 5px !important;
@@ -531,7 +537,7 @@ body{
 .header-p{
   width: 90%;
   font-weight: 550;
-  font-size: 18px !important;
+  font-size: 16px ;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
   margin:0 auto;
@@ -555,7 +561,6 @@ body{
     height: 70vh;
   }
   .header-button,.section2btn{
-    margin-left: 10%;
     padding: 2% 4%;
   }
   .header-container{
@@ -563,7 +568,6 @@ body{
     margin-left: 14px;
     padding-left: 10px;
    font-size: 10px;
-   display: none;
   }
   
   .section2h1{
@@ -601,14 +605,14 @@ body{
 }
 .section2btn{
   margin: 0 auto;
-  margin-left: 24% !important;
+  /* margin-left: 24% !important; */
   font-size: 14px;
 }
 .choose{
   width: 50% !important;
-  font-size: 22px !important;
+  font-size: 32px !important;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .section3-img{
   width: 40vh;
@@ -683,7 +687,6 @@ body{
 }
 
 .header-title{
-  width: 80% !important;
   font-size: 45px;
 } 
 
@@ -724,45 +727,47 @@ body{
   .header-button,.section2btn{
     /* margin-left: 10%; */
     padding: 2% 4%;
-   margin-left: 50px;
+   /* margin-left: 50px; */
 
   }
   .header-container{
-    gap: 0.5em;
-  margin-left: 40px;
+    gap: 1.5em;
+  margin: 0 auto;
    font-size: 5px;
+   
   }
 
   .row1 p{
-    font-size: 25px;
+    font-size: 28px;
   }
   .row2 p{
-    font-size: 25px;
+    font-size: 28px;
   }
   .row1 span{
-    font-size: 18px;
+    font-size: 20px;
   }
   .row2 span{
-    font-size: 18px;
+    font-size: 20px;
   }
   .section2h1{
-    margin-top: 10px !important;
-    font-size: 33px !important; 
-   margin: 0 auto !important;
-   width: 50%;
+    margin-top: 30px ;
+    font-size: 20px; 
+   margin: 0 auto;
+   width: 70%;
   }
   .section2container{
-    gap: 1em !important;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 0;
+    gap: 1em;
     margin: 0 auto;
+    flex-direction: column;
    
   }
   .section2row{
  
     margin-top: 2%;
-    width: 50%;
+    width: 57%;
     background-color: #efeded;
     margin: 0 auto;
     /* padding: 2% 0 2% 0;
@@ -782,13 +787,13 @@ body{
 }
 .section2btn{
   margin: 0 auto;
-  margin-left: 24% !important;
+  /* margin-left: 24% !important; */
   font-size: 14px;
 }
 h1.choose{
-  width: 45% !important;
-  font-size: 32px !important;
-  margin: 0 auto;
+  width: 45% ;
+  font-size: 30px;
+
   margin-top: 30px;
 }
 .section3-img{
@@ -796,7 +801,7 @@ h1.choose{
   margin: 0 auto;
 }
 .section3-h3{
-  font-size: 15px;
+  font-size: 25px;
  
 }
 .section3row{
@@ -819,8 +824,10 @@ h1.choose{
 
 .section6-container{
  margin: 0 auto;
- width: 40%;
- margin-top: 20px;
+ /* width: 40%; */
+ /* margin-top: 20px; */
+ width: 50%;
+
 }
 .section4-container{
   flex-wrap: wrap;
@@ -830,19 +837,19 @@ h1.choose{
 
 .section4-h1{
   width: 60%;
-  font-size: 30px !important;
+  font-size: 40px;
 }
 .section4-row{
   padding: 2%;
-  width: 30%;
-  font-size: 15px !important;
+  width: 40%;
+  font-size: 25px;
 }
 
 .section4-row h4,h5,p{
-  font-size: 10px;
+  font-size: 14px;
 }
 .section4-row h3{
-  font-size: 15px;
+  font-size: 24px;
 }
 
 
@@ -873,10 +880,17 @@ h1.choose{
 } 
 
 .header-p{
-  font-weight: 550;
-  font-size: 32px !important;
-margin: 0 auto;
-
+  width: 80%;
+  color: #1A626D;
+  align-self: center;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-weight: 28px;
+  font-family: 'Crimson Text', serif;
+  letter-spacing: 2px;
+  font-size: 26px;
 }
 
 
@@ -893,7 +907,7 @@ margin: 0 auto;
 @media (max-width: 1199.98px) {
   .header{
     display:flex ;
-    flex-direction: col;
+    flex-direction: column;
     width: 90%;
     object-fit:contain;
     margin: 0 auto;
@@ -902,14 +916,18 @@ margin: 0 auto;
   .left{
     width: 60vh;
     height: 70vh;
+    margin: 0 auto;
+    
   }  
   .right{
-    width: 40vh;
+    width: 50vh;
     height: 50vh;
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    margin: 0 auto;
+
   }
   .header-container {
-    gap: 2em;  
+    gap: 2.5em;  
 }
 .header-title{
   width: 80%;
@@ -919,7 +937,7 @@ margin: 0 auto;
   margin-top: 10%;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .header-p{
@@ -933,7 +951,7 @@ margin: 0 auto;
   font-weight: 28px;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 26px;
 }
 .section2h1 {
     margin: 0 auto;
@@ -978,13 +996,12 @@ h1.choose{
 
 @media (max-width: 1399.98px) { 
   .left{
-    width: 93vh;
+    width: 60vh;
     height: 70vh;
   }  
   .right{
-    width: 90vh;
+    width: 60vh;
     height: 50vh;
-    margin-top: 60px;
   }
   .header-container {
     gap: 2em;  
@@ -997,7 +1014,7 @@ h1.choose{
   margin-top: 10%;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 60px;
+  font-size: 50px;
 }
 .header-p{
   width: 90%;
@@ -1010,7 +1027,7 @@ h1.choose{
   font-weight: 28px;
   font-family: 'Crimson Text', serif;
   letter-spacing: 2px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .section2h1 {
@@ -1039,7 +1056,7 @@ h1.choose{
 }
 .section6-container-row p{
   color: black;
-  width: 90%;
+  width: 95%;
 }
 .section6-container-row h3{
   font-weight: 400;
@@ -1049,7 +1066,7 @@ h1.choose{
 
 .section6-container{
  margin: 0 auto;
- width: 80%;
+ width: 70%;
  margin-top: 20px;
  justify-content: space-around;
 }
@@ -1061,7 +1078,7 @@ h1.choose{
 }
 
 .section5-row p{
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
 .section5-row h3{

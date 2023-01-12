@@ -2,7 +2,7 @@
 span.kejani{
   color: rgb(27, 98, 110);
   font-family: 'Lora', serif;
-  font-size:50px;
+  font-size:45px;
   font-weight: bold;
   letter-spacing: 4px;
  
@@ -19,8 +19,7 @@ span.kejani{
 .display-flex{
   display: flex;
   flex-direction: row;
-  gap: 30em;
- 
+  gap: 18em;
 }
 
 .auth{
@@ -104,7 +103,7 @@ a.auth.nav-link{
   .display-flex{
     display: flex;
     flex-direction: row;
-    gap: 10em !important;
+    gap: 10em;
    
   }
 }
@@ -113,7 +112,7 @@ a.auth.nav-link{
   .display-flex{
     display: flex;
     flex-direction: row;
-    gap: 10em !important;
+    gap: 10em;
    
   }
 }
@@ -122,7 +121,6 @@ a.auth.nav-link{
   .display-flex{
     display: flex;
     flex-direction: row;
-    gap: 15em !important;
    
   }
  }
