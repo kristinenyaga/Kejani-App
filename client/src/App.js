@@ -107,7 +107,8 @@ export default function App() {
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/contact" element={<ContactForm />} />
-        <Route exact path="/movers" element={<Movers setUser={setUser} />} />
+            <Route exact path="/movers" element={<Movers setUser={setUser} />} />
+            <Route exact path="/cleaners" element={<Cleaners/>} />
             
             
 
