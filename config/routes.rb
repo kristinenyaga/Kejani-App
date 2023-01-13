@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :users
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
-  get "/me", to: "users#show"
+  get '/profile', to: 'users#profile'
   delete "/logout", to:  "sessions#destroy"
+  post '/auto_login', to: 'auth#auto_login'
   get 'latest', to: 'post#latest'
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

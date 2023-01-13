@@ -6,7 +6,7 @@ import './unitInformation.css'
 
 
 const Unitspecs = ( {data,user} ) => {
-  console.log(user)
+  
   const [reviews, setReview] = useState([])
   const[id,setID]=useState("")
   const navigate = useNavigate();

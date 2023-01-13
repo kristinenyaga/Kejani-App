@@ -1,7 +1,11 @@
 import React from 'react'
 import UserNavbar from '../userspage/usernavbar'
 import './movers.css'
+import { Rate } from 'antd';
+import { useState } from 'react';
+const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 function Movers({setUser}) {
+  const [value, setValue] = useState(3);
   return (
     <div className='moverspage'>
       <UserNavbar setUser={setUser} />
@@ -16,9 +20,13 @@ function Movers({setUser}) {
         </img>
        
           <h1>Joham Movers</h1>
-          <p><i class="fa-sharp fa-solid fa-quote-left"></i>Joham Movers is a Leading Moving Company in Nairobi, Kenya.
-We offer quick, reliable and Affordable Moving and Removal services within and outside Nairobi, Kenya. 
-<a href='https://www.johammoversltd.com'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+                <p><i class="fa-sharp fa-solid fa-quote-left"></i>Joham Movers is a Leading Moving Company in Nairobi, Kenya.
+      We offer quick, reliable and Affordable Moving and Removal services within and outside Nairobi, Kenya. 
+      <a href='https://www.johammoversltd.com'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+    <span className='span_star'>
+      <Rate tooltips={desc} onChange={setValue} value={value} />
+      {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+    </span>
         <h3>Contact</h3>
         <div  >
         <p><i class="fa-solid fa-envelope-circle-check"></i>info@johammoversltd.com</p>
@@ -33,6 +41,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
         </img>
           <h1>Touch Movers</h1>
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>We specialize in corporate relocation, long distance and residential moving. We understand that you have more to worry about than the physical move. Let a reputable moving company like Touch Movers help you relieve some of that stress.<a href='https://touchmovers.co.ke'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+          <span>
+          <Rate tooltips={desc} onChange={setValue} value={value} />
+          {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+        </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>info@touchmovers.co.ke</p>
@@ -47,6 +59,7 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
         </img>
           <h1>Absolute Movers Kenya</h1>
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>Absolute Movers Kenya is a fully licensed moving services company that offers international and domestic moving services for everyone ranging from commercial establishments to residential houses.<a href='https://absolutemovers.co.ke'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+          <Rate allowHalf defaultValue={2.5} />;
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>info@absolutemovers.co.ke</p>
@@ -60,6 +73,7 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
         </img>
           <h1>Taylor Movers</h1>
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>We specialize in local and international relocations. Taylor Movers is a privately held firm committed to excellence through providing relocations, transportation, warehousing, expatriate mobility services and logistics services efficiently.<i class="fa-sharp fa-solid fa-quote-right"></i><a href='https://taylorea.com'>More</a></p>
+          <Rate />;
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i> info@taylorea.com</p>
@@ -78,6 +92,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
         </img>
           <h1>Cants Movers</h1>
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>Cants Movers Kenya is a customer oriented moving company based in Nairobi Kenya, providing comprehensive and tailored moving services throughout the whole of Kenya.<a href='https://cantsmovers.com'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+          <span>
+            <Rate tooltips={desc} onChange={setValue} value={value} />
+            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+          </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i> info@cantsmovers.com</p>
@@ -94,6 +112,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
         </img>
           <h1>Nellions Moving & Relocations Company</h1>
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>At Nellions Moving & Relocations, we have earned a reputation for being the best movers in Kenya through our firm commitment to service excellence, integrity, and expertise.<a href='https://nellions.co.ke'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i></p>
+          <span>
+            <Rate tooltips={desc} onChange={setValue} value={value} />
+            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+          </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>move@nellions.co.ke</p>
@@ -111,6 +133,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>
           Sunlink Movers Kenya is a trusted moving services company in Nairobi,Kenya providing best quality and reliable moving services at affordable cost.<a href='https://sunlink-movers.co.ke'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i>
           </p>
+          <span>
+            <Rate tooltips={desc} onChange={setValue} value={value} />
+            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+          </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>info@sunlinkmovers.com</p>
@@ -128,6 +154,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>
           Alpha Movers Kenya is a premium moving services company in Nairobi Kenya whose sole intent is geared towards leaving a permanent positive impact on our clients..<a href='https://alphamovers.co.ke'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i>
           </p>
+          <span>
+            <Rate tooltips={desc} onChange={setValue} value={value} />
+            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+          </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>info@alphamovers.co.ke</p>
@@ -145,6 +175,10 @@ We offer quick, reliable and Affordable Moving and Removal services within and o
           <p><i class="fa-sharp fa-solid fa-quote-left"></i>
           We are affordable and professional movers in Nairobi. Rhino Prompt Movers Kenya ensures that all your moving needs are met in a timely and efficient manner.<a href='https://www.rhinopromptmovers.com'>More</a><i class="fa-sharp fa-solid fa-quote-right"></i>
           </p>
+          <span>
+            <Rate tooltips={desc} onChange={setValue} value={value} />
+            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+          </span>
           <h3>Contact</h3>
           <div>
           <p><i class="fa-solid fa-envelope-circle-check"></i>sales@rhinopromptmovers.com</p>

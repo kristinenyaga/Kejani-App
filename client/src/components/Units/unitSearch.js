@@ -2,12 +2,12 @@ import React from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import './unitsearch.css'
 
-function UnitSearch( {setSearch} ){
+function UnitSearch( {changeInput,value} ){
 
-    function handleChange(event){
+    // function handleChange(event){
      
-        setSearch((event.target.value).charAt(0).toUpperCase() + (event.target.value).slice(1))
-      }
+    //     setSearch((event.target.value).charAt(0).toUpperCase() + (event.target.value).slice(1))
+    //   }
 
     return (
         <>
@@ -20,7 +20,8 @@ function UnitSearch( {setSearch} ){
       className='filtr'
         type="text"
         placeholder="Filter by Location or Apartment type"
-        onChange={(handleChange) }
+        value={value}
+        onChange={changeInput}
       />
     </div>
 

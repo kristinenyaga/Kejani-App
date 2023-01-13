@@ -45,10 +45,7 @@ function ApartmentForm({ user }) {
   }
   return (
     <>
-      <div className='addapartment'>
-        <h3 className='apartment-h3'><i class="fa-solid fa-house-circle-check"></i>Kejani</h3>
-
-      </div>
+    
       <div className="main-block">
         <h1>Add Apartment</h1>
         <form className='apartment-form' onSubmit={handleSubmit} >

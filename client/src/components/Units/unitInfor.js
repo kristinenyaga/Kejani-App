@@ -3,20 +3,30 @@ import Unitspecs from './unitspecs';
 import './unitinfor.css'
 
 function UnitInfor({detail,search,selectedCategory,setDetails,selectedPrice}){
-    console.log(detail)
     
     const [filterdetails,setFilterDetails]=useState()
    
-    
+    const duplicate_details=detail
+
+    console.log(duplicate_details)
     function applyFilters(){
-        let displayedUnits=detail
-       
+    let displayedUnits=detail
+     
+        if(selectedCategory){
             displayedUnits = displayedUnits.filter(
-                (unit) => selectedCategory === "All" || unit.category === selectedCategory
+                (unit) =>{
+                    if(selectedCategory === "All"){
+                        return unit.category !== selectedCategory
+
+                    }
+                    else{
+                        return unit.category === selectedCategory
+                    }
+                }
+                       
               );
-    
-        
-       
+        }
+             
           displayedUnits =  displayedUnits.filter(det=>{
                 if(search ===''){
                   return true;

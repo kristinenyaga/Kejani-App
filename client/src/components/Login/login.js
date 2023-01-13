@@ -20,20 +20,31 @@ import './login.css';
         }
         fetch('/login', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            headers: { 
+                'Content-Type': 'application/json',
+                Accept:'application/json',
+                Authorization:localStorage.token
+            },
+            body: JSON.stringify({
+                email:email,
+                password:password
+            })
         })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then((user) =>{
-              onLogin(user)
-              setRole(user.role)
-              }
-              );
-            } else {
-            r.json().then((err) => setErrors(err.errors));
-            }
-          });
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.error) {
+            alert(data.error)
+          } else {
+            localStorage.setItem("user",JSON.stringify(data.user))
+            localStorage.setItem("token",data.token)
+            onLogin(data.user,data.user.role)
+             setRole(data.user.role)
+          }
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
         }
     
     return(

@@ -39,7 +39,7 @@ export default function App() {
   const [role, setRole] = useState("")
   const navigate = useNavigate("")
   const [lister, setLister] = useState("")
-  function onLogin(user) {
+  function onLogin(user,role) {
     setUser(user)
     console.log(user)
     console.log(role)
@@ -53,26 +53,34 @@ export default function App() {
       }
   }
 
+	// useEffect(() => {
+  //   const token = localStorage.token;
+  //   if (typeof token !== 'undefined' && token.length > 1
+  //     && token !== 'undefined'
+  //   ) {
+  //     fetch('/auto_login', {
+  //       method: 'POST',
+  //       headers: {
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ token }),
+  //     })
+  //       .then((r) => r.json())
+  //       .then((user) => setUser(user));
+  //   } else {
+  //     console.log('No token found, try logging in!');
+  //   }
+  // }, []);
+
+
 
   function onSignup(){
        navigate('/login')
   }
 
   const [apartment,setApartment]=useState("")
-  useEffect(()=>{
-    // auto-login
-    fetch("/me", {
-      method: 'GET',
-      headers: {
-        "Access-Control-Allow-Origin": "no-cors",
-        "Content-Type": "application/json"
-      }
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, [])
+  
 
   return (
     <>
@@ -111,6 +119,8 @@ export default function App() {
             <Route exact path="/" element={ <Homepage />} />
             <Route exact path="/contact" element={<ContactForm />} />
         <Route exact path="/movers" element={<Movers setUser={setUser} />} />
+        <Route exact path="/cleaners" element={<Cleaners/>} />
+
             
             
 
