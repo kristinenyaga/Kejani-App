@@ -1,83 +1,100 @@
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row' ;
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function RequestUnit() {
+  
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_kxwul7n', 'template_x0ge6mc', form.current, 'bZ5ufoi0zHdZ2MmFJ')
+      .then((result) => {
+          console.log(result.text);
+          console.log("Message sent successfully")
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
-    <div  style={{justifyContent:"space-around", fontWeight:"bolder", fontSize:"larger"}}>
-      <div style={{color:"#1A626D"}}> 
-    <Form>
-      <h1 style={{textAlign:"center"}}>Lister information</h1>
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="name" placeholder="Name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-        <Form.Label>Phone Number</Form.Label>
-        <Form.Control type="phone number" placeholder="Phone Number" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Send to me" />
-      </Form.Group>
-      
-    </Form>
-    <Form style={{color:"#1A626D"}}>
-        <h1 style={{textAlign:"center"}}>Renter's information</h1>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control type="email" placeholder="Username" />
-        </Form.Group>
+   
+    <div style={{display: 'flex',backgroungColor:"whitesmoke", flexDirection: 'column', padding: '1rem', color:"#1A626D" }}> 
+    <form  ref={form} onSubmit={sendEmail}>
+      <h2 style={{textAlign:"center"}}>Listers information</h2>
+    <label>Name:</label>
+    <br />
+    <input   type="text"  name="lister_name" style={{border: '1px solid #ccc', width: '100vw',  padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+    <label>Phone Number:</label>
+    <br />
+    <input type="text" name="lister_phone" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+    <label>Email:</label>
+    <br />
+    <input type="email" name="lister_email" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+    <label>Send to me </label>
 
-        <Form.Group as={Col} controlId="formGridUnitNumber">
-          <Form.Label>Unit Number</Form.Label>
-          <Form.Control type="password" placeholder="Unit Number" />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Email" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridlocation">
-          <Form.Label>Location</Form.Label>
-          <Form.Control type="password" placeholder="Location" />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridPhoneNumber">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="email" placeholder="Phone Number" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridCategory">
-          <Form.Label>Category</Form.Label>
-          <Form.Control type="password" placeholder="Category" />
-        </Form.Group>
-      </Row>
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Movers" />
-      </Form.Group>
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Cleaners" />
-      </Form.Group>
-
-      <Button  onClick={() => alert('Details successfully submitted')} variant="primary" style={{backgroundColor:"#1A626D", marginLeft:"600px"}} type="submit">
-        Submit
-      </Button>
-    </Form>
+    <input
+    name="send_to"
+        type="checkbox"
+        
+      />
+      <h2 style={{textAlign:"center"}}>Renter's information</h2>
+      <div>
+    <label>Username:</label>
+    <br />
+    <input type="text"name="user_name" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+    <label>Unit number:</label>
+    <br />
+    <input type="text" name="unit_number" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
     </div>
-    <div>
-      
+    <br />
+    <div >
+    <label>Email:</label>
+    <br />
+    <input type="email"  name="user_email"  style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+    <label>Location:</label>
+    <br />
+    <input type="text" name="user_location" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }}/>
+    <br />
+
     </div>
+    <div >
+    <br />
+    <label>Phone Number:</label>
+    <br />
+    <input type="text" name="user_phone" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }} />
+    <br />
+    <label>Category:</label>
+    <br />
+    <input type="text" name="user_category" style={{border: '1px solid #ccc',width: '100vw', padding: '0.5rem', fontSize: '1rem' }} />
+    <br />
     </div>
+    <label>Movers</label>
+    <input
+    name="movers"
+        type="checkbox"
+       
+      />
+      <label>Cleaners</label>
+    <input
+    name="cleaners"
+        type="checkbox"
+       
+      />
+       <br />
+    <input style={{background: '#1A626D', color: '#fff',width:"100vw", padding: '0.5rem', fontSize: '1rem' }} type="submit" value="Send" />
+    </ form>
+    </div>
+   
+  
+  
+  
   );
 }
 
