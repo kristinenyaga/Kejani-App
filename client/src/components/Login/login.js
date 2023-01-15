@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
- export default function Login({ onLogin,setRole }) {
+import { UserContext } from '../context/user';
+
+ export default function Login({ onLogin }) {
     const [errors, setErrors] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-
+    const { setUser,setRole } = useContext(UserContext);
     function handleClick() {
 
         navigate('/signup')
@@ -37,8 +39,9 @@ import './login.css';
           } else {
             localStorage.setItem("user",JSON.stringify(data.user))
             localStorage.setItem("token",data.token)
-            onLogin(data.user,data.user.role)
+            setUser(data.user)
              setRole(data.user.role)
+             onLogin()
           }
           console.log(data)
         })

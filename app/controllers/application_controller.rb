@@ -22,6 +22,7 @@ end
 
 def user_id
     decoded_token.first["user_id"]
+    
 end
 
 def current_user

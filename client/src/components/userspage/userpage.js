@@ -5,7 +5,7 @@ import Unitspecs from '../Units/unitspecs'
 import Category from './category'
 import PriceFilter from './pricefilter'
 import './userpage.css'
-function UsersPage() {
+function UsersPage({handleRequest}) {
   const [units,setUnits]=useState([])
   const [selectedCategory, setSelectedCategory] = useState("");
   const [search, setSearch] = useState([])
@@ -135,7 +135,7 @@ function UsersPage() {
         /> 
         <div className='units'>
         {units.map((data) => (
-            <Unitspecs key={data.id} data={data} />
+            <Unitspecs key={data.id} data={data} handleRequest={handleRequest} />
         ))}
         </div>
     </div>

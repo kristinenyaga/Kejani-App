@@ -16,6 +16,14 @@ class UsersController < ApplicationController
     end
     end
   
+    def show
+      user = User.find_by(email: params[:email]);
+      if user
+          render json: user, status: :created
+      else
+          render json: { error: "Not authorized" }, status: :unauthorized
+      end
+  end
 
     
     def index
@@ -24,7 +32,7 @@ class UsersController < ApplicationController
     end
 
     def profile
-        render json: user
+        render json: @user
     end
 
     private

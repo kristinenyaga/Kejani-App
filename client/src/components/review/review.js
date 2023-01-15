@@ -7,13 +7,10 @@ function Review({rev}){
 
     const navigate= useNavigate()
 
-
-    console.log(rev)
-
     return (
         <>
 
-        <h1 className="unitreviews">Unit Reviews</h1>
+       
       
           <p className="det">Review: {rev.description}</p>
           

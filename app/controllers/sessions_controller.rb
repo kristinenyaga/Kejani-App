@@ -17,6 +17,13 @@ class SessionsController < ApplicationController
       else
           render json: {error: "User is not logged in/could not be found."}
       end
+
+  end
+  def auto_login
+    @token = params[:token]
+    # byebug
+    user = User.find(JWT.decode(@token, jwt_key, true, algorithm: 'HS256')[0]["user_id"])
+    render json: user
   end
 
   private

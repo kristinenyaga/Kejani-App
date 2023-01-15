@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import './App.css';
 import Apartments from './components/ApartmentCard/apartmentCard';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -32,15 +32,19 @@ import ContactForm from './components/contact/contact';
 import UsersPage from './components/userspage/userpage';
 import Movers from './components/movers/movers';
 import Cleaners from './components/CleanersPage/cleaners.js'
+import { UserContext } from './components/context/user';
 
 
 export default function App() {
-  const [user, setUser] = useState("")
-  const [role, setRole] = useState("")
+  // const [user, setUser] = useState("")
+  // const [role, setRole] = useState("")
   const navigate = useNavigate("")
   const [lister, setLister] = useState("")
-  function onLogin(user,role) {
-    setUser(user)
+  const { user,error, role,setRole,setUser } = useContext(UserContext);
+  const [requestedunit,setRequestedUnit]=useState('')
+
+
+  function onLogin() {
     console.log(user)
     console.log(role)
     if (role === 'user') {
@@ -52,18 +56,21 @@ export default function App() {
        setLister(true)
       }
   }
+  console.log(requestedunit)
 
-	// useEffect(() => {
+
+
+  // useEffect(() => {
   //   const token = localStorage.token;
   //   if (typeof token !== 'undefined' && token.length > 1
   //     && token !== 'undefined'
   //   ) {
-  //     fetch('/auto_login', {
+  //     fetch('/me', {
   //       method: 'POST',
   //       headers: {
   //         Accept: 'application/json',
   //         'Content-Type': 'application/json',
-  //       },
+  //       },console
   //       body: JSON.stringify({ token }),
   //     })
   //       .then((r) => r.json())
@@ -74,10 +81,13 @@ export default function App() {
   // }, []);
 
 
-
   function onSignup(){
        navigate('/login')
   }
+  function handleRequest(unit){
+
+    setRequestedUnit(unit)
+ }
 
   const [apartment,setApartment]=useState("")
   
@@ -91,12 +101,7 @@ export default function App() {
             <>
               <Layout user={user} setApartment={setApartment} apartment={apartment} />
               <Routes>
-                {/* <Route exact path="/inbox" element={ <DefaultInbox />} />
-              <Route exact path="/reviews" element={ <Review />} />
-              <Route exact path="/addapartment" element={ <Addapartment  user={user}  />} />
-              <Route exact path="/tenants" element={ <Tenants />} />
-               */}
-
+          
               </Routes>
             </>
           ) : (
@@ -106,13 +111,13 @@ export default function App() {
              <Route exact path="/imagecard" element={ <ImageCard />} />
              <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
              <Route exact path="/unitinformation" element={ <UnitInformation />} />
-             <Route exact path="/unitspecs" element={ <Unitspecs user={user}/>} />
+             <Route exact path="/unitspecs" element={ <Unitspecs user={user} handleRequest={handleRequest}/>} />
              <Route exact path="/logout" element={ <Logout/>} />
             <Route exact path="/review" element={ <ReviewCard />} />
-            <Route exact path="/requestunit" element={ <RequestUnit />} />
+            <Route exact path="/requestunit" element={ <RequestUnit requestedunit={requestedunit} />} />
         
             <Route  path='/data/:id' element={<UnitReview/>} />
-            <Route  path='/userspage' element={<UsersPage/>} />
+            <Route  path='/userspage' element={<UsersPage handleRequest={handleRequest}/>} />
 
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
