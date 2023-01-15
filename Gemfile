@@ -18,6 +18,8 @@ gem 'bcrypt', ' 3.1.7'
 gem 'email_validator' 
 gem 'jwt', '~>2.6.0'
 
+gem 'jwt'
+
 # gem 'bootstrap', '~> 5.2.3' 
 
 # Use Active Storage variant

@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
- export default function Login({ onLogin,setRole }) {
+import { UserContext } from '../context/user';
+
+ export default function Login({ onLogin }) {
     const [errors, setErrors] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-
+    const { setUser,setRole } = useContext(UserContext);
     function handleClick() {
 
         navigate('/signup')
@@ -20,20 +22,32 @@ import './login.css';
         }
         fetch('/login', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            headers: { 
+                'Content-Type': 'application/json',
+                Accept:'application/json',
+                Authorization:localStorage.token
+            },
+            body: JSON.stringify({
+                email:email,
+                password:password
+            })
         })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then((user) =>{
-              onLogin(user)
-              setRole(user.role)
-              }
-              );
-            } else {
-            r.json().then((err) => setErrors(err.errors));
-            }
-          });
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.error) {
+            alert(data.error)
+          } else {
+            localStorage.setItem("user",JSON.stringify(data.user))
+            localStorage.setItem("token",data.token)
+            setUser(data.user)
+             setRole(data.user.role)
+             onLogin()
+          }
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
         }
     
     return(
