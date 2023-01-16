@@ -57,6 +57,9 @@ unit6=Unit.create(unit_number:5505,price:25000,image_url:"https://images.pexels.
 # unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
 
 
-review1=Review.create(user_id:user1.id,description:"the owner was very cooperative",unit_id:unit1.id)
-review2=Review.create(user_id:user2.id,description:"the owner was very cooperative",unit_id:unit2.id)
-review3=Review.create(user_id:user3.id,description:"the owner was very cooperative",unit_id:unit3.id)
+review1=Review.create(user_id:user1.id,description:"The owner was very cooperative",unit_id:unit1.id)
+review2=Review.create(user_id:user2.id,description:"The compound was dirty",unit_id:unit2.id)
+review3=Review.create(user_id:user3.id,description:"The rooms have bedbugs and noisy",unit_id:unit3.id)
+review1=Review.create(user_id:user1.id,description:"The owner was very cooperative",unit_id:unit4.id)
+review2=Review.create(user_id:user2.id,description:"The compound was dirty",unit_id:unit5.id)
+review3=Review.create(user_id:user3.id,description:"The rooms have bedbugs and noisy",unit_id:unit5.id)

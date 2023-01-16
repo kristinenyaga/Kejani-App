@@ -32,17 +32,19 @@ import ContactForm from './components/contact/contact';
 import UsersPage from './components/userspage/userpage';
 import Movers from './components/movers/movers';
 import Cleaners from './components/CleanersPage/cleaners.js'
+import ReviewForm from './components/review/reviewform';
+
+
 
 
 export default function App() {
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState()
   const [role, setRole] = useState("")
   const navigate = useNavigate("")
   const [lister, setLister] = useState("")
+
   function onLogin(user) {
     setUser(user)
-    console.log(user)
-    console.log(role)
     if (role === 'user') {
       setLister(false)
       navigate('/imagecard')
@@ -52,7 +54,6 @@ export default function App() {
        setLister(true)
       }
   }
-
 
   function onSignup(){
        navigate('/login')
@@ -64,7 +65,7 @@ export default function App() {
     fetch("/me", {
       method: 'GET',
       headers: {
-        "Access-Control-Allow-Origin": "no-cors",
+        // "Access-Control-Allow-Origin": "no-cors",
         "Content-Type": "application/json"
       }
     }).then((r) => {
@@ -76,6 +77,7 @@ export default function App() {
 
   return (
     <>
+
       {
         user ? (
 
@@ -91,17 +93,19 @@ export default function App() {
 
               </Routes>
             </>
-          ) : (
+          ) : (  
             <>
+            
             {/* <UserNavbar /> */}
             <Routes>
-             <Route exact path="/imagecard" element={ <ImageCard />} />
+             <Route exact path="/imagecard" element={ <ImageCard />} user={user}/>
              <Route exact path="/unitdetails" element={ <UnitDetails user={user} />} />
              <Route exact path="/unitinformation" element={ <UnitInformation />} />
              <Route exact path="/unitspecs" element={ <Unitspecs user={user}/>} />
              <Route exact path="/logout" element={ <Logout/>} />
             <Route exact path="/review" element={ <ReviewCard />} />
             <Route exact path="/requestunit" element={ <RequestUnit />} />
+            <Route exact path="/apartments" element={ <Apartments />} user={user}/>
         
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage/>} />

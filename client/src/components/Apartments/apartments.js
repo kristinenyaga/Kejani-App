@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import './apartments.css'
 
 
-const Apartments = ({ propertyDetail }) => {
+const Apartments = ({ propertyDetail, user }) => {
 
   const navigate = useNavigate();
 
@@ -17,6 +17,7 @@ const Apartments = ({ propertyDetail }) => {
 
   return (
     <>
+    
       <div className="apartment">
         <img className="apartmentImg"
           src={propertyDetail.image_url} alt="">

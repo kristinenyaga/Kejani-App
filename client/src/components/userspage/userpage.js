@@ -25,6 +25,7 @@ function UsersPage() {
       setUnits(data)
     })
   }, [])
+
   return (
     <>
     <UnitSearch setSearch={setSearch} />
@@ -44,6 +45,8 @@ function UsersPage() {
        categories={["All", ...categories]}
        selectedCategory={selectedCategory}
        setSelectedCategory={setSelectedCategory}/>
+
+       
     </div>
     </>
   )

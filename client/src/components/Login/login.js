@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
  export default function Login({ onLogin,setRole }) {
     const [errors, setErrors] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [item, setItem] = useState('')
+    const [user, setUser] = useState('')
+    
     const navigate = useNavigate()
 
     function handleClick() {
@@ -14,27 +17,36 @@ import './login.css';
 
     function handleSubmit(e) {
         e.preventDefault()
-        const data = {
+        const info = {
             email: email,
             password: password,
         }
         fetch('/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            body: JSON.stringify(info)
         })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then((user) =>{
+        .then((r) => r.json()
+        .then((data) =>{
+                localStorage.setItem('token', data.token)
               onLogin(user)
+              setUser(data.user)
               setRole(user.role)
-              }
-              );
-            } else {
-            r.json().then((err) => setErrors(err.errors));
-            }
-          });
+              })
+          );
         }
+
+        useEffect(()=>{
+            if(localStorage.getItem("token")){
+            fetch('/login', {
+                headers: {"Authenticate": localStorage.token}
+            })
+            .then(resp=>resp.json())
+            .then(user=>{
+                setUser(user)
+            })
+          }
+        },[])
     
     return(
         <>

@@ -4,21 +4,20 @@ import { Navigate, useNavigate} from 'react-router-dom'
 
 
 function Review({rev}){
-
-    const navigate= useNavigate()
-
-
+  
     console.log(rev)
 
     return (
-        <>
+      <>
 
-        <h1 className="unitreviews">Unit Reviews</h1>
-      
-          <p className="det">Review: {rev.description}</p>
-          
-        </>
+      <h1 className="unitreviews">What past tenants say about the unit...</h1>
+    
+        <p className="det">Review: {rev.description}</p>
+        
+        
+      </>
     )
+    
 }
 
 export default Review;
