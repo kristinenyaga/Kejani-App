@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Unitspecs from './unitspecs';
 import './unitinfor.css'
+import UserNav from '../userspage/usernavbar';
 
 function UnitInfor({detail,search,selectedCategory,setDetails,selectedPrice}){
     
@@ -59,6 +60,7 @@ function UnitInfor({detail,search,selectedCategory,setDetails,selectedPrice}){
     return (
 
         <div className='units'>
+            
         {detail.map((data) => (
             <Unitspecs key={data.id} data={data} />
         ))}

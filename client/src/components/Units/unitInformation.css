@@ -4,7 +4,7 @@
 max-width: 385px;
 max-height: 950px;
 margin: 50px 35px 45px 25px;
-border: 2px solid rgb(255, 247, 247);
+border: 2px solid rgb(247, 246, 246);
 box-shadow: black;
 padding: 15px;
 
@@ -32,7 +32,7 @@ cursor: pointer;
 }
 
 .unitTitle{
-font-size: 32px;
+font-size: 28px;
 cursor: pointer;
 margin-top: 15px;
 font-family: 'Sanchez', serif;
@@ -47,7 +47,7 @@ color: #17646C
 }
 
 .unitDesc{
-font-size: 20px;
+font-size: 18px;
 color: #444;
 font-family: 'Sanchez', serif;
 line-height: 24px;
@@ -68,14 +68,14 @@ font-size:20px ;
 
 .description{
 font-family: 'Sanchez', serif;
-font-size: 20px;
+font-size: 17px;
 color: #444;
 
 }
 
 .unittitle{
 font-family: 'Sanchez', serif;
-font-size: 19px;
+font-size: 16px;
 color: #17646C;
 
 
