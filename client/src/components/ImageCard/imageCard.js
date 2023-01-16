@@ -1,23 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import ApartmentCard from '../ApartmentCard/apartmentCard'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 function ImageCard(){
 
-    const [images, setImages] = useState([])
     const [detail, setDetails] = useState([])
+
+    const navigate = useNavigate();
   
+    
     useEffect(()=>{
   
-      fetch("/listers")
-      .then((res)=>res.json())
-      .then((image)=>{
-        setImages(image)
-      })
-    }, [])
-  
-    useEffect(()=>{
-  
-      fetch("/units")
+      fetch("/apartments")
       .then((res)=>res.json())
       .then((det)=>{
         setDetails(det)
@@ -25,13 +19,13 @@ function ImageCard(){
     }, [])
   
     console.log(detail)
-    console.log(images)
   
   
   return(
   <>
   
-  <ApartmentCard images= {images} detail= {detail} />
+  <ApartmentCard detail= {detail} />
+
   </>
   )
 

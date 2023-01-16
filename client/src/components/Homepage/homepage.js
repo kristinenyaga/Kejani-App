@@ -1,21 +1,25 @@
 import NavBar from "../Navbar/navbar";
 import './homepage.css'
 import Carousel from 'react-bootstrap/Carousel';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 export default function Homepage(){
   const navigate = useNavigate()
-  function handleclick(){
+  function handleClick(){
     navigate('/login')
   }
+
+ 
   return(
     <>
     <NavBar />
+    {/* <div className=''>
+      <Header/>
+    </div> */}
     <div className="header">
      <div className="left">
         <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
         <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
-        <button className="header-button">Learn More</button>
+        <button className="header-button" onClick={handleClick}>Learn More</button>
         <div className="header-container">
           <div className="row1">
             <p>1500+</p>
@@ -50,7 +54,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button onClick={handleclick}  className="section2btn">List House</button>
+      <button className="section2btn" onClick={handleClick}>List House</button>
       </div>
 
       <div className="section2row">
@@ -58,7 +62,7 @@ export default function Homepage(){
       <p className="section2row-ptag">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis finibus tellus, ut hendrerit dui. Curabitur sed ullamcorper metus. Maecenas vel dui in quam tempor maximus vitae vel felis.
       </p>
-      <button onClick={handleclick} className="section2btn">Rent House</button>
+      <button className="section2btn" onClick={handleClick}>Rent House</button>
 
       </div>
 
@@ -121,7 +125,6 @@ export default function Homepage(){
           <h5>100 houses</h5>
           <div className="container-flex">
             <p>Residential</p>
-            <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
           </div>
 
         </div>
@@ -135,7 +138,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -149,7 +151,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Residential</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
         
         </div>
@@ -164,7 +165,6 @@ export default function Homepage(){
         <h5>100 houses</h5>
         <div className="container-flex">
         <p>Hostel</p>
-        <h4>More <i className="fa-solid fa-arrow-right"></i></h4>
         </div>
 
         </div>
@@ -173,7 +173,7 @@ export default function Homepage(){
    </div>
 
    <div className="section5">
-   <h1>What Customers Are Saying About Kejani</h1>
+   <h1 className="choose">What Customers Are Saying About Kejani</h1>
    <div className="section-5container">
     <div className="section5-row">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sodales nibh a suscipit. Aenean luctus, lacus eu pulvinar tempor, lacus orci varius purus, ut iaculis tellus eros ac ex. Pellentesque finibus quis risus a mollis. Morbi eros urna, pellentesque sed pulvinar in, tempus a arcu.</p>
@@ -206,13 +206,13 @@ export default function Homepage(){
 
    
     <div className="section6-container">
-    <div>
+    <div className="section6-container-row">
       <h3>Kejani</h3>
       <p>Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </p>
 
     </div>
     
-    <div>
+    <div className="section6-container-row">
       <h3>Contact Us</h3>
       <div className="icon-container">
         
@@ -234,7 +234,7 @@ export default function Homepage(){
 
     </div>
 
-    <div>
+    <div className="section6-container-row">
       <h3>Office</h3>
       <p>Damino Street, CBD254,Kenya +254734452134</p>
 
@@ -252,3 +252,9 @@ export default function Homepage(){
   )
 }
 
+// https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1600
+// https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+// https://images.pexels.com/photos/1824392/pexels-photo-1824392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+// https://img.freepik.com/premium-photo/modern-australian-house-with-garage_224530-490.jpg?w=1380
+// https://img.freepik.com/premium-photo/3d-rendering-modern-house_62754-1884.jpg?w=1380
+// https://img.freepik.com/free-photo/modern-buildings_1127-2851.jpg?w=1380&t=st=1671981095~exp=1671981695~hmac=4e1e635cc6bbcd0ccb1a3085c42f1093cf7ab9ff048ce5dfe40cbaee364b28ad

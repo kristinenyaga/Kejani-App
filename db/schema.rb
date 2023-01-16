@@ -10,17 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_20_134950) do
+ActiveRecord::Schema.define(version: 2023_01_10_074123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "listers", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
+  create_table "apartments", force: :cascade do |t|
+    t.string "apartment_name"
+    t.string "apartment_type"
+    t.string "location"
+    t.string "user_id"
     t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "requestunits", force: :cascade do |t|
     t.string "username"
-    t.integer "phone_no"
+    t.string "email"
+    t.string "phone_number"
+    t.string "unit_number"
+    t.string "category"
+    t.string "location"
+    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,13 +48,11 @@ ActiveRecord::Schema.define(version: 2022_12_20_134950) do
   create_table "units", force: :cascade do |t|
     t.integer "unit_number"
     t.integer "price"
-    t.string "image_url"
     t.string "category"
+    t.string "image_url"
     t.integer "user_id"
-    t.integer "lister_id"
-    t.string "property_name"
-    t.string "property_type"
-    t.string "location"
+    t.string "occuppied", default: "vacant"
+    t.string "apartment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,6 +63,7 @@ ActiveRecord::Schema.define(version: 2022_12_20_134950) do
     t.string "email"
     t.string "password_digest"
     t.integer "phone_number"
+    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,11 +3,14 @@ class UnitsController < ApplicationController
   def index
     units=Unit.all
     render json: units
+
   end
 
   def show
     unit = Unit.find_by(id:params[:id])
-    render json: unit 
+    render json: unit
+    # include: ['reviews'], each_serializer: ReviewSerializer
+
   end
 
   def destroy
@@ -22,7 +25,6 @@ class UnitsController < ApplicationController
     render json: unit,status: :created
   end
 
-
   def update
     unit=Unit.find_by(id:params[:id])
     unit.update!(unit_params)
@@ -33,6 +35,18 @@ class UnitsController < ApplicationController
 
   def unit_params
 
-    params.permit(:unit_number,:price,:image_url,:category,:property_id,:user_id)
+    params.permit(:unit_number,:price,:image_url,:occuppied,:category,:apartment_id,:user_id)
   end
 end
+
+
+ 
+
+ 
+  
+    
+    
+    
+    
+   
+    
