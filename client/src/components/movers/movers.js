@@ -3,12 +3,13 @@ import UserNavbar from '../userspage/usernavbar'
 import './movers.css'
 import { Rate } from 'antd';
 import { useState } from 'react';
+import MoversNavbar from './moversnav';
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 function Movers({setUser}) {
   const [value, setValue] = useState(3);
   return (
     <div className='moverspage'>
-      <UserNavbar setUser={setUser} />
+      <MoversNavbar/>
       <h1 className='moverspage_h1'>Our Partnered Movers</h1>
       <blockquote className="blockquote">
         <p className="text-muted text-center">~We link you up with the best movers~</p>

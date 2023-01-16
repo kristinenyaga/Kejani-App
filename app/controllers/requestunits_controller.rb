@@ -32,6 +32,6 @@ class RequestunitsController < ApplicationController
 
   def request_unit_params
 
-    params.permit(:category,:unit_number,:username,:location,:email,:phone_number)
+    params.permit(:category,:unit_number,:username,:location,:email,:phone_number,:user_id)
   end
 end
