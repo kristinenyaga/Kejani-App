@@ -20,7 +20,7 @@ const Unitspecs = ( {data,handleRequest} ) => {
 }
   return (
     <>
-    <div className="unit">
+    <div className="unit  rounded-lg hover:scale-105 duration-300">
       <img className="unitImg"
       src={data.image_url} alt="">
       </img>
