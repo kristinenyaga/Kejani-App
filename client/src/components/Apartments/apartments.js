@@ -7,7 +7,7 @@ const Apartments = ({ propertyDetail }) => {
 
   const navigate = useNavigate();
 
-  console.log(propertyDetail)
+ 
 
   function formatAmount(price) {
     const amountFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });

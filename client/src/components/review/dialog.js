@@ -53,7 +53,6 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs({unit,title,user}) {
-  console.log(user)
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -76,7 +75,7 @@ export default function CustomizedDialogs({unit,title,user}) {
          {title}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <ReviewForm user={user}/>
+          <ReviewForm user={user} unit={unit}/>
          <ReviewMap unit={unit}  />
         </DialogContent>
        

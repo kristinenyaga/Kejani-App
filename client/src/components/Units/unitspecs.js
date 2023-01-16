@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import { useNavigate } from 'react-router';
 import CustomizedDialogs from '../review/dialog';
 import './unitInformation.css'
+import { UserContext } from '../context/user';
 
 
 
-const Unitspecs = ( {data,user} ) => {
-  console.log(user)
-  const [reviews, setReview] = useState([])
-  const[id,setID]=useState("")
+const Unitspecs = ( {data,handleRequest} ) => {
+  const { user } = useContext(UserContext);
+  
+  const [reviews, setReview] = useState('')
   const navigate = useNavigate();
-
-
-  function handleReviews(){
-    navigate(`/data/${data.id}`)
-  }
-    
+  console.log(reviews)
+ 
   function formatAmount(price) {
     const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'Ksh'});
     return amountFormatter.format(price);
@@ -23,7 +20,7 @@ const Unitspecs = ( {data,user} ) => {
 }
   return (
     <>
-    <div className="unit">
+    <div className="unit  rounded-lg hover:scale-105 duration-300">
       <img className="unitImg"
       src={data.image_url} alt="">
       </img>
@@ -51,29 +48,15 @@ const Unitspecs = ( {data,user} ) => {
       <h4 className="description">Rent: { formatAmount (data.price)}</h4>
       <CustomizedDialogs title="Reviews"unit={data} user={user}/>
 
-      <button className='mybtnn' onClick={()=>navigate('/bookunit')}>request this Unit</button>
+      <button className='mybtnn' onClick={()=>{
+        handleRequest(data)
+        navigate('/requestunit')
+        
+      }}>request this Unit</button>
       
    </div>
 
-      {/* <div className ='images'>
-        <div>
-          <img className= 'properties'src={data.image_url} />
-        </div>
-        <div>
-          <p className='det'>Unit Number: {data.unit_number}</p>
-          <p className='det'>Found in: {data.apartment.apartment_name} Property</p>
-          <p className='det'>{data.occuppied}</p>
-          <p className='det'>{data.category}</p>
-          <p className='det'>{data.apartment.location}</p>
-          <p className='det'>{data.apartment.location}</p>
-          <p className='det'>Monthly Rent: { formatAmount (data.price)} </p>
-          <button className='but' onClick={()=>navigate('/bookunit')}>Book this Unit</button>
-          <Link to={`/data/${data.id}`}>View</Link>
-        </div>
-       
-      </div> */}
-
-      
+    
      
 
     </>

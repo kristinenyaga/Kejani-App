@@ -51,10 +51,7 @@ function UnitForm({ apartment, user }) {
 
   return (
     <>
-      <div className='addapartment'>
-        <h3 className='apartment-h3'><i class="fa-solid fa-house-circle-check"></i>Kejani</h3>
-
-      </div>
+     
       <div className="main-block">
         <h1>Add Unit</h1>
         <form className='apartment-form' onSubmit={handleSubmit} >
@@ -67,11 +64,11 @@ function UnitForm({ apartment, user }) {
           <input className='apartment-inputs red' type="text" name="image url" value={unit_url} onChange={(e) => setUnitUrl(e.target.value)} placeholder="Image_url" />
           <select value={category} onChange={(e) => setCategory(e.target.value)} placeholder="u">
             <option value="number" selected>Category</option>
-            <option value="bedsitters">BedSitters</option>
+            <option value="bedsitters">bedsitter</option>
             <option value="studio">Studio</option>
-            <option value="onebedroom">One Bedroom</option>
-            <option value="twobedroom">Two Bedroom</option>
-            <option value="threebedroom">Three Bedroom</option>
+            <option value="onebedroom">1bedroom</option>
+            <option value="twobedroom">2bedroom</option>
+            <option value="threebedroom">3bedroom</option>
 
 
 
