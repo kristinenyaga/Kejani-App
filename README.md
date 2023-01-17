@@ -1,22 +1,8 @@
-# Project Template: React/Rails API
+# Kejani-App
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Render.
-
-**Note**: if you are not planning to deploy your app to Render and prefer to use
-SQLite, you will need to make the following changes in the project files:
-
-1. In the `Gemfile`, replace `gem 'pg', '~> 1.1'` with `gem 'sqlite3', '~>
-   1.4'`.
-2. In the `database.yml` file, change the line `adapter: postgresql` to
-   `adapter: sqlite3`.
-
-
-
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
+Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service.
 
 ## Setup
 

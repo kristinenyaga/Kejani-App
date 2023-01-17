@@ -1,7 +1,9 @@
-.aptdisplayflex{
+@media (max-width: 1024.600px) {
+  .aptdisplayflex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
   }
+}
