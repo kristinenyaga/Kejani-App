@@ -21,8 +21,8 @@ function Tenants() {
           <tr>
             <th className='p-3 text-sm font-semibold tracking-wide text-left'> Name</th>
             <th scope='p-3 text-sm font-semibold tracking-wide text-left'> Contact</th>
-            <th scope='p-3 text-sm font-semibold tracking-wide text-left'> Email</th>
             <th scope='p-3 text-sm font-semibold tracking-wide text-left'> Location</th>
+            <th scope='p-3 text-sm font-semibold tracking-wide text-left'> Email</th>
           </tr>
         </thead>
         {users.map((user) =>
