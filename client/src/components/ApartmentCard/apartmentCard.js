@@ -4,7 +4,7 @@ import './apartmentCard.css'
 
 function ApartmentCard({ detail }) {
 
-    console.log(detail)
+    
 
     return (
 

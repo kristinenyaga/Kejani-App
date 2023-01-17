@@ -36,7 +36,6 @@ function UnitInfor({detail,search,selectedCategory,setDetails,selectedPrice}){
                       
               })
     
-        
         const minPrice = selectedPrice[0];
         const maxPrice = selectedPrice[1];
 

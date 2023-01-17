@@ -1,6 +1,7 @@
 import React, { useEffect, useState,useContext } from 'react'
 import { useNavigate } from 'react-router';
 import CustomizedDialogs from '../review/dialog';
+import ReviewForm from '../review/reviewform';
 import './unitInformation.css'
 import { UserContext } from '../context/user';
 
@@ -16,8 +17,11 @@ const Unitspecs = ( {data,handleRequest} ) => {
   function formatAmount(price) {
     const amountFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'Ksh'});
     return amountFormatter.format(price);
-
 }
+
+console.log(data)
+
+
   return (
     <>
     <div className="unit  rounded-lg hover:scale-105 duration-300">

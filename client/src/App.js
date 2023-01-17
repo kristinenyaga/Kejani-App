@@ -33,6 +33,7 @@ import UsersPage from './components/userspage/userpage';
 import Movers from './components/movers/movers';
 import Cleaners from './components/CleanersPage/cleaners.js'
 import { UserContext } from './components/context/user';
+import ReviewMap from './components/review/reviewMap';
 
 
 export default function App() {
@@ -101,7 +102,7 @@ export default function App() {
             <>
               <Layout user={user} setApartment={setApartment} apartment={apartment} />
               <Routes>
-          
+              <Route exact path="/reviewmap" element={ <ReviewMap user={user}/>} />
               </Routes>
             </>
           ) : (
@@ -116,7 +117,7 @@ export default function App() {
             <Route exact path="/review" element={ <ReviewCard />} />
             <Route exact path="/requestunit" element={ <RequestUnit requestedunit={requestedunit} />} />
         
-            <Route  path='/data/:id' element={<UnitReview/>} />
+            <Route  path='/data/:id' element={<UnitReview/>} user={user}/>
             <Route  path='/userspage' element={<UsersPage handleRequest={handleRequest}/>} />
 
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />

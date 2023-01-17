@@ -8,9 +8,8 @@ function Apartment({ apartment, setApartment, handleApartment }) {
   function handleUnitClick() {
     handleApartment(apartment)
     navigate('/unitform')
-
-
   }
+  
   return (
 
     <div>

@@ -38,15 +38,3 @@ class UnitsController < ApplicationController
     params.permit(:unit_number,:price,:image_url,:occuppied,:category,:apartment_id,:user_id)
   end
 end
-
-
- 
-
- 
-  
-    
-    
-    
-    
-   
-    

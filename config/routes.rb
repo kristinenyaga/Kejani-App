@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :auths
   resources :requestunits
   resources :images
   resources :apartments
   resources :reviews
   resources :units
   resources :users
+  # resource :users, only: [:create]
+
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
   get "/profile", to: "users#profile"

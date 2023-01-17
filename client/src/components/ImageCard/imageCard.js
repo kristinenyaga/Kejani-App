@@ -3,7 +3,7 @@ import ApartmentCard from '../ApartmentCard/apartmentCard'
 import { Navigate, useNavigate } from 'react-router-dom'
 import UserNav from '../userspage/usernavbar';
 
-function ImageCard(){
+function ImageCard( {user} ){
 
     const [detail, setDetails] = useState([])
 
@@ -19,14 +19,13 @@ function ImageCard(){
       })
     }, [])
   
-    console.log(detail)
-  
+    console.log(detail)   
   
   return(
   <>
   <UserNav/>
   <ApartmentCard detail= {detail} />
-
+  
   </>
   )
 

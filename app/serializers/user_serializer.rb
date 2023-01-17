@@ -3,6 +3,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :units
   has_many :apartments
   has_many :requestunits
-  # has_many :reviews
+  has_many :reviews
  
 end

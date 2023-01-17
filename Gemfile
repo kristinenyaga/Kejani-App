@@ -16,7 +16,6 @@ gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'email_validator'  
-
 gem 'jwt'
 
 # gem 'bootstrap', '~> 5.2.3' 
