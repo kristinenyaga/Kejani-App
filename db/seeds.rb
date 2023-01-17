@@ -40,6 +40,10 @@ apartment5=Apartment.create(apartment_name:"Siandate",apartment_type:"Hostel",lo
 apartment6=Apartment.create(apartment_name:"Eljuok",apartment_type:"Residential",location:"Ruaka",image_url:"https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600",user_id:user4.id)
 
 unit1=Unit.create(unit_number:5500,price:8000,image_url:"https://images.pexels.com/photos/3288102/pexels-photo-3288102.png?auto=compress&cs=tinysrgb&w=600",category:"bedsitter",apartment_id:apartment1.id,user_id:user3.id)
+unit7=Unit.create(unit_number:5507,price:8000,image_url:"https://images.pexels.com/photos/3753436/pexels-photo-3753436.jpeg?auto=compress&cs=tinysrgb&w=400",category:"2bedroom",apartment_id:apartment1.id,user_id:user3.id)
+unit9=Unit.create(unit_number:5510,price:8000,image_url:"https://images.pexels.com/photos/13581811/pexels-photo-13581811.jpeg?auto=compress&cs=tinysrgb&w=400",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
+
+unit11=Unit.create(unit_number:5511,price:8000,image_url:"https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
 unit2=Unit.create(unit_number:5501,price:10000,image_url:"https://images.pexels.com/photos/3288102/pexels-photo-3288102.png?auto=compress&cs=tinysrgb&w=600",category:"1bedroom",apartment_id:apartment1.id,user_id:user3.id)
 unit3=Unit.create(unit_number:5502,price:15000,image_url:"https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=600",category:"2bedroom",apartment_id:apartment2.id,user_id:user4.id)
 unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/6523302/pexels-photo-6523302.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
@@ -57,9 +61,13 @@ unit6=Unit.create(unit_number:5505,price:25000,image_url:"https://images.pexels.
 # unit4=Unit.create(unit_number:5503,price:10000,image_url:"https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",category:"3bedroom",apartment_id:apartment3.id,user_id:user4.id)
 
 
-review1=Review.create(user_id:user1.id,description:"The owner was very cooperative",unit_id:unit1.id)
-review2=Review.create(user_id:user2.id,description:"The compound was dirty",unit_id:unit2.id)
-review3=Review.create(user_id:user3.id,description:"The rooms have bedbugs and noisy",unit_id:unit3.id)
-review1=Review.create(user_id:user1.id,description:"The owner was very cooperative",unit_id:unit4.id)
-review2=Review.create(user_id:user2.id,description:"The compound was dirty",unit_id:unit5.id)
-review3=Review.create(user_id:user3.id,description:"The rooms have bedbugs and noisy",unit_id:unit5.id)
+review1=Review.create(user_id:user1.id,description:"The owner is very cooperative",unit_id:unit1.id)
+review2=Review.create(user_id:user2.id,description:"I liked my stay in this apartment. The compound was clean and security was tight",unit_id:unit2.id)
+review3=Review.create(user_id:user3.id,description:"The rooms are generally clean, painted in warm color, and the neighbors are so friendly ",unit_id:unit3.id)
+review1=Review.create(user_id:user1.id,description:"Security of this premise is top notch. I would give the apartment five star rating",unit_id:unit4.id)
+review2=Review.create(user_id:user2.id,description:"I liked care taker's hospitality. Very understanding",unit_id:unit5.id)
+review3=Review.create(user_id:user3.id,description:"This is the best best place to live in Nairobi. I like the quality of the rooms and their affordability",unit_id:unit5.id)
+
+review3=Review.create(user_id:user3.id,description:"The rooms are of high quality and the rent is pocket friendly",unit_id:unit7.id)
+review3=Review.create(user_id:user3.id,description:"The management is quite understanding with regards to rent payment",unit_id:unit9.id)
+review3=Review.create(user_id:user3.id,description:"I like the level of security and serenity of the surroundings",unit_id:unit11.id)

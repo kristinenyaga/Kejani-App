@@ -1,0 +1,17 @@
+
+.containe{
+    display: flex;
+    color:  #1A626D;
+    position: absolute;
+    left: 17%;
+    background-color: #ebf4f5;
+    font-size: small;
+    box-shadow: 10px 10px lightblue;
+    top: 16%;
+    /* font-size: small; */
+    
+}
+
+.reviews{
+    font-size: larger;
+}

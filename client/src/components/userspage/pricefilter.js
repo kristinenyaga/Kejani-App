@@ -16,13 +16,29 @@ const useStyles = makeStyles({
     color: '#000',
   },
 });
-function PriceFilter({ value, changePrice }) {
+function PriceFilter({ value, changePrice,units,setUnits,selectedPrice,setSelectedPrice }) {
+  
   const classes = useStyles();
+  const handleChangePrice = (event, selectedPrice) => {
+    setSelectedPrice(selectedPrice);
+  const minPrice = selectedPrice[0];
+  const maxPrice = selectedPrice[1];
+  setUnits(
+    units.filter(
+      (item) => item.price >= minPrice && item.price <= maxPrice
+      )
+  )
+  
+  };
+
+  
+
+
   return (
     <div className={classes.root}>
       <Slider
-         value={value}
-         onChange={changePrice}
+         value={selectedPrice}
+         onChange={handleChangePrice}
         valueLabelDisplay='on'
         min={5000}
         max={50000}

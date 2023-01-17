@@ -1,63 +1,62 @@
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Form from 'react-bootstrap/Form';
-import React, {useState,useEffect} from 'react'
+import { useState,useContext } from 'react';
+import { UserContext } from '../context/user';
 
-function ReviewForm( {user, UnitID, setUnitID} ) {
-    console.log(user)
-    console.log(UnitID)
-    
-
-    const [description, setDecsription] = useState();
-    
-
-  
-    function handleSubmit(e){
+function ReviewForm({unit}) {
+  const[errors,setErrors]=useState()
+  const { user} = useContext(UserContext);
+  const [description,setDescription]=useState('')
+    const handleSubmit = (e) => {
 
       e.preventDefault();
-      e.target.reset();
-      fetch(`/reviews/${UnitID}`,{
-        Method: 'POST',
-        headers:{'Content-Type': 'application/json'},
-        BODY: JSON.stringify({
-          description: description,
-          
-      })
-      })
-      .then(res =>res.json()).then(r=>{
-        console.log(r)
-        resetField()
-      })
-    }
+  fetch('/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+          description:description,
+          user_id:user.id,
+          unit_id:unit.id
 
-    function handleDecsription(e){
-      setDecsription(e.target.value)
-    }
-     
-    function resetField(){
-      setDecsription('')
-    }
-      function getId(id){
-        setUnitID(id)
+      })
+  })
+  .then((r) => {
+    if (r.ok) {
+      r.json().then((review) =>{
+      console.log(review)
+      setDescription('')
       }
+      );
+    } else {
+    r.json().then((err) => alert(err.errors));
+    }
+  });
+
+  }
+    
   return (
-    <Form onSubmit ={handleSubmit}>
-        {/* <h1>Review form</h1> */}
+    <Form onSubmit={handleSubmit}>
+        <h1>Review form</h1>
+        
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>User</Form.Label>
-        <Form.Control type="text" placeholder="userid" />
+        <Form.Control style={{ color: "red" }} type="text" placeholder="username" value={user.username} disabled/>
         <Form.Text className="text-muted">
           Your review remains anonymous
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Your Review</Form.Label>
-        <Form.Control type="text" placeholder="leave a review"value={description} onChange={handleDecsription}/>
+        <Form.Label>description</Form.Label>
+        <Form.Control type="text" placeholder="leave a review" value={description} onChange={(e) => setDescription(e.target.value)} />
       </Form.Group>
-      <Button variant="contained" endIcon={<SendIcon />}>
+     
+      <Button variant="contained"  type="submit" endIcon={<SendIcon />}>
         Send
       </Button>
+      
+     
     </Form>
   );
 }

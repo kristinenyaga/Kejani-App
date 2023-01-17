@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     padding: 1.5rem 1rem;
-    position: sticky;
-    top: 20px;
+   
   }
   .searchBar-icon {
     color: rgba(0, 0, 0, 0.26);
     margin-right: 1rem;
+    font-size: 28px;
   }
   
   .searchBar-wrap input {

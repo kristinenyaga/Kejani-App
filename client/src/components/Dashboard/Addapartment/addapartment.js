@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Apartment from './apartment'
 
-export default function AddApartment({ user, setApartment, apartment, handleApartment }) {
+export default function AddApartment( { user, setApartment, apartment, handleApartment } ) {
   console.log(user)
+
+  const [reviews, setReviews]= useState('')
 
 
   const navigate = useNavigate("")

@@ -19,6 +19,7 @@ function UnitInformation(){
 
         <>
         {/* <UnitInfo detail= {detail} /> */}
+       <div>Hello,welcome home</div>
         </>
     )
     

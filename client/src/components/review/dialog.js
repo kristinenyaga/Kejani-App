@@ -23,7 +23,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
 
@@ -53,13 +52,11 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({unit,title,user, UnitID, setUnitID}) {
-  console.log(user)
+export default function CustomizedDialogs({unit,title,user}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
-    setUnitID(unit.id)
   };
   const handleClose = () => {
     setOpen(false);
@@ -78,7 +75,7 @@ export default function CustomizedDialogs({unit,title,user, UnitID, setUnitID}) 
          {title}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <ReviewForm user={user} UnitID={UnitID} setUnitID={setUnitID}/>
+          <ReviewForm user={user} unit={unit}/>
          <ReviewMap unit={unit}  />
         </DialogContent>
        

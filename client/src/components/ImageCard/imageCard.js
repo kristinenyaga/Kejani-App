@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ApartmentCard from '../ApartmentCard/apartmentCard'
 import { Navigate, useNavigate } from 'react-router-dom'
+import UserNav from '../userspage/usernavbar';
 
 function ImageCard( {user} ){
 
@@ -18,11 +19,11 @@ function ImageCard( {user} ){
       })
     }, [])
   
-          
+    console.log(detail)   
   
   return(
   <>
-  
+  <UserNav/>
   <ApartmentCard detail= {detail} />
   
   </>

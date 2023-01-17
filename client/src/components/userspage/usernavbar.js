@@ -1,39 +1,34 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link, useNavigate} from 'react-router-dom'
-import "./usernav.css"
-function UserNavbar({setUser}) {
-const nav = useNavigate();
-    function handleLogoutClick() {
-      fetch("/logout", {
-        method: "DELETE",
-        headers: {
-          "Access-Control-Allow-Origin":"no-cors",
-          "Content-Type": "application/json",
-        }
-       }).then((r) => {
-        if (r.ok) {
-          // setUser(null);
-          setUser(null)
-          nav("/")
-        }
-      });
-    }
+import Button from 'react-bootstrap/Button';
+import { UserContext } from '../context/user';
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
+function UserNav() {
+  const { user } = useContext(UserContext);
+  const navigate = useNavigate()
+  function handleLogout(){
+    localStorage.removeItem("user")
+    localStorage.removeItem("token")
+    navigate('/')
+  }
+
   return (
-    <>
-    <Navbar variant="light">
-      <Container className='display-ffflex'>
-      <Navbar.Brand className='kejani'><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
-        <Nav className="me-auto rightside" >
-          <Nav.Link as={Link} to="/contact">contact us</Nav.Link>
-          <button className='logoutBtn' onClick={handleLogoutClick}>
-        Logout
-      </button>
-        </Nav>
+    <Navbar>
+      <Container>
+        <Navbar.Brand href="#home" style={{color:"#1A626D",fontSize:"40px",fontFamily: 'Montserrat'}}><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text className='text-xl'>
+            Signed in as: <a href="#login">{user.username}</a>
+          </Navbar.Text>
+          <Button  onClick={handleLogout} style={{backgroundColor:"#1A626D",color:"white",fontFamily: 'Montserrat'}} variant="outline-success" className='w-24 mr-1.5 h-9 text-center leading-2 pb-0.5'>Log Out</Button>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
-  </>
   );
 }
-export default UserNavbar;
+
+export default UserNav;
