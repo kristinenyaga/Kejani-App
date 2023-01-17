@@ -21,7 +21,7 @@ function Review() {
 
         <div>
           {user?.reviews?.map((review) => (
-           <h1 className= 'reviews'>:git add {review.description}</h1>
+           <h1 className= 'reviews'>: {review.description}</h1>
            ))}
        </div>
 
