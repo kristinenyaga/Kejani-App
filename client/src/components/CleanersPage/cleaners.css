@@ -1,66 +1,75 @@
-img {
-    height: 150px;
+.cleanerspage_h1 {
+    color: #1A626D;
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+    font-size: 38px;
+    font-family: 'Crimson Text', serif;
+
+}
+
+.cleaners_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -40px auto;
+
+}
+
+.cleaners_row {
+    max-width: 385px;
+    margin: 40px 35px 35px 25px;
+    border: 2px solid rgb(255, 247, 247);
+    box-shadow: black;
+    padding: 15px;
+
+
+}
+
+.cleaners_row h1 {
+    color: #1A626D;
+}
+
+.unitImg {
     width: 100%;
+    object-fit: contain;
+    border-radius: 7px;
+    height: 280px;
+    margin: 0 auto;
 }
 
-div [class^="col-"] {
-    padding-left: 5px;
-    padding-right: 5px;
+.center-div {
+    align-self: center;
+    align-content: center;
+    background-color: #1A626D;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-
-
-.card {
-    transition: 0.5s;
-    cursor: pointer;
+.cleaners_row h3 {
+    font-family: 'Crimson Text', serif;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.card-title {
-    font-size: 15px;
-    transition: 1s;
-    cursor: pointer;
+.cleaners_row h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 28px;
 }
 
-.card-title i:hover {
-    transform: scale(1.25) rotate(100deg);
-    color: #18d4ca;
-
+.cleaners_row p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+.cleaners_row i {
+    color: #1A626D;
 }
 
-.card-text {
-    height: 80px;
-}
-
-.card::before,
-.card::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: scale3d(0, 0, 1);
-    transition: transform .3s ease-out 0s;
-    background: rgba(255, 255, 255, 0.1);
-    content: '';
-    pointer-events: none;
-}
-
-.card::before {
-    transform-origin: left top;
-}
-
-.card::after {
-    transform-origin: right bottom;
-}
-
-.card:hover::before,
-.card:hover::after,
-.card:focus::before,
-.card:focus::after {
-    transform: scale3d(1, 1, 1);
+.text-muted {
+    text-transform: uppercase;
+    font-size: larger;
+    font-family: 'Open Sans', 'Helvetica Neue';
 }

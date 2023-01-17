@@ -3,11 +3,15 @@ import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose, AiFillTag } from 'react
 import { BsFillCartFill,BsBackspaceFill,BsHurricane } from 'react-icons/bs';
 import {FaTruck} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
-import {FaUserFriends, FaWallet} from 'react-icons/fa'
-import {MdFavorite, MdHelp} from 'react-icons/md'
+import { UserContext } from '../context/user';
+import { useContext } from 'react';
+
+
 
 const MoversNavbar = () => {
 const [nav, setNav] = useState(false)
+const { user } = useContext(UserContext);
+
 
 function handleLogout(){
   localStorage.removeItem("user")
@@ -23,7 +27,7 @@ const navigate=useNavigate()
           <AiOutlineMenu size={30} />
         </div>
         <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2 my-2.5'>
-           <span style={{fontFamily:'Montserrat',fontSize:"46px"}} className='font-bold '>Kejani</span>
+           <span style={{fontFamily:'Montserrat',fontSize:"46px"}} className='font-bold tracking-wide '>Kejani</span>
         </h1>
         
       </div>
@@ -46,7 +50,9 @@ const navigate=useNavigate()
           className='absolute right-4 top-4 cursor-pointer'
         />
         <h2 className='text-2xl p-4'>
-           <span style={{fontFamily:'Montserrat',fontSize:"38px"}} className='font-bold text-center ml-11' ><i class="fa-solid fa-house-circle-check"></i></span>
+           <span style={{fontFamily:'Montserrat',fontSize:"38px"}} className='font-bold text-center ' ><i class="fa-solid fa-house-circle-check"></i></span>
+           <span style={{fontFamily:'Montserrat',fontSize:"18px"}} className='font-bold text-center ' >@{user.username}</span>
+
         </h2>
         <nav>
             <ul className='flex flex-col p-4 cursor-pointer '>
