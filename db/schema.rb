@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2023_01_10_074123) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "listers", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "image_url"
+    t.string "username"
+    t.integer "phone_no"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "requestunits", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -49,11 +59,13 @@ ActiveRecord::Schema.define(version: 2023_01_10_074123) do
   create_table "units", force: :cascade do |t|
     t.integer "unit_number"
     t.integer "price"
-    t.string "category"
     t.string "image_url"
+    t.string "category"
     t.integer "user_id"
-    t.string "occuppied", default: "vacant"
-    t.string "apartment_id"
+    t.integer "lister_id"
+    t.string "property_name"
+    t.string "property_type"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -64,7 +76,6 @@ ActiveRecord::Schema.define(version: 2023_01_10_074123) do
     t.string "email"
     t.string "password_digest"
     t.integer "phone_number"
-    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
