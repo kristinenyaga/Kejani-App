@@ -24,8 +24,7 @@ export default function AddApartment( { user, setApartment, apartment, handleApa
       <h3 className='apartment-add' onClick={handleClick}>Add apartment <i class="fa-solid fa-arrow-right-from-bracket"></i></h3>
 
 
-      <div className="section2container">
-        <div className="section2row">
+      <div className="flex flex-row gap-8 flex-wrap">
 
           {/* added ? just before user, remove it when necessary */}
           {user?.apartments?.map(apartment => (
@@ -34,7 +33,6 @@ export default function AddApartment( { user, setApartment, apartment, handleApa
           ))}
           {/* {posts?.map(post => <Card details={post}/>)} */}
 
-        </div>
 
       </div>
     </div>

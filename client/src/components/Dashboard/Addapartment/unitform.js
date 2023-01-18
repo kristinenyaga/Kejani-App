@@ -1,7 +1,10 @@
 import React from 'react'
-import { useRef, useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import { useRef, useState,useContext } from 'react';
+import { UserContext } from '../../context/user';
 
-function UnitForm({ apartment, user }) {
+
+function UnitForm({ apartment }) {
   console.log(apartment)
 
   const [status, setStatus] = useState('');
@@ -9,6 +12,14 @@ function UnitForm({ apartment, user }) {
   const [unit_number, setUnitNumber] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
+  const [location, setLocation] = useState('');
+  const [apttype,setApttype] = useState('')
+  const [aptname,setAptname] = useState('')
+
+
+
+  const { user,setRole } = useContext(UserContext);
+
 
 
   function handleSubmit(e) {
@@ -17,8 +28,8 @@ function UnitForm({ apartment, user }) {
       unit_number: unit_number,
       price: price,
       category: category,
-      // user_id:user.id,
-      // apartment_id:apartment.id,
+      user_id:user.id,
+      apartment_id:apartment.id,
       image_url: unit_url
     }
     fetch('/units', {
@@ -44,6 +55,10 @@ function UnitForm({ apartment, user }) {
     setStatus("")
     setUnitNumber("")
     setUnitUrl("")
+    setApttype('')
+    setLocation('')
+    setAptname('')
+    Window.alert("success")
 
   }
 
@@ -56,13 +71,13 @@ function UnitForm({ apartment, user }) {
         <h1>Add Unit</h1>
         <form className='apartment-form' onSubmit={handleSubmit} >
           {/* added ? just before username, edit out when necessary */}
-          <input className="apartment-inputs red" value={user?.username} type="text" name="apartment name" placeholder="Apartment Name" disabled />
-          <input className='apartment-inputs red' type="email" name="apartment type" placeholder="Apartment Type" disabled />
+          <input className="apartment-inputs red" value={user?.username} type="text" name="apartment name" placeholder="Apartment Name" onChange={(e) => setAptname(e.target.value)} />
+          <input className='apartment-inputs ' type="text" name="apartment type" placeholder="Apartment Type" value={apttype} onChange={(e) => setApttype(e.target.value)}  />
           <input className='apartment-inputs ' type="text" name="unit number" value={unit_number} onChange={(e) => setUnitNumber(e.target.value)} placeholder="Unit Number" />
-          <input className='apartment-inputs' type="text" name="name" placeholder="Location" />
+          <input className='apartment-inputs' type="text" name="name" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} />
           <input className='apartment-inputs' type="text" name="name" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="price" />
-          <input className='apartment-inputs red' type="text" name="image url" value={unit_url} onChange={(e) => setUnitUrl(e.target.value)} placeholder="Image_url" />
-          <select value={category} onChange={(e) => setCategory(e.target.value)} placeholder="u">
+          <input className='apartment-inputs' type="text" name="image url" value={unit_url} onChange={(e) => setUnitUrl(e.target.value)} placeholder="Image_url" />
+          <Form.Select  value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="number" selected>Category</option>
             <option value="bedsitters">bedsitter</option>
             <option value="studio">Studio</option>
@@ -70,16 +85,18 @@ function UnitForm({ apartment, user }) {
             <option value="twobedroom">2bedroom</option>
             <option value="threebedroom">3bedroom</option>
 
+         </Form.Select>
+
+          
 
 
 
-          </select>
-          <select value={status} onChange={(e) => setStatus(e.target.value)} >
-            <option value="number" selected>Status</option>
+          <Form.Select value={status} onChange={(e) => setStatus(e.target.value)} >
+            <option value="number"  selected>Status</option>
             <option value="vacant">Vacant</option>
             <option value="occuppied">Occuppied</option>
 
-          </select>
+          </Form.Select>
 
 
           <button type="submit" className="button">Submit</button>

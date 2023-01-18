@@ -20,7 +20,7 @@ export default function Homepage() {
         <div className="left">
           <h1 className="header-title">Find Your Next <span>Perfect Place</span>With Us.</h1>
           <h5 className="header-p">Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </h5>
-          <button className="header-button" onClick={handleClick}>Learn More</button>
+          <button className="header-button rounded" onClick={handleClick}>Learn More</button>
           <div className="header-container">
             <div className="row1">
               <p>1500+</p>
@@ -58,7 +58,7 @@ export default function Homepage() {
               Roughly 3 in every 4 buyers or lessees use the Internet to find the next perfect place to call home.
               Grab the chance and increase your property visibility with one of the fastest growing source of inquiry.
             </p>
-            <button className="section2btn" onClick={handleClick}>List House</button>
+            <button className="section2btn rounded" onClick={handleClick}>List House</button>
           </div>
 
           <div className="section2row">
@@ -66,7 +66,7 @@ export default function Homepage() {
             <p className="section2row-ptag">
               Looking for something easy to use from the comfort of wherever you are? Looking to avoid the hustle of searching for property? Looking forward to eliminating the middle man and directly deal with the seller hence you get the actual pricing of the property.
             </p>
-            <button className="section2btn" onClick={handleClick}>Rent House</button>
+            <button className="section2btn rounded" onClick={handleClick}>Rent House</button>
 
           </div>
 
@@ -122,7 +122,7 @@ export default function Homepage() {
         <div className="section4-container">
           <div className="section4-row">
             <img
-              src="https://images.pexels.com/photos/11757899/pexels-photo-11757899.jpeg?auto=compress&cs=tinysrgb&w=400">
+              src="https://images.unsplash.com/photo-1624204386084-dd8c05e32226?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXBhcnRtZW50JTIwYnVpbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
             </img>
             <h3>Kasarani House</h3>
             <h4><i class="fa-solid fa-location-dot"></i>Evagrin,Acquatic Close</h4>
@@ -162,7 +162,7 @@ export default function Homepage() {
           <div className="section4-row">
 
             <img
-              src="https://images.pexels.com/photos/5936369/pexels-photo-5936369.jpeg?auto=compress&cs=tinysrgb&w=400">
+              src="https://images.unsplash.com/photo-1512845296467-183ccf124347?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             </img>
             <h3>Parklands Hse</h3>
             <h4><i class="fa-solid fa-location-dot"></i>Gandhi,Bhanderi Road</h4>
