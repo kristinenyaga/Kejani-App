@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 2023_01_13_114939) do
     t.string "unit_number"
     t.string "category"
     t.string "location"
+    t.string "status", default: "pending"
     t.integer "user_id"
+    t.integer "unitid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

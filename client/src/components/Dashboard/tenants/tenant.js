@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 function Tenant({user}) {
     return(
         <tbody className="divide-y divide-gray-100">

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Tenant from './tenant';
 
+
 function Tenants() {
   const [users, setUsers] = useState([])
 
@@ -15,7 +16,7 @@ function Tenants() {
     // <div>
     //   <h3>Tenants</h3>
     // </div>
-    <div className='overflow-auto rounded-lg shadow hidden md:block'>
+    <div className='table'>
       <table className='w-full'>
         <thead className='bg-gray-50 border-b-2 border-gray-200'>
           <tr>
