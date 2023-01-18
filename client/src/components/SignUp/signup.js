@@ -4,13 +4,13 @@ import {Navigate, useNavigate} from 'react-router-dom'
 import './signup.css'
 
 function SignUp( {onSignup} ) {
-    const [name, setName] = useState('');
+    const [username, setName] = useState('');
     const [location, setLocation] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [number, setNumber] = useState('');
+    const [phone_number, setNumber] = useState('');
     const [role, setRole] = useState('')
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [password_confirmation, setPasswordConfirmation] = useState("");
 
     
 
@@ -18,66 +18,44 @@ function SignUp( {onSignup} ) {
      const [submitted, setSubmitted] = useState(false);
      const [error, setError] = useState(false);
 
-     const handlerole = (event) => {
-        const value = event.target.value;
-        setRole(value);
-      };
 
 
     // Handling the form submission
     const handleSubmit = (e) => {
         console.log(role)
         e.preventDefault();
-        if (name === '' || number === '' || location === '' || email === '' || password === '') {
+        if (username === '' || phone_number === '' || location === '' || email === '' || password === '') {
             setError(true);
         } else {
             setError(false);
         }
-        
- 
 
-        // fetch('/signup', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json'},
-        //     body: JSON.stringify({
-        //         username:name,
-        //         location:location,
-        //         email:email,
-        //         phone_number:number,
-        //         password:password,
-        //         password_confirmation: passwordConfirmation,
-        //         role:role
-        //     })
-        // })
-    
-
-
-
-    fetch('/users', {
+    fetch('/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
-            username:name,
-            location:location,
-            email:email,
-            phone_number:number,
-            password:password,
-            password_confirmation: passwordConfirmation,
-            role:role
+         
+            username,
+            location,
+            email,
+            phone_number,
+            password,
+            password_confirmation,
+            role
+
+         
         })
     })
-    .then((r) => {
-        if (r.ok) {
-          r.json().then((user) =>{
-          onSignup(user)
-          setRole(user.role)
-          }
-          );
-        } 
-        
-      });
-    }
-    const handleRole=(e)=>{
+    .then((r) => r.json())
+    .then((data)=>console.log(data));
+    setName('')
+    setEmail('')
+    setLocation('')
+    setPassword('')
+    setNumber('')
+    setRole('')
+    };
+    const handlerole=(e)=>{
         setRole(e.target.value)
         setSubmitted(false)
 
@@ -93,7 +71,7 @@ function SignUp( {onSignup} ) {
                 style={{
                     display: submitted ? '' : 'none',
                 }}>
-                <h6>{name} successfully registered!</h6>
+                <h6>{username} successfully registered!</h6>
             </div>
         );
     };
@@ -119,8 +97,8 @@ function SignUp( {onSignup} ) {
                 <input
                     type="text"
                     onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    name={name}
+                    value={username}
+                    name='name'
                     className="form-control"
                     placeholder="Enter your name"
                 />
@@ -132,7 +110,7 @@ function SignUp( {onSignup} ) {
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
-                    name={email}
+                    name="email"
                     className="form-control"
                     placeholder="Enter your email"
                 />
@@ -143,8 +121,8 @@ function SignUp( {onSignup} ) {
                 <input
                     type="integer"
                     onChange={(e) => setNumber(e.target.value)}
-                    value={number}
-                    name={number}
+                    value={phone_number}
+                    name="number"
                     className="form-control"
                     placeholder="Enter your phone number"
                 />
@@ -156,7 +134,7 @@ function SignUp( {onSignup} ) {
                     type="text"
                     onChange={(e) => setLocation(e.target.value)}
                     value={location}
-                    name={location}
+                    name="location"
                     className="form-control"
                     placeholder="Enter your location" />
             </div>
@@ -169,7 +147,7 @@ function SignUp( {onSignup} ) {
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
-                    name={password}
+                    name="password"
                     className="form-control"
                     placeholder="Enter your password"
                 />
@@ -180,8 +158,8 @@ function SignUp( {onSignup} ) {
                 <input
                     type="password"
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
-                    value={passwordConfirmation}
-                    name={passwordConfirmation}
+                    value={password_confirmation}
+                    name="passwordConfirmation"
                     className="form-control"
                     placeholder="password confirmation"
                 />

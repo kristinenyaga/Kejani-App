@@ -40,16 +40,16 @@ review1=Review.create(user_id:user1.id,description:"the owner was very cooperati
 review2=Review.create(user_id:user2.id,description:"the owner was very cooperative",unit_id:unit2.id)
 review3=Review.create(user_id:user3.id,description:"the owner was very cooperative",unit_id:unit3.id)
 
-requestunit1=Requestunit.create(unit_number:5500,username:"Joan Ndirangu",email:"joan@gmail.com",phone_number:"0723345678",category:"bedsitter",location:"Embakasi",user_id:user3.id)
-requestunit2=Requestunit.create(unit_number:5500,username:"Samson Okola",email:"samson@gmail.com",phone_number:"0734456543",category:"bedsitter",location:"Embakasi",user_id:user3.id)
-requestunit3=Requestunit.create(unit_number:5501,username:"Judy Machoka",email:"judy@gmail.com",phone_number:"0723343564",category:"1bedroom",location:"Embakasi",user_id:user3.id)
-requestunit4=Requestunit.create(unit_number:5501,username:"Esther Mutheu",email:"esther@gmail.com",phone_number:"0792043520",category:"1bedroom",location:"Embakasi",user_id:user3.id)
-requestunit5=Requestunit.create(unit_number:5502,username:"Ivy Temi",email:"ivy@gmail.com",phone_number:"076502154",category:"2bedroom",location:"Ngong",user_id:user4.id)
-requestunit6=Requestunit.create(unit_number:5502,username:"Olivia Janet",email:"olivia@gmail.com",phone_number:"0721145890",category:"2bedroom",location:"Ngong",user_id:user4.id)
-requestunit7=Requestunit.create(unit_number:5503,username:"Angela Muite",email:"angela@gmail.com",phone_number:"0721143506",category:"3bedroom",location:"Ruaka",user_id:user4.id)
-requestunit8=Requestunit.create(unit_number:5503,username:"Lucy Mwakazi",email:"lucy@gmail.com",phone_number:"0745143590",category:"3bedroom",location:"Ruaka",user_id:user4.id)
-requestunit9=Requestunit.create(unit_number:5504,username:"Lincoln Muchiri",email:"lincoln@gmail.com",phone_number:"07344143506",category:"3bedroom",location:"Ruaka",user_id:user3.id)
-requestunit10=Requestunit.create(unit_number:5504,username:"Beatrice Nduta",email:"beatrice@gmail.com",phone_number:"0727665506",category:"3bedroom",location:"Ruaka",user_id:user3.id)
+requestunit1=Requestunit.create(unit_number:5500,username:"Joan Ndirangu",email:"joan@gmail.com",phone_number:"0723345678",category:"bedsitter",location:"Embakasi",user_id:user3.id,unitid:unit1.id)
+requestunit2=Requestunit.create(unit_number:5500,username:"Samson Okola",email:"samson@gmail.com",phone_number:"0734456543",category:"bedsitter",location:"Embakasi",user_id:user3.id,unitid:unit1.id)
+requestunit3=Requestunit.create(unit_number:5501,username:"Judy Machoka",email:"judy@gmail.com",phone_number:"0723343564",category:"1bedroom",location:"Embakasi",user_id:user3.id,unitid:unit2.id)
+requestunit4=Requestunit.create(unit_number:5501,username:"Esther Mutheu",email:"esther@gmail.com",phone_number:"0792043520",category:"1bedroom",location:"Embakasi",user_id:user3.id,unitid:unit2.id)
+requestunit5=Requestunit.create(unit_number:5502,username:"Ivy Temi",email:"ivy@gmail.com",phone_number:"076502154",category:"2bedroom",location:"Ngong",user_id:user4.id,unitid:unit3.id)
+requestunit6=Requestunit.create(unit_number:5502,username:"Olivia Janet",email:"olivia@gmail.com",phone_number:"0721145890",category:"2bedroom",location:"Ngong",user_id:user4.id,unitid:unit3.id)
+requestunit7=Requestunit.create(unit_number:5503,username:"Angela Muite",email:"angela@gmail.com",phone_number:"0721143506",category:"3bedroom",location:"Ruaka",user_id:user4.id,unitid:unit4.id)
+requestunit8=Requestunit.create(unit_number:5503,username:"Lucy Mwakazi",email:"lucy@gmail.com",phone_number:"0745143590",category:"3bedroom",location:"Ruaka",user_id:user4.id,unitid:unit4.id)
+requestunit9=Requestunit.create(unit_number:5504,username:"Lincoln Muchiri",email:"lincoln@gmail.com",phone_number:"07344143506",category:"3bedroom",location:"Ruaka",user_id:user3.id,unitid:unit5.id)
+requestunit10=Requestunit.create(unit_number:5504,username:"Beatrice Nduta",email:"beatrice@gmail.com",phone_number:"0727665506",category:"3bedroom",location:"Ruaka",user_id:user3.id,unitid:unit5.id)
 
 
 

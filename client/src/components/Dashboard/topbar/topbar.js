@@ -11,7 +11,7 @@ const TopSection = ( {user} ) => {
             <h1 className="listers_h1">Lister's Page</h1>
             <div className="user-flex">
             <i class="fa-solid fa-user-secret"></i>
-            <h3 className="listers_h3">{user.username}</h3>
+            <h3 className="listers_h3">signed in as:{user.username}</h3>
             </div>
             </div>
             

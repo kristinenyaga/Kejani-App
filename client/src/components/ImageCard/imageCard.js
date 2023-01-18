@@ -9,15 +9,23 @@ function ImageCard(){
 
     const navigate = useNavigate();
   
-    
     useEffect(()=>{
-  
-      fetch("/apartments")
+      fetch("/apartments", {
+        method: 'GET',
+        headers: { 
+            'Content-Type': 'application/json',
+            Accept:'application/json',
+            Authorization:`Bearer${localStorage.getItem("token")}`
+        },
+       
+    })
       .then((res)=>res.json())
       .then((det)=>{
         setDetails(det)
       })
     }, [])
+    
+   
   
     console.log(detail)
   

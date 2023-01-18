@@ -22,16 +22,21 @@ class RequestunitsController < ApplicationController
   end
 
 
-  def update
-    requested_unit=Requestunit.find_by(id:params[:id])
-    requested_unit.update!(request_unit_params)
-    render json: requested_unit, status: :ok
-  end
+    
+  def update   
+    requested_unit = Requestunit.find_by(id: params[:id])
+      if requested_unit
+        requested_unit.update(request_unit_params)
+        render json: requested_unit,status: :created
+      else
+        render json: { error: "Requestunit not found"}, status: :not_found
+      end
+   end
 
   private
 
   def request_unit_params
 
-    params.permit(:category,:unit_number,:username,:location,:email,:phone_number,:user_id)
+    params.permit(:category,:unit_number,:username,:location,:email,:phone_number,:user_id,:status,:unitid)
   end
 end

@@ -8,7 +8,7 @@ import { UserContext } from '../context/user';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-    const { setUser,setRole } = useContext(UserContext);
+    const { setUser,setRole,setrequestedunits } = useContext(UserContext);
     function handleClick() {
 
         navigate('/signup')
@@ -16,39 +16,45 @@ import { UserContext } from '../context/user';
 
     function handleSubmit(e) {
         e.preventDefault()
-        const data = {
-            email: email,
-            password: password,
-        }
+        // const data = {
+        //     email: email,
+        //     password: password,
+        // }
         fetch('/login', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                Accept:'application/json',
-                Authorization:localStorage.token
+                Accepts:'application/json',
+                Authorization:`Bearer${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
-                email:email,
-                password:password
+                user:{
+                    email:email,
+                    password:password
+                }
+               
             })
         })
         .then((res) => res.json())
         .then((data) => {
-          if (data.error) {
-            alert(data.error)
-          } else {
             localStorage.setItem("user",JSON.stringify(data.user))
-            localStorage.setItem("token",data.token)
+            localStorage.setItem("token",data.jwt)
             setUser(data.user)
              setRole(data.user.role)
              onLogin()
-          }
-          console.log(data)
+            console.log(data.user.role)
+            setRole(data.user.role)
+            setUser(data.user)
+            setrequestedunits(data.requestunits)
+            onLogin()
+
         })
         .catch((error) => {
           console.log(error);
         });
-        }
+        setEmail('')
+        setPassword('')
+        };
     
     return(
         <>
@@ -59,11 +65,11 @@ import { UserContext } from '../context/user';
             <form className='login-form' onSubmit={handleSubmit}>
                 <h3>Login</h3>
 
-                <label for="username">Email</label>
-                <input type="email" className='input' placeholder="Type in your Email" id="username" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label for="email">Email</label>
+                <input type="email" className='input' placeholder="Type in your Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                 <label for="password">Password</label>
-                <input type="password" className='input' placeholder="Type in your Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" className='input' placeholder="Type in your Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 {errors.length > 0 &&
                     <div className='input-control'>

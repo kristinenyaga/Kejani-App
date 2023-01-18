@@ -1,20 +1,17 @@
 class UsersController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create]
    
     def create
-      user = User.new(user_params)
+      user = User.create!(user_params)
      
-      if user.save
-        token=issue_token(user)
-        render json: { user: user, status: :created,jwt:token}
+      if user.valid?
+        token=encode_token(user_id:user.id)
+        render json: { user: UserSerializer.new(user),jwt:token}, status: :created
       else
-        if user.errors.messages
-          render json: {error: user.errors.messages}
-        else
-        render json: { error: 'failed to create user', status: :not_acceptable}
+        render json: { error: 'failed to create user'}, status: :unprocessable_entity
       end
     end
-    end
+  
   
     def show
       user = User.find_by(email: params[:email]);

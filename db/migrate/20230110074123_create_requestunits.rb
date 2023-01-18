@@ -9,7 +9,7 @@ class CreateRequestunits < ActiveRecord::Migration[6.1]
       t.string :location
       t.string :status,default: "pending"
       t.integer :user_id
-
+      t.integer :unitid
 
       t.timestamps
     end

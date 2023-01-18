@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2023_01_10_074123) do
     t.string "location"
     t.string "status", default: "pending"
     t.integer "user_id"
+    t.integer "unitid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -40,13 +40,15 @@ export default function App() {
   // const [role, setRole] = useState("")
   const navigate = useNavigate("")
   const [lister, setLister] = useState("")
-  const { user,error, role,setRole,setUser } = useContext(UserContext);
+  const { user,error, role,setRole,setUser,requestedunits } = useContext(UserContext);
   const [requestedunit,setRequestedUnit]=useState('')
 
 
   function onLogin() {
     console.log(user)
     console.log(role)
+    console.log(requestedunits)
+
     if (role === 'user') {
       setLister(false)
       navigate('/imagecard')
@@ -118,7 +120,7 @@ export default function App() {
         
             <Route  path='/data/:id' element={<UnitReview/>} />
             <Route  path='/userspage' element={<UsersPage handleRequest={handleRequest}/>} />
-
+            
             <Route exact path="/signup" element={<SignUp onSignup={onSignup} />} />
             <Route exact path="/login" element={<Login onLogin={onLogin} setRole={setRole}/>} />
             <Route exact path="/" element={ <Homepage />} />

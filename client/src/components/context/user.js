@@ -7,6 +7,7 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const [role, setRole] = useState(null);
+    const[requestedunits,setrequestedunits]=useState(null)
 
     useEffect(() => {
         fetch("/profile", {
@@ -29,7 +30,7 @@ const UserProvider = ({ children }) => {
    
     }, []);
     return (
-        <UserContext.Provider value={{ user, setUser,setRole, error,role }}>
+        <UserContext.Provider value={{ user, setUser,setRole, error,role,requestedunits,setrequestedunits }}>
             {children}
         </UserContext.Provider>
     );

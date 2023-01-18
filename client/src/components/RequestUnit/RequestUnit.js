@@ -52,7 +52,8 @@ function RequestUnit({requestedunit}) {
         unit_number:requestedunit.unit_number,
         category:requestedunit.category,
         location:requestedunit.apartment.location,
-        user_id:requestedunit.user.id
+        user_id:requestedunit.user.id,
+        unitid:requestedunit.id
         })
     })
     .then((res) => res.json())

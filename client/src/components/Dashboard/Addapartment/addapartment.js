@@ -30,7 +30,6 @@ export default function AddApartment({ user, setApartment, apartment, handleApar
             <Apartment apartment={apartment} handleApartment={handleApartment} setApartment={setApartment} />
 
           ))}
-          {/* {posts?.map(post => <Card details={post}/>)} */}
 
         </div>
 
