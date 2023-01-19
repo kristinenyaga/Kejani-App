@@ -1,15 +1,21 @@
-.containe{
-    display: flex;
-    color:  #1A626D;
-    position: absolute;
-    left: 17%;
-    font-size: small;
-    box-shadow: 10px 10px #ebf4f5;
-    top: 16%;
-    /* font-size: small; */
-    
-}
-
 .reviews{
-    font-size: larger;
+    font-size: large;
 }
+.review{
+    font-size: large;
+    flex: 1;
+    justify-content: center;
+    line-height: 70px;
+}
+ .card {
+    box-shadow: 10px 10px #1A626D;
+    transition: 0.3s;
+    background-color: lightblue;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .containe {
+    padding: 2px 16px;
+    display: flex;
+  }
