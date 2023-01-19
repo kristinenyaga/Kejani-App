@@ -17,7 +17,7 @@ export default function AddApartment( { user, setApartment, apartment, handleApa
     navigate('/unitform')
   }
   return (
-    <div className="section2">
+    <div className="myapartment">
 
 
 

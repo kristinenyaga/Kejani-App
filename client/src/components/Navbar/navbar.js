@@ -4,10 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate } from 'react-router-dom'
 import "./navbar.css"
-
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const nav = useNavigate();
   function handleClick() {
     nav('/signup')
@@ -18,10 +16,7 @@ function NavBar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center flex-row justify-between gap-96">
-
-
               <Navbar.Brand className='kejani mr-6'><i class="fa-solid fa-house-circle-check"></i>Kejani</Navbar.Brand>
-
               <div className="hidden md:block justify-end ">
                 <div className="ml-10 flex items-baseline space-x-4 ">
                   <a
@@ -29,22 +24,18 @@ function NavBar() {
                   >
                     <Nav.Link style={{backgroundColor: "rgb(27, 98, 110)"}}as={Link} className='text-white py-8 w-32 text-center h-9 leading-8 no-underline list-none rounded ' to="/signup" onClick={handleClick}>Signup</Nav.Link>
                   </a>
-
                   <a
 
                     className="text-gray-300  hover:text-white px-3 py-2 rounded-md text-lg font-medium no-underline"
                   >
                     <Nav.Link style={{backgroundColor: "rgb(27, 98, 110)"}}as={Link} className='text-white py-8 w-32 text-center h-9 leading-8 no-underline list-none rounded ' to="/login">Login</Nav.Link>
                   </a>
-
                   <a
 
                     className="text-gray-300  hover:text-white px-3 py-2 no-underline  text-lg font-medium"
                   >
                     <Nav.Link  style={{backgroundColor: "rgb(27, 98, 110)"}}as={Link} className='text-white py-8 w-32 text-center h-9 leading-8 no-underline list-none rounded ' to="/contact" >Contact Us</Nav.Link>
                   </a>
-
-
                 </div>
               </div>
             </div>
@@ -94,7 +85,6 @@ function NavBar() {
             </div>
           </div>
         </div>
-
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"
@@ -112,22 +102,18 @@ function NavBar() {
                 >
                   <Nav.Link as={Link} className='auth' to="/signup" onClick={handleClick}>Signup</Nav.Link>
                 </a>
-
                 <a
 
                   className="text-gray-300  hover:text-white block px-3 py-2 rounded-md text-xl font-medium"
                 >
                   <Nav.Link as={Link} className='auth' to="/login">Login</Nav.Link>
                 </a>
-
                 <a
 
                   className="text-gray-300  hover:text-white block px-3 py-2 rounded-md text-xl font-medium"
                 >
                   <Nav.Link as={Link} className='auth' to="/contact" >Contact Us</Nav.Link>
                 </a>
-
-
               </div>
             </div>
           )}
@@ -142,5 +128,4 @@ function NavBar() {
     </div>
   );
 }
-
 export default NavBar;

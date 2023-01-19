@@ -32,9 +32,7 @@ function Apartment({ apartment, setApartment, handleApartment }) {
         </div>
         */}
       <hr />
-
       <button className="section2btn" onClick={() => {
-
         handleApartment(apartment)
         navigate('/unitform')
       }}>Add Unit</button>
