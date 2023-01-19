@@ -49,7 +49,8 @@ export default function AlertDialogSlide({open,setOpen,request}) {
         if (data.error) {
           alert(data.error)
         } else {
-          console.log(data)
+          window.alert("Status Updated successfully")
+          setStatus('')
           setClicked(true)
           setOpenDialog(true)
         }
