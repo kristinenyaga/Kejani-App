@@ -40,7 +40,7 @@ function UnitForm({ apartment }) {
       .then((r) => {
         if (r.ok) {
           r.json().then((unit) => {
-            console.log(unit)
+            window.alert("Data Submitted successfully")
             clearData()
           }
           );

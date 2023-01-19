@@ -19,10 +19,12 @@ function Apartment({ apartment, setApartment, handleApartment }) {
         src={apartment?.image_url} alt="">
       </img>
 
-      <h3 className='font-semibold'>
+      <h3 className='font-bold text-xl' style={{fontFamily:"Montserrat"}}>
         {apartment?.apartment_name}
       </h3>
-      <h4 className='font-normal'>
+      
+      <p style={{fontFamily:"Montserrat"}} className='text-dark-green'><i class="fa-solid fa-location-dot"></i>{apartment?.location}</p>
+      <h4 className='font-light text-base ' style={{fontFamily:"Montserrat"}}>
         {apartment?.apartment_type}
       </h4>
       {/* <div className="postcats">

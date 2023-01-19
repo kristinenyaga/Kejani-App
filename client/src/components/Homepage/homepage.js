@@ -209,17 +209,9 @@ export default function Homepage() {
       </div>
 
 
-      <div className="section6-container">
-        <div className="section6-container-row">
-          <h3>Kejani</h3>
-          <p>Kejani offers customers on demand experience for renting houses and providing transparency and almost seamless end-end service. </p>
-
-        </div>
-
-        </div>
         <div className="section6-container"></div>
 
-        <section className="bg-wh">
+        <section className="bg-dark-green">
           <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
               <div className="sm:col-span-2">
@@ -234,13 +226,13 @@ export default function Homepage() {
 
                   </div>
                   <span className="ml-2 text-xl font-bold tracking-wide text-white">
-                    {/* Kejani */}
+                    Kejani
                   </span>
                 </a>
                 <div className="mt-6 lg:max-w-sm">
                   <p className="mt-4 text-sm text-white">
-                    {/* Kejani offers customers on demand experience for renting houses and
-                    providing transparency and almost seamless end-end service. */}
+                    Kejani offers customers on demand experience for renting houses and
+                    providing transparency and almost seamless end-end service.
                   </p>
                 </div>
               </div>

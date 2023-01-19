@@ -5,6 +5,7 @@ import ApartmentForm from '../Addapartment/apartmentform'
 import UnitForm from '../Addapartment/unitform'
 import Inbox from '../defaultinbox/defaultinbox'
 import DefaultMap from '../defaultinbox/defaultmap'
+
 import Review from '../Reviews/review'
 import Tenants from '../tenants/tenants'
 
@@ -18,6 +19,9 @@ function SideBarPages({user,setApartment,apartment,handleApartment}) {
       <Route path="/addapartment" element={<AddApartment handleApartment={handleApartment} user={user} setApartment={setApartment} apartment={apartment}/>} />
       <Route path='/apartmentform' element={< ApartmentForm  user={user} />} />
       <Route path='/unitform' element={<UnitForm user={user} apartment={apartment} />} />
+
+
+
 
     
       

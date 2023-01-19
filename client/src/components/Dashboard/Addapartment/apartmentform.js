@@ -27,7 +27,7 @@ function ApartmentForm({ user }) {
       .then((r) => {
         if (r.ok) {
           r.json().then((apartment) => {
-            console.log(apartment)
+            window.alert("Data Submitted successfully")
             clearData()
           }
           );

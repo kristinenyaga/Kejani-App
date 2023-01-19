@@ -21,7 +21,7 @@ export default function AddApartment( { user, setApartment, apartment, handleApa
 
 
 
-      <h3 className='apartment-add' onClick={handleClick}>Add apartment <i class="fa-solid fa-arrow-right-from-bracket"></i></h3>
+      <h3 className=' text-2xl underline-offset-4 my-4 underline' style={{fontFamily:"Montserrat"}} onClick={handleClick}>Add apartment <i class="fa-solid fa-arrow-right-from-bracket"></i></h3>
 
 
       <div className="flex flex-row gap-8 flex-wrap">

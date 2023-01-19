@@ -8,13 +8,8 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: session[:user_id]);
-    if user.role="lister"
-       apartment = Apartment.create(apartment_params);
-       render json:apartment, status: :created
-    else
-        render json: { errors: apartment.errors.full_messages }, status: :unprocessable_entity
-    end
+    apartment=Apartment.create!(apartment_params)
+    render json: apartment,status: :created
   end
 
   private 

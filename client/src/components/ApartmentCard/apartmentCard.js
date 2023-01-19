@@ -15,7 +15,7 @@ function ApartmentCard({ detail }) {
         ))} */}
 
             <h1 className='section2h1'>Our Apartments</h1>
-            <div className='aptdisplayflex'>
+            <div className='flex flex-row flex-wrap m-auto ml-28'>
                 {detail.map((propertyDetail) => (
                     <Apartments key={propertyDetail.id} propertyDetail={propertyDetail} />
                 ))}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TopSection from "../topbar/topbar";
 
 import '../sidebar/sidebar.css'
@@ -8,8 +8,10 @@ import Tenants from "../tenants/tenants";
 import AddApartment from "../Addapartment/addapartment";
 import SideBarPages from "../Routes/sideBarPages";
 import SideBar from "../sidebar/sidebar";
+import DefaultMap from "../defaultinbox/defaultmap";
 
 const Layout = ({ user, setApartment, apartment }) => {
+  const[inbox,setInbox]=useState(true)
   function handleApartment(apartment) {
     setApartment(apartment)
   }
@@ -22,9 +24,10 @@ const Layout = ({ user, setApartment, apartment }) => {
 
         <div className="w-full h-screen flex ">
           <div>
-            <SideBar />
+            <SideBar setInbox={setInbox} />
           </div>
           <div className="w-full h-screen">
+            {inbox && <DefaultMap/>}
             <SideBarPages user={user} setApartment={setApartment} handleApartment={handleApartment} apartment={apartment} />
           </div>
         </div>
